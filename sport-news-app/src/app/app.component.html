@@ -1,7 +1,17 @@
 <app-header>
 </app-header>
 
-<app-sidenav></app-sidenav>
+<!-- <app-sidenav></app-sidenav> -->
+
+<div>
+  <h3>List of routes</h3>
+  <ul>
+    <li *ngFor="let item of navigationItems">
+      <a [routerLink]="item">{{item}}</a>
+    </li>
+  </ul>
+</div>
+
 <main>
     <div class='container'>
         <router-outlet>

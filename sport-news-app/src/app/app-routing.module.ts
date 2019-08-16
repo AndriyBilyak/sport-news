@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
-  },
-  {
-    path: 'custompages',
-    loadChildren: () => import('./custom-pages/custom-pages.module').then(mod => mod.CustomPagesModule)
   },
   {
     path: 'dealbook',
@@ -23,8 +18,7 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule)
-  },
-  
+  }
 ];
 
 @NgModule({
