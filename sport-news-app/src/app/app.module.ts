@@ -14,7 +14,7 @@ import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +22,8 @@ import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
     AppRoutingModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
