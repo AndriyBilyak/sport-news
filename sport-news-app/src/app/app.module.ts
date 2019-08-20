@@ -8,7 +8,7 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ButtonComponent } from './shared/layout/button/button.component';
+
 
 
 
@@ -19,7 +19,7 @@ import { ButtonComponent } from './shared/layout/button/button.component';
     FooterComponent,
     SidenavComponent,
     PageNotFoundComponent,
-    ButtonComponent,
+
   ],
   imports: [
     BrowserModule,
