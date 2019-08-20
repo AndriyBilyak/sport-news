@@ -23,9 +23,10 @@ export class AppComponent implements OnInit {
   }
 
   private addCustomPagesRoutes = () => {
-    const customPagesRoutes = this.getCustomPagesRoutes()
-    const routerConfig = this.router.config.concat(customPagesRoutes)
+    const customPagesRoutes = this.getCustomPagesRoutes();
+    const routerConfig = [...this.router.config]
 
+    routerConfig.splice(routerConfig.length - 1, 0, ...customPagesRoutes)
     this.router.resetConfig(routerConfig)
   }
 
