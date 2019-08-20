@@ -1,0 +1,13 @@
+<form [formGroup]="registerForm" class="form-group mt-3" (ngSubmit)="onSubmit()">
+    <label class="sub-label">Sign up to receive the latest in sport news</label>
+    <div class="input-group input-group-sm footer-copyright-info">
+        <input type="text" formControlName="email" class="form-control input-em" placeholder="Your email address"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <button class="btn sm colored " 
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors, 'is-valid':submitted && ! f.email.errors}">Subscribe</button>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback position-static mb-0">
+            <div *ngIf="f.email.errors.required">You must use a valid email address</div>
+            <div *ngIf="f.email.errors.email">You must use a valid email address</div>
+        </div>
+    </div>
+</form>

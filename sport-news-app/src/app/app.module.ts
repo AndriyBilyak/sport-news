@@ -9,6 +9,11 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ButtonComponent } from './shared/layout/button/button.component';
+import { ValidationFormComponent } from './shared/layout/footer/validation-form/validation-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +22,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FooterComponent,
     SidenavComponent,
     PageNotFoundComponent,
+    ButtonComponent,
+    ValidationFormComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     AmplifyAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AmplifyService],
   bootstrap: [AppComponent]
