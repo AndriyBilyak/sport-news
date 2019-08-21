@@ -1,6 +1,4 @@
 /* button-form */
-/* button-form */
-/* button-form */
 
 .sm {
     height: 32px;
@@ -13,9 +11,7 @@
     box-sizing: border-box;
     text-align: center;
     color: #FFF5F5;
-    font-family: Open Sans;
     font-style: normal;
-    font-weight: 600;
     font-size: 12px;
     border-radius: 0px;
 }
@@ -41,8 +37,7 @@
 }
 
 /* button-form */
-/* button-form */
-/* button-form */
+
 
 .sub-label{
     font-style: normal;
@@ -59,6 +54,7 @@
     border-right: none;  
 }
 .input-em::placeholder{
+    font-family: Open Sans;
     color:#C6CCD7;
     font-size: 12px;
     vertical-align: middle;

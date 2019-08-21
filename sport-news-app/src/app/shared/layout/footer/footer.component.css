@@ -1,11 +1,28 @@
+*{
+  font-family: Open Sans;
+}
+
 @media screen and (min-width: 1025px) {
-.footer-width{
-    width: 68%;
-  }
   hr {
     width:82.75%;
     margin-right:0;  
     text-align:right;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .footer-width{
+    width: 68%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h5{
+    font-size: 16px;
+  }
+
+  div a.footer-logo{
+    font-size: 18px;
   }
 }
 
@@ -21,7 +38,7 @@ footer ul a{
 
 .footer-logo{
         text-decoration:none;
-        font-size: 18px;
+        font-size: 22px;
         color: #FFFFFF;
 }
 
@@ -36,5 +53,19 @@ footer label, .footer-sign{
 }
 
 
+.icon svg:hover #fill2 {
+  fill: #D72130;
+}
 
+.icon svg:hover #fill1 {
+  stroke: #D72130;
+}
+
+.icon svg:hover #fill3 {
+  stroke: #D72130;
+}
+
+.icon svg:hover #fill4 {
+  fill: #D72130;
+}
  
