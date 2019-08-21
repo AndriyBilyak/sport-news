@@ -1,0 +1,29 @@
+.main-photo img {
+  width: 100%;
+}
+.carousel-content {
+  width: 100%;
+  background: #F6F6F6;
+}
+.carousel-content p {
+  font-size: 14px;
+  line-height: 16px;
+  color: #7F7B7B;
+}
+.carousel-content h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #C63638;
+}
+.carousel-content h4 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #2B2F43;
+}
+@media screen and (min-width:776px){
+  .carousel-content {
+    display: none;
+  }
+}

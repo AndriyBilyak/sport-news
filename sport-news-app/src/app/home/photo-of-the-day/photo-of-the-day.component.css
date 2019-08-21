@@ -1,0 +1,67 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+hr {
+  background-color: #B2B2B2;
+  margin-bottom: 50px;
+}
+.title span {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #B2B2B2;
+  border-radius: 20px;
+  margin-bottom: -38px;
+}
+
+.photo-of-the-day img {
+  width: 100%;
+}
+.photo-of-the-day {
+  position: relative;
+}
+.photo-content {
+  position: absolute;
+  padding: 0 20px;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(transparent, #000000);
+}
+.photo-content h4 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ffffff;
+}
+.photo-content p {
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 160px solid #D72130;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+}
+.triangle-content {
+  position: absolute;
+  width: 75px;
+  top: 10px;
+}
+.triangle-content h5 {
+  font-size: 16px;
+  color: #FFFFFF;
+}
+@media screen and (max-width:776px){
+  .triangle, .triangle-content {
+    display: none;
+  }
+}

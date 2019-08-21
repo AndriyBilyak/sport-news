@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
+  },
   {path: '**', component: PageNotFoundComponent}
 ];
 

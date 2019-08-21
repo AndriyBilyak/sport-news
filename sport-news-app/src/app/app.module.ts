@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +13,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ButtonComponent } from './shared/layout/button/button.component';
 import { ValidationFormComponent } from './shared/layout/footer/validation-form/validation-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
@@ -27,11 +26,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule,
     AmplifyAngularModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
+  exports: [],
   providers: [AmplifyService],
   bootstrap: [AppComponent]
 })
