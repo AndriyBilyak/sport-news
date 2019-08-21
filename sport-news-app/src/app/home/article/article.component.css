@@ -1,0 +1,47 @@
+.article {
+  margin: 40px 0;
+}
+.articlePhoto {
+  width: 100%;
+}
+.article h5{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+.article p {
+  font-size: 14px;
+  line-height: 19px;
+  color: #7F7B7B;
+}
+.article-rectangle {
+  padding: 10px;
+  min-height: 250px;
+  position: relative;
+}
+.arrow {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.arrow img {
+  width: 16px;
+  height: 12px;
+  display: none;
+}
+.article-rectangle:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.article .col-md-3 {
+  padding: 0 5px;
+}
+@media screen and (max-width:768px) {
+  .article-rectangle {
+    width: 70%;
+  }
+  .article .col-md-3 {
+    display: flex;
+    justify-content: center;
+  }
+
+}

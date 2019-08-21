@@ -28,6 +28,7 @@ import { ButtonComponent } from './shared/layout/button/button.component';
     AmplifyAngularModule,
     AppRoutingModule
   ],
+  exports: [],
   providers: [AmplifyService],
   bootstrap: [AppComponent]
 })
