@@ -3,6 +3,11 @@
     width: 130px;
 }
 
+.full {
+    height: 42px;
+    width: 100%;
+}
+
 .sm {
     height: 32px;
     width: 137px;
