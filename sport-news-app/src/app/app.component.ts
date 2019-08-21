@@ -1,5 +1,6 @@
 import { Component, OnInit, Output,Input  } from '@angular/core';
 import { Router } from '@angular/router';
+import { AmplifyService } from 'aws-amplify-angular';
 
 import CustomRoutesConfig from "./mockedData/customRoutesConfig"
 import { NgClass } from '@angular/common';
@@ -14,17 +15,20 @@ export class AppComponent implements OnInit {
   navigationItems = [];
   
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private amplifyService: AmplifyService) {}
 
   ngOnInit() {
+    // TODO: amplify
+    console.log(this.amplifyService)
     this.addCustomPagesRoutes()
     this.getNavigationItems()
   }
 
   private addCustomPagesRoutes = () => {
-    const customPagesRoutes = this.getCustomPagesRoutes()
-    const routerConfig = this.router.config.concat(customPagesRoutes)
+    const customPagesRoutes = this.getCustomPagesRoutes();
+    const routerConfig = [...this.router.config]
 
+    routerConfig.splice(routerConfig.length - 1, 0, ...customPagesRoutes)
     this.router.resetConfig(routerConfig)
   }
 
