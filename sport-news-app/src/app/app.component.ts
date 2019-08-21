@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,Input  } from '@angular/core';
 import { Router } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
 
 import CustomRoutesConfig from "./mockedData/customRoutesConfig"
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import CustomRoutesConfig from "./mockedData/customRoutesConfig"
 export class AppComponent implements OnInit {
   title = 'sport-news-app';
   navigationItems = [];
+  
 
   constructor(private router: Router, private amplifyService: AmplifyService) {}
 
