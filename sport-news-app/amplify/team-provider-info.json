@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "sport-news-app-dev-20190820103737-authRole",
+            "UnauthRoleArn": "arn:aws:iam::088449153928:role/sport-news-app-dev-20190820103737-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::088449153928:role/sport-news-app-dev-20190820103737-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "sport-news-app-dev-20190820103737-deployment",
+            "UnauthRoleName": "sport-news-app-dev-20190820103737-unauthRole",
+            "StackName": "sport-news-app-dev-20190820103737",
+            "StackId": "arn:aws:cloudformation:eu-west-1:088449153928:stack/sport-news-app-dev-20190820103737/61c9bdf0-c31d-11e9-b656-0212c97b1f72"
+        }
+    }
+}

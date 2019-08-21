@@ -11,6 +11,8 @@ import { FooterComponent } from './shared/layout/footer/footer.component';
 import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ButtonComponent } from './shared/layout/button/button.component';
+import { ValidationFormComponent } from './shared/layout/footer/validation-form/validation-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { ButtonComponent } from './shared/layout/button/button.component';
     FooterComponent,
     SidenavComponent,
     PageNotFoundComponent,
-    ButtonComponent
+    ButtonComponent,
+    ValidationFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule,
     AmplifyAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [],
   providers: [AmplifyService],
