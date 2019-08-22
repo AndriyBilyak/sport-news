@@ -1,0 +1,55 @@
+.article {
+    margin: 40px 0;
+  }
+  .articlePhoto {
+    width: 100%;
+  }
+  .article h5{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .article p {
+    font-size: 14px;
+    line-height: 19px;
+    color: #7F7B7B;
+  }
+  .article-rectangle {
+    padding: 10px;
+    position: relative;
+  }
+  .article-rectangle:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .article .row {
+    padding: 0 5px;
+  }
+
+  hr{
+    width: 95%;
+    float: center;
+    margin: 0 0 0 0;
+}
+
+.article-rectangle svg{
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+}
+.article-rectangle:hover #fill1 {
+  fill: #D72130;
+}
+
+  @media screen and (max-width:768px) {
+    .article-rectangle {
+      width: 90%;
+    }
+    .article .row {
+      display: flex;
+      justify-content: center;
+    }
+    hr, svg{
+        display: none;
+    }
+  }
+  
