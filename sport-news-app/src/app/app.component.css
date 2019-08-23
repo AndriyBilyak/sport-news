@@ -1,10 +1,29 @@
-.container {
-  width: 815px;
+main.container {
   padding: 0;
+  max-width: 814px;
+  font-size: 0;
 }
-@media screen and (max-width:776px){
-  .container{
-    width: 100%;
-    padding: 0;
+
+@media screen and (min-width: 768px) {
+  main.container {
+    margin-left: 16.7vw;
+    width: calc(100% - 19vw);
+    padding-top: 44px;
+    position: relative;
+
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main.container {
+    margin-left: calc(17.6vw - 10px);
+    margin-right: unset;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main.container {
+    margin-left: 17.6vw;
+
   }
 }
