@@ -16,6 +16,9 @@ hr {
   border-radius: 20px;
   margin-bottom: -38px;
 }
+.breakdown {
+  position: relative;
+}
 .breakdown img {
   width: 100%;
 }
@@ -24,7 +27,19 @@ hr {
 }
 .breakdown-photo {
   border: 1px solid #EDEDED;
-
+  position: relative;
+}
+.breakdown-button button {
+  position: absolute;
+  width: 134px;
+  height: 39px;
+  left: 0;
+  top: 0;
+  background: #2F2F2F;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
 }
 .breakdown h4 {
   font-weight: bold;
@@ -54,15 +69,68 @@ hr {
 .news-content:hover{
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.arrow {
+.news-content svg{
   position: absolute;
-  bottom: 5px;
-  right: 20px;
+  bottom: 10%;
+  right: 10%;
 }
-.arrow img {
-  width: 16px;
-  height: 12px;
-  display: none;
+.news-content:hover #fill1 {
+  fill: #D72130;
+}
+.breakdown-photo svg{
+  position: absolute;
+  bottom: 5%;
+  right: 7%;
+}
+.breakdown-photo:hover #fill1 {
+  fill: #D72130;
 }
 
+.reader-pool {
+  max-width: 220px;
+  background: #F8F8F8;
+  position: absolute;
+  top: 70px;
+  right: -225px;
+}
+.reader-title {
+  background: #F2F2F2;
+}
+.reader-title .col-6 {
+  padding: 0;
+}
+.reader-pool h5 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #434C5D;
+  padding: 15px 15px;
+  margin: 0;
 
+}
+.reader-pool p {
+  font-size: 12px;
+  line-height: 16px;
+  color: #B2B2B2;
+  padding: 15px 15px;
+  margin: 0;
+}
+.reader-pool h4 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2B2F43;
+  padding: 30px 16px;
+  margin: 0;
+}
+.reader-content {
+  display: block;
+}
+.reader-content p{
+  padding: 10px 16px;
+}
+@media screen and (max-width:991px){
+  .reader-pool {
+    display: none;
+  }
+}
