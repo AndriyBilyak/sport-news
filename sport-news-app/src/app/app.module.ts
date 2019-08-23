@@ -21,7 +21,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     SidenavComponent,
     PageNotFoundComponent,
-    ButtonComponent,
     ValidationFormComponent,
   ],
   imports: [
