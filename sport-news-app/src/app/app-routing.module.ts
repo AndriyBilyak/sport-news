@@ -10,6 +10,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
   },
   {
+    path: 'NBA',
+    loadChildren: () => import('./custom-pages/custom-pages.module').then(mod => mod.CustomPagesModule)
+  },
+  {
     path: 'dealbook',
     loadChildren: () => import('./dealbook/dealbook.module').then(mod => mod.DealbookModule)
   },

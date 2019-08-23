@@ -39,13 +39,11 @@ hr {
 .news-content:hover{
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.arrow {
+.news-content svg{
   position: absolute;
-  bottom: 5px;
-  right: 20px;
+  bottom: 10%;
+  right: 10%;
 }
-.arrow img {
-  width: 16px;
-  height: 12px;
-  display: none;
+.news-content:hover #fill1 {
+  fill: #D72130;
 }
