@@ -30,7 +30,7 @@
   line-height: 30px;
   color: #2B2F43;
 }
-.carousel-buttons, .news, .all-news {
+.carousel-buttons, .all-news {
   display: none;
 }
 @media screen and (min-width:991px){
