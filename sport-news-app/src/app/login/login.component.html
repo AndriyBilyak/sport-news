@@ -6,58 +6,15 @@
         <a href="#">Sport news</a>
     </div>
     <div class="right-part background px-4">
-        <div class="navigation">
-            <div class="already-account">
-                <p>Already have an account?</p>
-            </div>
-            <app-button [classValue]="'sm transparent'"></app-button>
+        <div class="registration">
+
+            <!-- <app-create-account></app-create-account> -->
+            <!-- <app-singup></app-singup> -->
+            <!-- <app-forgot-password></app-forgot-password> -->
+            <!-- <app-email></app-email> -->
+            <!-- <app-change-password></app-change-password> -->
+            <router-outlet>
+            </router-outlet>
         </div>
-        <form class="registration">
-            <div class="row">
-                <div class="col-12 head">
-                    <h1>Create account</h1>
-                </div>
-                <div class="col-12 icon mb-3">
-                    <a href="#" class="mr-4">
-                        <svg width="34" height="34" class="fb" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path id="fill1" fill-rule="evenodd" clip-rule="evenodd" d="M17 33C25.8366 33 33 25.8366 33 17C33 8.16344 25.8366 1 17 1C8.16344 1 1 8.16344 1 17C1 25.8366 8.16344 33 17 33Z" stroke="black"/>
-                            <path id="fill2" d="M20.9999 14.996H18.2754V13.3244C18.2754 12.6967 18.7202 12.5503 19.0334 12.5503C19.346 12.5503 20.9561 12.5503 20.9561 12.5503V9.79067L18.3082 9.78101C15.3688 9.78101 14.6999 11.8393 14.6999 13.1564V14.996H12.9999V17.8396H14.6999C14.6999 21.4891 14.6999 25.8863 14.6999 25.8863H18.2754C18.2754 25.8863 18.2754 21.4457 18.2754 17.8396H20.6881L20.9999 14.996Z" fill="black"/>
-                        </svg>
-                    </a>
-                    <a href="#">
-                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" id="fill1" d="M16.7986 33C25.6351 33 32.7986 25.8366 32.7986 17C32.7986 8.16344 25.6351 1 16.7986 1C7.96203 1 0.798584 8.16344 0.798584 17C0.798584 25.8366 7.96203 33 16.7986 33Z" stroke="black"/>
-                            <path id="fill2" d="M25.4477 16.4645H22.9107V14.2102C22.9107 14.0382 22.7536 13.8983 22.5605 13.8983H21.8381C21.6435 13.8983 21.4865 14.0382 21.4865 14.2102V16.4645H18.9495C18.7563 16.4645 18.5986 16.6047 18.5986 16.777V17.4191C18.5986 17.5914 18.7563 17.7309 18.9495 17.7309H21.4865V19.9864C21.4865 20.1587 21.6435 20.2983 21.8381 20.2983H22.5605C22.7536 20.2983 22.9107 20.1587 22.9107 19.9864V17.7306H25.4477C25.6409 17.7306 25.7986 17.5911 25.7986 17.4188V16.7767C25.7986 16.6044 25.6409 16.4645 25.4477 16.4645Z" fill="black"/>
-                            <path id="fill2" fill-rule="evenodd" clip-rule="evenodd" d="M16.7835 18.6645C16.3146 18.3044 15.8885 17.7764 15.8811 17.6142C15.8811 17.3189 15.9054 17.1776 16.5164 16.6615C17.3064 15.9909 17.7415 15.1092 17.7415 14.1777C17.7415 13.333 17.5035 12.5827 17.0984 12.0556H17.4127C17.4777 12.0556 17.5415 12.0337 17.5934 11.9925L18.4703 11.3036C18.5793 11.219 18.625 11.0681 18.5834 10.93C18.5416 10.7923 18.424 10.6984 18.2902 10.6984H14.3682C13.939 10.6984 13.5031 10.7804 13.0752 10.94C11.6459 11.4745 10.6464 12.795 10.6464 14.1507C10.6464 16.0713 12.0187 17.527 13.853 17.5727C13.8171 17.7249 13.799 17.8749 13.799 18.0219C13.799 18.318 13.8681 18.5982 14.0106 18.8692H13.9601C12.2116 18.8692 10.6334 19.7994 10.0342 21.1837C9.87812 21.5437 9.79858 21.9077 9.79858 22.2671C9.79858 22.6165 9.88138 22.9528 10.0437 23.2688C10.4203 23.9992 11.229 24.5658 12.322 24.8651C12.8861 25.0195 13.4924 25.0984 14.1218 25.0984C14.6875 25.0984 15.2267 25.0192 15.7253 24.8628C17.2797 24.3734 18.2849 23.1327 18.2849 21.7004C18.2846 20.3261 17.8771 19.5034 16.7835 18.6645ZM11.8302 21.8105C11.8302 20.8107 13.0016 19.9339 14.3367 19.9339H14.3726C14.6631 19.9378 14.9466 19.9841 15.2136 20.0729C15.2991 20.1368 15.3818 20.1979 15.4614 20.2567L15.4787 20.2695L15.4805 20.2709C16.0979 20.727 16.5059 21.0284 16.6194 21.5119C16.6461 21.6338 16.6595 21.7558 16.6595 21.8739C16.6595 23.1188 15.8033 23.7498 14.1138 23.7498C12.8333 23.7498 11.8302 22.8984 11.8302 21.8105ZM13.834 11.9694C13.5271 11.9694 13.2538 12.1058 13.0452 12.3642C12.7223 12.7635 12.5858 13.3958 12.671 14.0992C12.8226 15.3573 13.6699 16.4446 14.5189 16.4729H14.5329H14.5335C14.8528 16.4729 15.1222 16.3365 15.3315 16.0774C15.6585 15.6733 15.8033 15.0101 15.7176 14.3048C15.565 13.0451 14.7356 11.9977 13.8687 11.97L13.834 11.9694Z" fill="black"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="col-12 text">
-                    <p>Or use your email for registration</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-12 col-lg-6 form-group">
-                    <label>First Name</label>
-                    <input type="text" class="form-control" placeholder="John" name="first_name">
-                </div>
-                <div class="col-12 col-sm-6 col-md-12 col-lg-6 form-group">
-                    <label>Second Name</label>
-                    <input type="text" class="form-control" placeholder="Doe" name="first_name">
-                </div>
-                <div class="col-12 form-group ">
-                    <label>Email</label>
-                    <input type="email" class="form-control" placeholder="Doe" name="email">
-                </div>
-                <div class="col-12 form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control" placeholder="4 + caharacters" name="email">
-                </div>
-                <div class="col-12 form-group form-group-submit mt-3">
-                    <app-button [classValue]="'full colored'"></app-button>
-                </div>
-                <div class="col-12 login">
-                    <a href="#">Already have an account?</a>
-                </div>
-            </div>
-        </form>
     </div>
 </div>
