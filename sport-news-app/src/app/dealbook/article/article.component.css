@@ -5,6 +5,7 @@
     width: 100%;
   }
   .article h5{
+    color:black;
     font-weight: bold;
     font-size: 16px;
     line-height: 22px;
@@ -21,9 +22,6 @@
   .article-rectangle:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
-  .article .row {
-    padding: 0 5px;
-  }
 
   hr{
     width: 95%;
@@ -39,7 +37,7 @@
 .article-rectangle:hover #fill1 {
   fill: #D72130;
 }
-
+  
   @media screen and (max-width:768px) {
     .article-rectangle {
       width: 90%;
