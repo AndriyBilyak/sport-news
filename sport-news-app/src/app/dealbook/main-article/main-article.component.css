@@ -10,21 +10,40 @@
     line-height: 16px;
     color: #7F7B7B;
   }
-  .main-article h5 {
+  .main-article h4 {
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
     color: #C63638;
   }
-  .main-article h4 {
+  .main-article h5 {
     font-weight: bold;
     font-size: 22px;
     line-height: 30px;
     color: #2B2F43;
   }
   @media screen and (min-width:776px){
-    .main-article {
+    /* .main-article {
       display: none;
+    } */
+  }
+
+  @media screen and (max-width:776px){
+    .main-article p {
+      font-size: 12px;
+      line-height: 16px;
+      color: #7F7B7B;
+      margin-bottom: 10px;
+    }
+    .main-article h5 {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      color: #2B2F43;
+    }
+    .main-article h4 {
+    line-height: 20px;
+    margin-bottom: 0;
     }
   }
   

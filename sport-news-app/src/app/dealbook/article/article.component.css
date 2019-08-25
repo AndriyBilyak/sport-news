@@ -14,13 +14,22 @@
     font-size: 14px;
     line-height: 19px;
     color: #7F7B7B;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .article-rectangle {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     position: relative;
   }
   .article-rectangle:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.11);
+    transition-duration: 0.4s;
   }
 
   hr{
@@ -48,6 +57,12 @@
     }
     hr, svg{
         display: none;
+    }
+    .article p {
+      -webkit-line-clamp: 4;
+    }
+    .m-sm-top{
+      margin-top: 7px;
     }
   }
   
