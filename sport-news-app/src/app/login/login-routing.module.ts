@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LoginComponent,
     children:[
       {
-        path:'singup',
+        path:'',
         component: SingupComponent,
       },
       {
