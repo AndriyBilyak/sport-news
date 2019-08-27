@@ -1,8 +1,8 @@
-.container {
-    width: 845px;
+.row {
+  margin: 0;
 }
-@media screen and (max-width:576px){
-  .container {
-      width: 100%;
+@media screen and (max-width:990px){
+  .right {
+    display: none;
   }
 }
