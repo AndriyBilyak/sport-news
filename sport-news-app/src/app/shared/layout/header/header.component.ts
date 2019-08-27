@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {debounceTime, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 import CustomRoutesConfig from 'src/app/mockedData/customRoutesConfig.js';
 
 
@@ -66,6 +67,7 @@ const statesWithFlags: {name: string, flag: string}[] = [
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  router: Router;
   public model: any;
 
   search = (text$: Observable<string>) =>
@@ -80,7 +82,6 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // alert(CustomRoutesConfig.routes);
   }
 
 }
