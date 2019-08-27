@@ -14,7 +14,7 @@ import { NgClass } from '@angular/common';
 export class AppComponent implements OnInit {
   title = 'sport-news-app';
   navigationItems = [];
-  currentUser = false;
+  currentUser = true;
 
   constructor(private router: Router, private amplifyService: AmplifyService) {}
  
