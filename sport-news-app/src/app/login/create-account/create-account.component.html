@@ -2,7 +2,7 @@
     <div class="already-account">
         <p>Already have an account?</p>
     </div>
-    <app-button [classValue]="'sm transparent'" [textValue]="'Log in'"></app-button>
+    <app-button [routerLink]="['/login']" [classValue]="'sm transparent'" [textValue]="'Log in'"></app-button>
 </div>
 
 <form [formGroup]='createAccountForm' (ngSubmit)="onSubmit()" novalidate>

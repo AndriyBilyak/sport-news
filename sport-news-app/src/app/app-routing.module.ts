@@ -3,30 +3,27 @@ import { Routes, RouterModule, PreloadAllModules, CanActivate } from '@angular/r
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
-import { AuthCanLoadGuard } from './guards/auth-can-load.guard';
+
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'home',
-    canLoad:[AuthCanLoadGuard],
     loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule),
     canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'dealbook',
-    canLoad:[AuthCanLoadGuard],
     loadChildren: () => import('./dealbook/dealbook.module').then(mod => mod.DealbookModule),
     canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'video',
-    canLoad:[AuthCanLoadGuard],
     loadChildren: () => import('./video/video.module').then(mod => mod.VideoModule),
     canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'profile',
-    canLoad:[AuthCanLoadGuard],
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
     canActivate:[AuthCanActivateGuard]
   },
@@ -41,6 +38,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

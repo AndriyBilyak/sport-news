@@ -26,7 +26,7 @@ const routes: Routes = [
         component: EmailComponent,
       },
       {
-        path:'changePassword',
+        path:'changepassword',
         component: ChangePasswordComponent,
       },
       {
