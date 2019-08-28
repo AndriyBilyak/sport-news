@@ -1,133 +1,107 @@
 <header class="header-main container-fluid p-0">
-    <div class="row d-md-flex fixed-top flex-md-row">
+  <div class="row d-md-flex fixed-top flex-md-row">
 
-        <<<<<<< HEAD <!-- This section wil be displayed as a header on mobile devices -->
-            <section class="left-section col-12 col-md-2 d-flex align-items-end align-items-md-center justify-content-between justify-content-md-center">
-                <div class="header-hamburger d-md-none">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <h1 class="header-logo">Sport News</h1>
-                <div class="header-profile d-md-none" ngbDropdown>
-                    <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
-                    <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
-                        <div class="dropdown-profile-wrapper">
-                            <span class="user-block__name">Ivan Baloh</span>
-                            <span class="user-block__email">ivanbaloh@gmail.com</span>
-                            <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
-                        </div>
-                        <div class="list-group">
-                            <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
-                            <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
-                            <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
-                            <div class="dropdown-divider user-dropdown-divider"></div>
-                            <a routerLink="" class="list-group-item list-group-item-action">Log out</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            =======
-            <!-- This section wil be displayed as a header on mobile devices -->
-            <section class="left-section col-12 col-md-2 d-flex align-items-end align-items-md-center justify-content-between justify-content-md-center">
+      <!-- This section wil be displayed as a header on mobile devices -->
+      <section class="left-section col-12 col-md-2 d-flex align-items-end align-items-md-center justify-content-between justify-content-md-center">
 
-                <div class="header-hamburger d-md-none">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-
-                <h1 class="header-logo" routerLink="home">Sport News</h1>
-
-                <div class="header-profile d-md-none" ngbDropdown>
-                    <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
-                    <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
-                        <div class="dropdown-profile-wrapper">
-                            <span class="user-block__name">Ivan Baloh</span>
-                            <span class="user-block__email">ivanbaloh@gmail.com</span>
-                            <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
-                        </div>
-                        <div class="list-group">
-                            <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
-                            <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
-                            <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
-                            <div class="dropdown-divider user-dropdown-divider"></div>
-                            <a routerLink="" class="list-group-item list-group-item-action">Log out</a>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-            >>>>>>> 157122a64dd41fa5c449792ce94fbac72b168b00
-
-            <!-- This section won`t be displayed on mobile but we will see it on desktop -->
-            <section class="right-section col d-flex align-items-center">
-
-                <span class="current-page">Home</span>
-
-                <div class="search-block d-flex align-items-center border-right">
-                    <label for="rtid" class="dropdown-menu">
-          <ng-template #rt let-r="result" let-t="term" id="rtid">
-            <ngb-highlight [result]="r.name" [term]="t" class="highlight"></ngb-highlight>
-          </ng-template>
-        </label>
-
-                    <label for="searchFieldId">
-          <div class="input-wrapper">
-            <input type="text"
-                   placeholder="Search by"
-                   id="searchFieldId"
-                   autocomplete="off"
-                   [(ngModel)]="model"
-                   [ngbTypeahead]="search"
-                   [resultTemplate]="rt"
-                   [inputFormatter]="formatter">
+          <div class="header-hamburger d-md-none">
+              <div></div>
+              <div></div>
+              <div></div>
           </div>
-        </label>
+
+          <h1 class="header-logo" routerLink="home">Sport News</h1>
+
+          <div class="header-profile d-md-none" ngbDropdown>
+              <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
+              <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                  <div class="dropdown-profile-wrapper">
+                      <span class="user-block__name">Ivan Baloh</span>
+                      <span class="user-block__email">ivanbaloh@gmail.com</span>
+                      <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
+                  </div>
+                  <div class="list-group">
+                      <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
+                      <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
+                      <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
+                      <div class="dropdown-divider user-dropdown-divider"></div>
+                      <a routerLink="" class="list-group-item list-group-item-action">Log out</a>
+                  </div>
+              </div>
+          </div>
+
+      </section>
+
+      <!-- This section won`t be displayed on mobile but we will see it on desktop -->
+      <section class="right-section col d-flex align-items-center">
+
+          <span class="current-page">Home</span>
+
+          <div class="search-block d-flex align-items-center border-right">
+              <label for="rtid" class="dropdown-menu">
+        <ng-template #rt let-r="result" let-t="term" id="rtid">
+          <ngb-highlight [result]="r.name" [term]="t" class="highlight"></ngb-highlight>
+        </ng-template>
+      </label>
+
+              <label for="searchFieldId">
+        <div class="input-wrapper">
+          <input type="text"
+                 placeholder="Search by"
+                 id="searchFieldId"
+                 autocomplete="off"
+                 [(ngModel)]="model"
+                 [ngbTypeahead]="search"
+                 [resultTemplate]="rt"
+                 [inputFormatter]="formatter">
+        </div>
+      </label>
+          </div>
+
+          <div class="share-block d-md-flex justify-content-center align-items-center border-right">
+              <div class="share-wrapper d-flex justify-content-between align-items-stretch">
+                  <span class="share-span">Share</span>
+                  <div class="share-icons-wrapper d-flex justify-content-around justify-content-lg-end">
+                      <div class="share-facebook"></div>
+                      <div class="share-twitter"></div>
+                      <div class="share-linkedin"></div>
+                  </div>
+              </div>
+          </div>
+
+          <div ngbDropdown class="user-block d-md-flex justify-content-center align-items-center" id="userDropdownWrapperId">
+              <div class="user-block__wrapper d-flex flex-column" id="dropdownBasic1" ngbDropdownToggle>
+                  <span class="user-block__name">Ivan Baloh</span>
+                  <span class="user-block__status">Administrator</span>
+              </div>
+              <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <div class="dropdown-profile-wrapper">
+                      <span class="user-block__name dropdown-name">Ivan Baloh</span>
+                      <span class="user-block__email">ivanbaloh@gmail.com</span>
+                      <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
+                  </div>
+                  <div class="list-group">
+                      <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
+                      <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
+                      <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
+                      <div class="dropdown-divider user-dropdown-divider"></div>
+                      <a routerLink="" class="list-group-item list-group-item-action">Log out</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="language-block d-md-flex align-items-center justify-content-md-end justify-content-lg-start">
+              <div ngbDropdown class="language-dropdown d-flex align-items-center">
+                  <span class="language-dropdown__span" id="dropdownBasic2" ngbDropdownToggle>EN</span>
+                  <div ngbDropdownMenu class="language-dropdown-menu" aria-labelledby="dropdownBasic2">
+                      <div class="list-group language-list-group">
+                          <a routerLink="" class="list-group-item list-group-item-action">UA</a>
+                          <a routerLink="" class="list-group-item list-group-item-action">DE</a>
+                          <a routerLink="" class="list-group-item list-group-item-action">FR</a>
+                      </div>
                 </div>
-
-                <div class="share-block d-md-flex justify-content-center align-items-center border-right">
-                    <div class="share-wrapper d-flex justify-content-between align-items-stretch">
-                        <span class="share-span">Share</span>
-                        <div class="share-icons-wrapper d-flex justify-content-around justify-content-lg-end">
-                            <div class="share-facebook"></div>
-                            <div class="share-twitter"></div>
-                            <div class="share-linkedin"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div ngbDropdown class="user-block d-md-flex justify-content-center align-items-center" id="userDropdownWrapperId">
-                    <div class="user-block__wrapper d-flex flex-column" id="dropdownBasic1" ngbDropdownToggle>
-                        <span class="user-block__name">Ivan Baloh</span>
-                        <span class="user-block__status">Administrator</span>
-                    </div>
-                    <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <div class="dropdown-profile-wrapper">
-                            <span class="user-block__name dropdown-name">Ivan Baloh</span>
-                            <span class="user-block__email">ivanbaloh@gmail.com</span>
-                            <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
-                        </div>
-                        <div class="list-group">
-                            <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
-                            <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
-                            <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
-                            <div class="dropdown-divider user-dropdown-divider"></div>
-                            <a routerLink="" class="list-group-item list-group-item-action">Log out</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="language-block d-md-flex align-items-center justify-content-md-end justify-content-lg-start">
-                    <div ngbDropdown class="language-dropdown d-flex align-items-center">
-                        <span class="language-dropdown__span" id="dropdownBasic2" ngbDropdownToggle>EN</span>
-                        <div ngbDropdownMenu class="language-dropdown-menu" aria-labelledby="dropdownBasic2">
-                            <div class="list-group language-list-group">
-                                <a routerLink="" class="list-group-item list-group-item-action">UA</a>
-                                <a routerLink="" class="list-group-item list-group-item-action">DE</a>
-                                <a routerLink="" class="list-group-item list-group-item-action">FR</a>
-                            </div>
-
-            </section>
-            </div>
+              </div>
+          </div>
+      </section>
+  </div>
 </header>
