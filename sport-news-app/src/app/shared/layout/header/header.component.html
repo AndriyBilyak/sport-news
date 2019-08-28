@@ -3,12 +3,15 @@
 
         <!-- This section wil be displayed as a header on mobile devices -->
         <section class="left-section col-12 col-md-2 d-flex align-items-end align-items-md-center justify-content-between justify-content-md-center">
+
             <div class="header-hamburger d-md-none">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <h1 class="header-logo">Sport News</h1>
+
+            <h1 class="header-logo" routerLink="home">Sport News</h1>
+
             <div class="header-profile d-md-none" ngbDropdown>
                 <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
                 <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
@@ -26,6 +29,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- This section won`t be displayed on mobile but we will see it on desktop -->
@@ -54,25 +58,25 @@
         </label>
             </div>
 
-            <div class="share-block d-flex justify-content-center align-items-center border-right">
+            <div class="share-block d-md-flex justify-content-center align-items-center border-right">
                 <div class="share-wrapper d-flex justify-content-between align-items-stretch">
                     <span class="share-span">Share</span>
-                    <div class="share-icons-wrapper d-flex">
+                    <div class="share-icons-wrapper d-flex justify-content-around justify-content-lg-end">
                         <div class="share-facebook"></div>
                         <div class="share-twitter"></div>
-                        <div class="share-google"></div>
+                        <div class="share-linkedin"></div>
                     </div>
                 </div>
             </div>
 
-            <div ngbDropdown class="user-block d-flex justify-content-center align-items-center" id="userDropdownWrapperId">
+            <div ngbDropdown class="user-block d-md-flex justify-content-center align-items-center" id="userDropdownWrapperId">
                 <div class="user-block__wrapper d-flex flex-column" id="dropdownBasic1" ngbDropdownToggle>
                     <span class="user-block__name">Ivan Baloh</span>
                     <span class="user-block__status">Administrator</span>
                 </div>
                 <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <div class="dropdown-profile-wrapper">
-                        <span class="user-block__name">Ivan Baloh</span>
+                        <span class="user-block__name dropdown-name">Ivan Baloh</span>
                         <span class="user-block__email">ivanbaloh@gmail.com</span>
                         <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
                     </div>
@@ -86,8 +90,8 @@
                 </div>
             </div>
 
-            <div class="language-block d-flex align-items-center justify-content-start">
-                <div ngbDropdown class="language-dropdown">
+            <div class="language-block d-md-flex align-items-center justify-content-md-end justify-content-lg-start">
+                <div ngbDropdown class="language-dropdown d-flex align-items-center">
                     <span class="language-dropdown__span" id="dropdownBasic2" ngbDropdownToggle>EN</span>
                     <div ngbDropdownMenu class="language-dropdown-menu" aria-labelledby="dropdownBasic2">
                         <div class="list-group language-list-group">
@@ -95,10 +99,7 @@
                             <a routerLink="" class="list-group-item list-group-item-action">DE</a>
                             <a routerLink="" class="list-group-item list-group-item-action">FR</a>
                         </div>
-                    </div>
-                </div>
-            </div>
 
         </section>
-    </div>
+        </div>
 </header>
