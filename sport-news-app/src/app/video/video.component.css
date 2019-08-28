@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'Roboto Condensed Bold';
-    src: url("../../assets/fonts/RobotoCondensed-Bold.ttf");
-}
-
 main.container {
     padding: 0;
     max-width: 814px;

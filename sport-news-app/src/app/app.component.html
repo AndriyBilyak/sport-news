@@ -1,22 +1,24 @@
-<app-header></app-header>
+<div *ngIf='currentUser === true'>
+    <app-header></app-header>
 
-<div class="row">
-  <div class="col-2 left">
     <app-sidenav></app-sidenav>
+
     <div>
-      <h3>List of routes</h3>
-      <ul>
-        <li *ngFor="let item of navigationItems">
-          <a [routerLink]="item">{{item}}</a>
-        </li>
-      </ul>
+        <h3>List of routes</h3>
+        <ul>
+            <li *ngFor="let item of navigationItems">
+                <a [routerLink]="item">{{item}}</a>
+            </li>
+        </ul>
     </div>
-  </div>
-  <div class="col main-container">
-    <main>
-      <router-outlet></router-outlet>
+
+    <main class="container">
+        <router-outlet></router-outlet>
     </main>
-  </div>
+
+    <app-footer></app-footer>
 </div>
 
-<app-footer></app-footer>
+<div *ngIf='currentUser === false'>
+    <router-outlet></router-outlet>
+</div>

@@ -1,25 +1,31 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, CanActivate } from '@angular/router';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
+    loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule),
+    canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'dealbook',
-    loadChildren: () => import('./dealbook/dealbook.module').then(mod => mod.DealbookModule)
+    loadChildren: () => import('./dealbook/dealbook.module').then(mod => mod.DealbookModule),
+    canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'video',
-    loadChildren: () => import('./video/video.module').then(mod => mod.VideoModule)
+    loadChildren: () => import('./video/video.module').then(mod => mod.VideoModule),
+    canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule)
+    loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
+    canActivate:[AuthCanActivateGuard]
   },
   {
     path: 'login',
@@ -32,6 +38,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

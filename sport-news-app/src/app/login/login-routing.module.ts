@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LoginComponent,
     children:[
       {
-        path:'singup',
+        path:'',
         component: SingupComponent,
       },
       {
@@ -26,7 +26,7 @@ const routes: Routes = [
         component: EmailComponent,
       },
       {
-        path:'changePassword',
+        path:'changepassword',
         component: ChangePasswordComponent,
       },
       {
