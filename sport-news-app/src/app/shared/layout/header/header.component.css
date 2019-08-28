@@ -122,7 +122,7 @@
     height: 16px;
     top: 5px;
     right: -12px;
-    background-image: url("../../../../assets/icons/searchIcon.svg");
+    background-image: url("~/src/app/shared/icons/searchIcon.svg");
     background-size: cover;
     cursor: text;
 }

@@ -1,27 +1,28 @@
-main.container {
+.main-container {
+    max-width: 1200px;
     padding: 0;
-    max-width: 814px;
-    font-size: 0;
 }
-
-@media screen and (min-width: 768px) {
-    main.container {
-        margin-left: 16.7vw;
-        width: calc(100% - 19vw);
-        padding-top: 44px;
-        position: relative;
+.row  {
+    margin: 0;
+}
+.left {
+    overflow: hidden;
+}
+@media screen and (max-width:767px){
+    .left {
+        display: none;
+    }
+    .main-container {
+        margin-left: 0;
     }
 }
-
-@media screen and (min-width: 992px) {
-    main.container {
-        margin-left: calc(17.6vw - 10px);
-        margin-right: unset;
+@media screen and (min-width:767px){
+    .main-container {
+        margin-left: -15px;
     }
 }
-
-@media screen and (min-width: 1200px) {
-    main.container {
-        margin-left: 17.6vw;
+@media screen and (min-width:1200px){
+    .main-container {
+        margin-left: 0;
     }
 }

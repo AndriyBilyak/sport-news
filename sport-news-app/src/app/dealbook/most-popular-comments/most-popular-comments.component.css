@@ -23,8 +23,9 @@
   .news-content img {
     max-height: 115px;
     width: 100%;
-    min-width: 151px;
-    min-height: 98px;
+    height: 100%;
+    min-width: 125px;
+    min-height: 81px;
   }
   .news-content {
     border: 1px solid #EDEDED;
