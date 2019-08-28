@@ -1,125 +1,112 @@
 @font-face {
-  font-family: 'Roboto Condensed Bold';
-  src: url("../shared/fonts/RobotoCondensed-Bold.ttf");
+    font-family: 'Roboto Condensed Bold';
+    src: url("../../assets/fonts/RobotoCondensed-Bold.ttf");
 }
 
 main.container {
-  padding: 0;
-  max-width: 814px;
-  font-size: 0;
+    padding: 0;
+    max-width: 814px;
+    font-size: 0;
 }
 
 .page-name-span {
-  display: none;
+    display: none;
 }
 
 .sm-video-holder {
-  padding: 0 16px;
-  margin-bottom: 40px;
+    padding: 0 16px;
+    margin-bottom: 40px;
 }
 
 .main-video-holder {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-
-@media screen and (min-width: 576px){
-
-}
+@media screen and (min-width: 576px) {}
 
 @media screen and (min-width: 768px) {
-  main.container {
-    margin-left: 16.7vw;
-    width: calc(100% - 19vw);
-    padding-top: 44px;
-    position: relative;
-  }
-
-  div.container::before, div.container::after {
-    font-size: 141px;
-    color: rgba(204, 211, 224, 0.301628);
-    font-family: "Roboto Condensed Bold";
-    font-weight: bold;
-    position: absolute;
-    transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-  }
-
-  div.container::before {
-    content: 'VIDEO';
-    top: 138px;
-    left: -194px;
-  }
-
-  .video-page-header {
-    margin-bottom: 17px;
-  }
-
-  .page-name-span {
-    font-size: 12px;
-    line-height: 1rem;
-    color: #B2B2B2;
-    font-family: "Open Sans";
-    font-weight: bold;
-    padding-right: 20px;
-    display: unset;
-    position: relative;
-  }
-
-  .page-name-span::after {
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    right: 2px;
-    background-image: url("../shared/icons/chevron-right.svg");
-    background-size: 6px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .page-name-span.subname {
-    color: #D72130;
-    padding: 0;
-  }
-
-  .page-name-span.subname::after {
-    display: none;
-  }
-
-  .video-row-holder {
-    margin-bottom: 40px;
-  }
-
-  .sm-video-holder {
-    max-width: calc(50% - 17px);
-    padding: 0;
-    margin: 0;
-  }
-
+    main.container {
+        margin-left: 16.7vw;
+        width: calc(100% - 19vw);
+        padding-top: 44px;
+        position: relative;
+    }
+    div.container::before,
+    div.container::after {
+        font-size: 141px;
+        color: rgba(204, 211, 224, 0.301628);
+        font-family: "Roboto Condensed Bold";
+        font-weight: bold;
+        position: absolute;
+        transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+    }
+    div.container::before {
+        content: 'VIDEO';
+        top: 138px;
+        left: -194px;
+    }
+    .video-page-header {
+        margin-bottom: 17px;
+    }
+    .page-name-span {
+        font-size: 12px;
+        line-height: 1rem;
+        color: #B2B2B2;
+        font-family: "Open Sans";
+        font-weight: bold;
+        padding-right: 20px;
+        display: unset;
+        position: relative;
+    }
+    .page-name-span::after {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        right: 2px;
+        background-image: url("../../assets/icons/chevron-right.svg");
+        background-size: 6px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .page-name-span.subname {
+        color: #D72130;
+        padding: 0;
+    }
+    .page-name-span.subname::after {
+        display: none;
+    }
+    .video-row-holder {
+        margin-bottom: 40px;
+    }
+    .sm-video-holder {
+        max-width: calc(50% - 17px);
+        padding: 0;
+        margin: 0;
+    }
 }
 
 @media screen and (min-width: 992px) {
-  main.container {
-    margin-left: calc(17.6vw - 10px);
-    margin-right: unset;
-  }
+    main.container {
+        margin-left: calc(17.6vw - 10px);
+        margin-right: unset;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  main.container {
-    margin-left: 17.6vw;
-
-  }
+    main.container {
+        margin-left: 17.6vw;
+    }
 }
 
 @media screen and (min-width: 1250px) {
-  div.container::after {
-    line-height: 141px;
-    content: 'NEWS';
-    top: 537px;
-    right: -321px;
-  }
+    div.container::after {
+        line-height: 141px;
+        content: 'NEWS';
+        top: 537px;
+        right: -321px;
+    }
 }
