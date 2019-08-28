@@ -89,12 +89,12 @@
     }
   }
 
-  @media screen and (max-width:1200px){
+  @media screen and (max-width:1199px){
     .lg{
-      position: relative;
       margin: 10px 0 20px;
     }
   }
+
 
   @media screen and (max-width:776px){
     .main-content p {
