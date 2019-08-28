@@ -1,27 +1,18 @@
-<!-- <app-header>
-</app-header>
+<app-header></app-header>
 
- <app-sidenav></app-sidenav>
+<app-sidenav></app-sidenav>
 
 <div>
-    <h3>List of routes</h3>
-    <ul>
-        <li *ngFor="let item of navigationItems">
-            <a [routerLink]="item">{{item}}</a>
-        </li>
-    </ul>
-</div> -->
+  <h3>List of routes</h3>
+  <ul>
+    <li *ngFor="let item of navigationItems">
+      <a [routerLink]="item">{{item}}</a>
+    </li>
+  </ul>
+</div>
 
-<!-- You can change style of botton put name of class(sm,lg,transparent,colored) -->
-<!-- <app-button [classValue]="'lg transparent'"></app-button> -->
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
 
-<!-- <main>
-    <div class='container'>
-        <router-outlet>
-        </router-outlet>
-    </div>
-</main> -->
-<!-- 
-<app-footer></app-footer> -->
-<router-outlet>
-</router-outlet>
+<app-footer></app-footer>
