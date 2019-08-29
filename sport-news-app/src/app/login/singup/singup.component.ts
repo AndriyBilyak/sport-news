@@ -34,7 +34,6 @@ export class SingupComponent implements OnInit {
     .then(data => {
       // TODO: navigate to home page
       this.router.navigate(['./home']);
-      console.log(data)
     })
     .catch(err => {
       // TODO: handle errors on login
