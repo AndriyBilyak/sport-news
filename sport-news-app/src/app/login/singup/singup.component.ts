@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
 
 @Component({
@@ -13,7 +14,10 @@ import { AmplifyService } from 'aws-amplify-angular';
 
 export class SingupComponent implements OnInit {
 
-  constructor(private amplifyService: AmplifyService) {}
+  constructor(
+    private amplifyService: AmplifyService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
 
@@ -29,6 +33,7 @@ export class SingupComponent implements OnInit {
     )
     .then(data => {
       // TODO: navigate to home page
+      this.router.navigate(['./home']);
       console.log(data)
     })
     .catch(err => {
