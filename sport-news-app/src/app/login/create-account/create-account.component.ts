@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators,FormGroup} from '@angular/forms';
+import { AmplifyService } from 'aws-amplify-angular';
+import { FormBuilder, Validators, FormGroup} from '@angular/forms';
+
+// TODO: move svg from html to assets
+// TODO: improve fields validation
 
 @Component({
   selector: 'app-create-account',
@@ -7,34 +11,51 @@ import { FormBuilder, Validators,FormGroup} from '@angular/forms';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
-
   createAccountForm: FormGroup;
-  result: null;
   submitted = false;
- 
+
   constructor(
-    private frmBuilder: FormBuilder
+    private frmBuilder: FormBuilder,
+    private amplifyService: AmplifyService
   ) {}
 
   ngOnInit() {
-      // Form valid
     this.createAccountForm = this.frmBuilder.group({
-    first_name:["", [Validators.required]],
-    second_name:["", [Validators.required]],
-    email:["", [Validators.required, Validators.email]],
-    password:["", [Validators.required, Validators.minLength(4)]]
-  })
-    }
-     get f() { return this.createAccountForm.controls; }
-    onSubmit() {
-      this.submitted = true;
-  
-      // stop here if form is invalid
-      if (this. createAccountForm.invalid) {
-          return;
-      }
-  
-      this.result = this.createAccountForm.value;
+      firstName: ['', [Validators.required]],
+      secondName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]]
+    })
   }
-  
+
+  get f() { return this.createAccountForm.controls; }
+
+  onSubmit() {
+    const values = this.createAccountForm.value
+    this.submitted = true;
+    console.log(this.createAccountForm)
+
+    if (this.createAccountForm.invalid) {
+      return;
+    }
+
+
+    this.amplifyService.auth().signUp({
+      username: values.email,
+      password: values.password,
+      attributes: {
+        'custom:firstName': values.firstName,
+        'custom:lastName': values.secondName
+      },
+      validationData: [],
+    })
+    .then(data => {
+      // TODO: show message like "Check your email ..." with button leads to login page
+      console.log(data)
+    })
+    .catch(err => {
+      // TODO: handle errors on create account
+      console.log(err)
+    });
+  }
 }

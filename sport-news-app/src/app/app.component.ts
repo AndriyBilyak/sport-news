@@ -14,23 +14,30 @@ import { NgClass } from '@angular/common';
 export class AppComponent implements OnInit {
   title = 'sport-news-app';
   navigationItems = [];
-  currentUser = true;
+  currentUser = false;
 
   constructor(private router: Router, private amplifyService: AmplifyService) {}
- 
+
 
   ngOnInit() {
     // TODO: amplify
     console.log(this.amplifyService)
-    this.addCustomPagesRoutes()
+    this.extendRoutes()
     this.getNavigationItems()
   }
 
-  private addCustomPagesRoutes = () => {
+  private extendRoutes = () => {
     const customPagesRoutes = this.getCustomPagesRoutes();
     const routerConfig = [...this.router.config]
 
     routerConfig.splice(routerConfig.length - 1, 0, ...customPagesRoutes)
+
+    if (this.currentUser) {
+      routerConfig.splice(0, 1, { path: '', redirectTo: '/home', pathMatch: 'full' })
+    } else {
+      routerConfig.splice(routerConfig.length - 1, 1, { path: '**', redirectTo: '/login'})
+    }
+
     this.router.resetConfig(routerConfig)
   }
 

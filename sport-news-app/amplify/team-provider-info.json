@@ -9,6 +9,18 @@
             "UnauthRoleName": "sport-news-app-dev-20190820103737-unauthRole",
             "StackName": "sport-news-app-dev-20190820103737",
             "StackId": "arn:aws:cloudformation:eu-west-1:088449153928:stack/sport-news-app-dev-20190820103737/61c9bdf0-c31d-11e9-b656-0212c97b1f72"
+        },
+        "categories": {
+            "auth": {
+                "sportnewsapp6b5b74ee": {}
+            }
+        }
+    },
+    "undefined": {
+        "categories": {
+            "auth": {
+                "sportnewsapp73fcc8ad": {}
+            }
         }
     }
 }

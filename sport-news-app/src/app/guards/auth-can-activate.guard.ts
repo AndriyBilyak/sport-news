@@ -12,13 +12,12 @@ export class AuthCanActivateGuard implements  CanActivate{
     ) { }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         // const currentUser = this.authenticationService.currentUserValue;
-        const currentUser = true;
+        const currentUser = false;
         if (currentUser) {
             return true;
         }
 
         this.router.navigate(['/login']);
-        console.log('Enter in system')
         return false;
     }
 }

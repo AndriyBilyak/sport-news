@@ -8,6 +8,10 @@ import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule),
     canActivate:[AuthCanActivateGuard]
@@ -27,11 +31,7 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
     canActivate:[AuthCanActivateGuard]
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
-  },
-  {path: '**', component: PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

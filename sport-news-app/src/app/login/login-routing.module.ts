@@ -18,7 +18,7 @@ const routes: Routes = [
         component: SingupComponent,
       },
       {
-        path:'forgotpassword',
+        path:'forgot-password',
         component: ForgotPasswordComponent,
       },
       {
@@ -26,11 +26,11 @@ const routes: Routes = [
         component: EmailComponent,
       },
       {
-        path:'changepassword',
+        path:'change-password',
         component: ChangePasswordComponent,
       },
       {
-        path:'createAccount',
+        path:'create-account',
         component: CreateAccountComponent,
       },
     ]
