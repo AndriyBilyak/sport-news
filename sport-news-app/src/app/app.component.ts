@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,Input  } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
 import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
@@ -11,22 +11,25 @@ import { NgClass } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'sport-news-app';
   navigationItems = [];
-  currentUser = false;
+  currentUser =  null;
+  signedIn = false
 
   constructor(private router: Router, private amplifyService: AmplifyService) {}
 
-
   ngOnInit() {
-    // TODO: amplify
-    console.log(this.amplifyService)
+    this.subscribeAuthState()
     this.extendRoutes()
     this.getNavigationItems()
   }
 
-  private extendRoutes = () => {
+  ngOnDestroy() {
+    this.subscribeAuthState().unsubscribe()
+  }
+
+  private extendRoutes() {
     const customPagesRoutes = this.getCustomPagesRoutes();
     const routerConfig = [...this.router.config]
 
@@ -41,7 +44,7 @@ export class AppComponent implements OnInit {
     this.router.resetConfig(routerConfig)
   }
 
-  private getCustomPagesRoutes = () => {
+  private getCustomPagesRoutes() {
     // TODO: call to BE will be implemented here to get routes config
 
     return CustomRoutesConfig.routes.map(route => {
@@ -53,7 +56,20 @@ export class AppComponent implements OnInit {
     })
   }
 
-  private getNavigationItems = () => {
+  private getNavigationItems() {
     this.navigationItems = this.router.config.map(routes => routes.path)
+  }
+
+  private subscribeAuthState() {
+    return this.amplifyService.authStateChange$
+      .subscribe(authState => {
+        console.log(authState)
+          this.signedIn = authState.state === 'signedIn';
+          if (!authState.user) {
+              this.currentUser = null;
+          } else {
+              this.currentUser = authState.user;
+          }
+    });
   }
 }

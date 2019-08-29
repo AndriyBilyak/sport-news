@@ -22,6 +22,7 @@
     </div>
     <div class="col-12 form-group form-group-submit mt-3">
         <app-button [typeValue]="'submit'" [classValue]="'full colored'" [textValue]="'LOG IN'"></app-button>
+        <button (click)="logIn()">LogIn</button>
     </div>
     <div class="col-12 login">
         <a [routerLink]="['./create-account']">Don`t have any account?</a>
