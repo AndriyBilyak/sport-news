@@ -2,10 +2,11 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {debounceTime, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
-import CustomRoutesConfig from 'src/app/mockedData/customRoutesConfig.js';
+import { AmplifyService } from 'aws-amplify-angular';
 
-
-// Data for test only!
+// TODO: move data to mockedData folder
+// TODO: display real user name and email
+// TODO: add sharing via social media
 
 const statesWithFlags: {name: string, flag: string}[] = [
   {'name': 'Alabama', 'flag': '5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},
@@ -68,7 +69,11 @@ const statesWithFlags: {name: string, flag: string}[] = [
 })
 export class HeaderComponent implements OnInit {
   router: Router;
-  public model: any;
+  model: any;
+
+  constructor(private amplifyService: AmplifyService) {}
+
+  ngOnInit() {}
 
   search = (text$: Observable<string>) =>
     text$.pipe(
@@ -79,9 +84,16 @@ export class HeaderComponent implements OnInit {
 
   formatter = (x: {name: string}) => x.name;
 
-  constructor() { }
-
-  ngOnInit() {
+  singOut() {
+    this.amplifyService.auth().signOut()
+    .then(data => {
+      // TODO: redirect to login page
+      console.log(data)
+    })
+    .catch(err => {
+      // TODO: handle errors
+      console.log(err)
+    });
   }
 
 }
