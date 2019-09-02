@@ -1,6 +1,9 @@
 .main-article {
   margin: 80px 0 40px;
 }
+.main-photo {
+  position: relative;
+}
 .main-photo img {
   width: 100%;
 }
@@ -25,37 +28,13 @@
   line-height: 30px;
   color: #2B2F43;
 }
-
-.lg {
-  height: 42px;
-  width: 175px;
-  position: relative;
+.article-text p {
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
 }
-.colored {
-  background: #D72130;
-  box-sizing: border-box;
-  text-align: center;
-  color: #FFF5F5;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  border-radius: 0px;
-}
-.colored:hover {
-  background: #E02232;
-  color: white;
-  box-shadow: none;
-}
-
-.colored:focus {
-  box-shadow: none;
-}
-
-.colored:active {
-  background: #C80515;
-  box-shadow: none;
-  color: white;
+.article-text {
+  margin: 40px auto;
 }
 
 .NBA-news {
@@ -63,7 +42,7 @@
   z-index: -1;
   position: absolute;
   top: 40px;
-  left: -25%;
+  left: -140px;
 }
 .NBA-news h2 {
   font-weight: bold;
@@ -99,18 +78,6 @@
     padding-right: 20px;
     margin-bottom: 46px;
   }
-  .lg{
-    width: 48.6%;
-    position: absolute;
-    bottom:0;
-    left: 0;
-  }
-}
-
-@media screen and (max-width:1199px){
-  .lg{
-    margin: 10px 0 20px;
-  }
 }
 
 
@@ -130,6 +97,12 @@
   .main-content h4 {
     line-height: 20px;
     margin-bottom: 0;
+  }
+  .NBA-news {
+    display: none;
+  }
+  .article-text p {
+    padding-left: 15px;
   }
 }
 
