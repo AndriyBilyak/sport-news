@@ -1,5 +1,5 @@
 .reader-pool {
-    max-width: 220px;
+    max-width: 280px;
     background: #F8F8F8;
 }
 .reader-title {
@@ -38,7 +38,9 @@
     padding: 10px 16px;
 }
 .news {
-  display: block;
+  position: relative;
+  right: 80px;
+  margin: 34rem 0 13rem;
   z-index: -1;
   transform: rotate(90deg);
 }
