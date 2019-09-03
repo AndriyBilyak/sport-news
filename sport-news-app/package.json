@@ -22,6 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
     "aws-amplify": "^1.1.36",
     "aws-amplify-angular": "^3.0.11",
+    "localtunnel": "^1.9.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
