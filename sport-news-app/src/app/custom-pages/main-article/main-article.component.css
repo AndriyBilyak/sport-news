@@ -10,6 +10,7 @@
 .main-content {
   width: 100%;
   background: #F6F6F6;
+
 }
 .main-content p {
   font-size: 14px;
@@ -71,6 +72,7 @@
     max-width: 51%;
     min-width: 25%;
     display: block;
+    box-shadow: -20px 16px 23px 0px rgba(0, 0, 0, 0.1);
   }
   .main-content .col-md-12{
     padding-top: 15px;
