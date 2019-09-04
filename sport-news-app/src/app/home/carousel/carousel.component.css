@@ -92,6 +92,7 @@
     min-width: 25%;
     min-height: 49%;
     display: block;
+    box-shadow: -20px 16px 23px 0px rgba(0, 0, 0, 0.1);
   }
   .main-content .col-md-12{
     padding-top: 15px;

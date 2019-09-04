@@ -1,7 +1,7 @@
 .news {
   position: relative;
-  right: 80px;
-  margin: 34rem 0 13rem;
+  right: 20px;
+  margin: 24rem 0 13rem;
   z-index: -1;
   transform: rotate(90deg);
 }
@@ -11,4 +11,10 @@
   line-height: 160px;
   letter-spacing: -10px;
   color: rgba(204, 211, 224, 0.301628);
+}
+
+@media screen and (max-width: 1200px){
+  col-3 {
+    display: none;
+  }
 }

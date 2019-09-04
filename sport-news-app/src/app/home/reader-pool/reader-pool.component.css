@@ -39,7 +39,7 @@
 }
 .news {
   position: relative;
-  right: 80px;
+  right: 20px;
   margin: 34rem 0 13rem;
   z-index: -1;
   transform: rotate(90deg);
