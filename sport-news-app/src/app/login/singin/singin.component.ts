@@ -4,8 +4,8 @@ import { AmplifyService } from 'aws-amplify-angular';
 
 @Component({
   selector: 'app-singup',
-  templateUrl: './singup.component.html',
-  styleUrls: ['./singup.component.css']
+  templateUrl: './singin.component.html',
+  styleUrls: ['./singin.component.css']
 })
 
 // TODO: rename SingupComponent => SingInComponent

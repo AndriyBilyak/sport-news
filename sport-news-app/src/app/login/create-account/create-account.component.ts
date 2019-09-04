@@ -60,7 +60,7 @@ export class CreateAccountComponent implements OnInit {
         console.log(data)
       })
       .catch(err => {
-        // TODO: handle errors on create account  
+        // TODO: handle errors on create account  (done)
   
         if(err['code'] === "UsernameExistsException"){ 
           this.amplifyService.auth().signUp(values.email,values.password);
