@@ -170,6 +170,7 @@ label {
     background-position-x: 97%;
     background-position-y: center;
     outline: 1px solid #E1464E;
+    border: none;
 }
 
 .form-group .valid-input {
@@ -179,6 +180,7 @@ label {
     background-position-x: 97%;
     background-position-y: center;
     outline: 1px solid #56BD5B;
+    border: none;
 }
 
 .text-control {
@@ -188,4 +190,55 @@ label {
     font-weight: 600;
     font-size: 10px;
     line-height: 16px;
+}
+
+.sendemail {
+    text-align: center;
+}
+
+.icon-email {
+    display: block;
+    margin: auto;
+    content: url("../../../assets/img/Email.svg")
+}
+
+.head {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.text {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #596377;
+}
+
+@media screen and (max-width: 768px) {
+    .icon-email {
+        content: url("../../../assets/img/Email-white.svg")
+    }
+    .text {
+        color: #C6CCD7;
+    }
+    .head {
+        color: #FFFFFF;
+    }
+    .login {
+        display: inline;
+    }
+    .login a {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
 }

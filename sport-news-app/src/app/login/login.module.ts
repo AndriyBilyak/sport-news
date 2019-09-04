@@ -10,6 +10,8 @@ import { SingupComponent } from './singup/singup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { EmailComponent } from './email/email.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 
 
 
@@ -19,7 +21,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     CommonModule,
     LoginRoutingModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlashMessagesModule.forRoot()
   ]
 })
 export class LoginModule { }

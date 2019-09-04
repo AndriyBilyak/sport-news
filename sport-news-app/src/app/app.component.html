@@ -1,20 +1,20 @@
 <div *ngIf="currentUser; else loginBlock">
-  <app-header></app-header>
-  <app-sidenav></app-sidenav>
-  <div>
-    <h3>List of routes</h3>
-    <ul>
-      <li *ngFor="let item of navigationItems">
-        <a [routerLink]="item">{{item}}</a>
-      </li>
-    </ul>
-  </div>
-  <main class="container">
-    <router-outlet></router-outlet>
-  </main>
-  <app-footer></app-footer>
+    <app-header></app-header>
+    <app-sidenav></app-sidenav>
+    <div>
+        <h3>List of routes</h3>
+        <ul>
+            <li *ngFor="let item of navigationItems">
+                <a [routerLink]="item">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+    <main class="container">
+        <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
 </div>
 
 <ng-template #loginBlock>
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </ng-template>

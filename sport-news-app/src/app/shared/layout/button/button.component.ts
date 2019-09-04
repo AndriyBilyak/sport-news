@@ -10,6 +10,7 @@ export class ButtonComponent implements OnInit {
   @Input() classValue: string;
   @Input() textValue: string;
   @Input() typeValue: string;
+  @Input() event: string;
   // @Output() submitEvent = new EventEmitter();
   // submit(): void {
   // submitEvent.emit();
