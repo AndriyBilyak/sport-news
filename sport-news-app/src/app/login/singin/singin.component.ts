@@ -10,12 +10,13 @@ import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 })
 
 // TODO: rename SingupComponent => SingInComponent(done)
-// TODO: add form and validation
+// TODO: add form and validation (done)
 // TODO:
 
 export class SingupComponent implements OnInit {
   signInForm: FormGroup;
   submitted: boolean = false;
+  authService: any;
 
   constructor(
     private amplifyService: AmplifyService,
@@ -28,6 +29,7 @@ export class SingupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })
+
   }
 
   get f() { return this.signInForm.controls; }

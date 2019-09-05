@@ -22,7 +22,7 @@
                 <label>Password</label>
                 <a [routerLink]="[ './forgot-password'] ">Forgot password?</a>
             </div>
-            <input type="password " class="form-control " formControlName="password" placeholder="Enter your password " name="password " [ngClass]="{ 'invalid-input': (submitted && f.password.errors)||(f.password.touched && f.password.errors), 'valid-input': f.password.touched && !f.password.errors} ">
+            <input type="password" class="form-control " formControlName="password" placeholder="Enter your password " name="password" [ngClass]="{ 'invalid-input': (submitted && f.password.errors)||(f.password.touched && f.password.errors), 'valid-input': f.password.touched && !f.password.errors} ">
             <div *ngIf="(submitted && f.password.errors)||(f.password.touched && f.password.errors) " class="text-control ">
                 <div *ngIf="f.password.errors.required ">Email is required</div>
                 <div *ngIf="f.password.errors.minlength ">Password must be at least 8 characters</div>
