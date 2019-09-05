@@ -1,8 +1,5 @@
-.row {
-  margin: 0;
-}
-@media screen and (max-width:990px){
-  .right {
+@media screen and (max-width: 1200px){
+  .col-3 {
     display: none;
   }
 }

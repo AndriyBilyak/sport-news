@@ -1,107 +1,110 @@
+.main-article {
+  margin: 80px 0 40px;
+}
 .main-photo {
-    width: 100%;
-    padding: 0;
-    margin-right: auto;
-    margin-left: auto;
+  position: relative;
 }
 .main-photo img {
-    width: 100%;
+  width: 100%;
 }
-.article-content {
-    padding: 25px 15px 50px ;
-    width: 100%;
-    background: #F6F6F6;
-    margin-bottom: 10px; 
+.main-content {
+  width: 100%;
+  background: #F6F6F6;
+
 }
-.article-content p {
-    font-size: 14px;
+.main-content p {
+  font-size: 14px;
+  line-height: 16px;
+  color: #7F7B7B;
+}
+.main-content h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #C63638;
+}
+.main-content h5 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #2B2F43;
+}
+.article-text p {
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.article-text {
+  margin: 40px auto;
+}
+
+.NBA-news {
+  display: block;
+  z-index: -1;
+  position: absolute;
+  top: 40px;
+  left: -140px;
+}
+.NBA-news h2 {
+  font-weight: bold;
+  font-size: 140px;
+  line-height: 160px;
+  letter-spacing: -10px;
+  color: rgba(204, 211, 224, 0.301628);
+  transform: rotate(90deg);
+}
+
+
+@media screen and (min-width:1200px){
+  .main-article{
+    position: relative;
+  }
+  .main-photo{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .main-content{
+    position: absolute;
+    top: 10%;
+    left: 75.2%;
+    z-index: 2;
+    max-width: 51%;
+    min-width: 25%;
+    display: block;
+    box-shadow: -20px 16px 23px 0px rgba(0, 0, 0, 0.1);
+  }
+  .main-content .col-md-12{
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 46px;
+  }
+}
+
+
+@media screen and (max-width:776px){
+  .main-content p {
+    font-size: 12px;
     line-height: 16px;
     color: #7F7B7B;
-}
-.article-content h5 {
-    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .main-content h5 {
+    font-weight: bold;
     font-size: 16px;
-    line-height: 22px;
-    color: #C63638;
-}
-.article-content h4 {
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 30px;
+    line-height: 21px;
     color: #2B2F43;
-}
-.container {
-    width: 845px;
-}
-.arcticle-text p {
-    font-size: 14px;
-    line-height: 19px;
-    color: #000000;
-}
-.arcticle-text {
-    margin: 40px auto;
-}
-.NBA-news {
+  }
+  .main-content h4 {
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+  .NBA-news {
     display: none;
-}
-.news {
-    display: block;
-    z-index: -1;
-    position: absolute;
-    right: -20%;
-    transform: rotate(90deg);
-}
-.news h2 {
-    font-weight: bold;
-    font-size: 140px;
-    line-height: 160px;
-    letter-spacing: -10px;
-    color: rgba(204, 211, 224, 0.301628);
-}
-@media screen and (max-width:991px){
-    .news {
-        display: none;
-    }
-}
-@media screen and (min-width:1250px){
-    .news {
-        right: -36%;
-    }
+  }
+  .article-text p {
+    padding-left: 15px;
+  }
 }
 
-@media screen and (max-width:576px){
-    .container {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width:991px){
-    .main-article {
-        position: relative;
-    }
-    .article-container {
-        position: absolute;
-        width: 30%;
-        top: 25%; 
-        right: 0;
-    }
-    .main-photo {
-        max-width: 815px;
-        position: relative;
-    }
-    .NBA-news {
-        display: block;
-        z-index: -1;
-        position: absolute;
-        top: 42px;
-        left: -17%;
-    }
-    .NBA-news h2 {
-        font-weight: bold;
-        font-size: 140px;
-        line-height: 160px;
-        letter-spacing: -10px;
-        color: rgba(204, 211, 224, 0.301628);
-        transform: rotate(90deg);
-    }
-}
