@@ -13,6 +13,7 @@
           <h1 class="header-logo" routerLink="home">Sport News</h1>
 
           <div class="header-profile d-md-none" ngbDropdown>
+            <div *ngIf="isSignedIn">
               <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
               <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
                   <div class="dropdown-profile-wrapper">
@@ -28,6 +29,12 @@
                       <a routerLink="" class="list-group-item list-group-item-action" (click)="singOut()">Log out</a>
                   </div>
               </div>
+            </div>
+
+            <div *ngIf="!isSignedIn">
+                <button type="button" class="btn lg colored" [routerLink]="['/login']">Login In</button>
+                <button type="button" class="btn lg colored" [routerLink]="['/login/create-account']">Sing Up</button>
+            </div>
           </div>
 
       </section>
@@ -70,6 +77,7 @@
           </div>
 
           <div ngbDropdown class="user-block d-md-flex justify-content-center align-items-center" id="userDropdownWrapperId">
+            <div *ngIf="isSignedIn">
               <div class="user-block__wrapper d-flex flex-column" id="dropdownBasic1" ngbDropdownToggle>
                   <span class="user-block__name">Ivan Baloh</span>
                   <span class="user-block__status">Administrator</span>
@@ -88,6 +96,11 @@
                       <a routerLink="" class="list-group-item list-group-item-action" (click)="singOut()">Log out</a>
                   </div>
               </div>
+            </div>
+            <div *ngIf="!isSignedIn">
+                <button type="button" class="btn lg colored" [routerLink]="['/login']">Login In</button>
+                <button type="button" class="btn lg colored" [routerLink]="['/login/create-account']">Sing Up</button>
+            </div>
           </div>
 
           <div class="language-block d-md-flex align-items-center justify-content-md-end justify-content-lg-start">

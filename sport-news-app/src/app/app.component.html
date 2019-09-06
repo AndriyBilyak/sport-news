@@ -1,5 +1,5 @@
-<div *ngIf="currentUser; else loginBlock">
-    <app-header></app-header>
+<div *ngIf="!isLoginLayoutActivated; else LoginLayout">
+    <app-header [isSignedIn]="isSignedIn"></app-header>
     <div class="row">
         <div class="col-2 left">
             <app-sidenav></app-sidenav>
@@ -21,6 +21,6 @@
     <app-footer></app-footer>
 </div>
 
-<ng-template #loginBlock>
+<ng-template #LoginLayout>
     <router-outlet></router-outlet>
 </ng-template>
