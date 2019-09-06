@@ -1,0 +1,62 @@
+{
+    "identityPoolName": "sportnewsapp73fcc8ad_identitypool_73fcc8ad",
+    "allowUnauthenticatedIdentities": false,
+    "openIdLambdaRoleName": "sportn73fcc8ad_openid_lambda_role",
+    "resourceNameTruncated": "sportn73fcc8ad",
+    "userPoolName": "sportnewsapp73fcc8ad_userpool_73fcc8ad",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "sportn73fcc8ad_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "sportn73fcc8ad_totp_lambda_role",
+    "userpoolClientLambdaRole": "sportn73fcc8ad_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "sportnewsapp73fcc8ad",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "default",
+    "usernameAttributes": [
+        "email"
+    ],
+    "additionalQuestions": [],
+    "dependsOn": []
+}

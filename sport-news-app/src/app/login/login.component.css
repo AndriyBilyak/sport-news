@@ -1,8 +1,3 @@
-@font-face {
-    src: url("../../assets/fonts/OpenSans-Regular.ttf");
-    font-family: "Open Sans";
-}
-
 .login-page {
     display: flex;
 }
@@ -40,9 +35,9 @@
 }
 
 .sportnews a {
-    font-family: "Open Sans";
+    font-family: "Open Sans", Arial;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 22px;
     line-height: 28px;
     color: #FFFBFB;

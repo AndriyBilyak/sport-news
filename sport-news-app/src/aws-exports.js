@@ -4,7 +4,12 @@ const awsmobile = {
     "aws_project_region": "eu-west-1",
     "aws_content_delivery_bucket": "sport-news-app-20190820104017-hostingbucket-dev",
     "aws_content_delivery_bucket_region": "eu-west-1",
-    "aws_content_delivery_url": "http://sport-news-app-20190820104017-hostingbucket-dev.s3-website-eu-west-1.amazonaws.com"
+    "aws_content_delivery_url": "http://sport-news-app-20190820104017-hostingbucket-dev.s3-website-eu-west-1.amazonaws.com",
+    "aws_cognito_identity_pool_id": "eu-west-1:876e654a-45a7-421b-a154-2c03adcc9a36",
+    "aws_cognito_region": "eu-west-1",
+    "aws_user_pools_id": "eu-west-1_NsAFiaAPE",
+    "aws_user_pools_web_client_id": "6kkihipqkh9q1dg3ibu6nek6t3",
+    "oauth": {}
 };
 
 

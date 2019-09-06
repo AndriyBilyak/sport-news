@@ -14,11 +14,11 @@ const routes: Routes = [
     component: LoginComponent,
     children:[
       {
-        path:'singup',
+        path:'',
         component: SingupComponent,
       },
       {
-        path:'forgotpassword',
+        path:'forgot-password',
         component: ForgotPasswordComponent,
       },
       {
@@ -26,11 +26,11 @@ const routes: Routes = [
         component: EmailComponent,
       },
       {
-        path:'changePassword',
+        path:'change-password',
         component: ChangePasswordComponent,
       },
       {
-        path:'createAccount',
+        path:'create-account',
         component: CreateAccountComponent,
       },
     ]
