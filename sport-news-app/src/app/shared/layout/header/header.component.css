@@ -179,13 +179,13 @@
     display: none;
 }
 
-.share-wrapper .share-icons-wrapper>div {
+.share-wrapper .share-icons-wrapper > a {
     height: 19px;
     background-size: contain;
     transition: .2s;
 }
 
-.share-wrapper .share-icons-wrapper>div:hover {
+.share-wrapper .share-icons-wrapper > a:hover {
     cursor: pointer;
 }
 
@@ -204,11 +204,19 @@
     margin-left: 24px;
 }
 
+.share-twitter:hover {
+  background-image: url("../../../../assets/icons/twitterHover.svg");
+}
+
 .share-linkedin {
     width: 20px;
     background-image: url('../../../../assets/icons/linked-in.svg');
     margin-left: 24px;
     background-repeat: no-repeat;
+}
+
+.share-linkedin:hover {
+  background-image: url("../../../../assets/icons/linked-inHover.svg");
 }
 
 .right-section .user-block,

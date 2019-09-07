@@ -5,7 +5,7 @@
     <app-button [routerLink]="['/login']" [classValue]="'sm transparent'" [textValue]="'Log in'"></app-button>
 </div>
 
-<form [formGroup]='createAccountForm' (ngSubmit)="onSubmit()" novalidate>
+<form *ngIf="message == false" [formGroup]='createAccountForm' (ngSubmit)="onSubmit()" novalidate>
     <div class=" row ">
         <div class="col-12 head ">
             <h1>Create account</h1>
@@ -41,21 +41,21 @@
         </div>
         <div class="col-12 col-sm-6 col-md-12 col-lg-6 form-group ">
             <label>First Name</label>
-            <input type="text " class="form-control " formControlName="firstName" placeholder="John " name="firstName" [ngClass]="{ 'invalid-input': submitted && f.firstName.errors , 'valid-input': f.firstName.touched && !f.firstName.errors} ">
-            <div *ngIf="submitted && f.firstName.errors" class="text-control ">
+            <input type="text " class="form-control " formControlName="firstName" placeholder="John " name="firstName" [(ngModel)]="firstName" [ngClass]="{ 'invalid-input': (submitted && f.firstName.errors)||(f.firstName.touched && f.firstName.errors) , 'valid-input': f.firstName.touched && !f.firstName.errors} ">
+            <div *ngIf="(submitted && f.firstName.errors)||(f.firstName.touched && f.firstName.errors)" class="text-control ">
                 <div *ngIf="f.firstName.errors.required ">Name is required</div>
             </div>
         </div>
         <div class=" col-12 col-sm-6 col-md-12 col-lg-6 form-group ">
             <label>Second Name</label>
-            <input type="text" class="form-control " formControlName="secondName" placeholder="Doe " name="secondName" [ngClass]="{ 'invalid-input': submitted && f.secondName.errors, 'valid-input': f.secondName.touched && !f.secondName.errors} ">
-            <div *ngIf="submitted && f.secondName.errors " class="text-control ">
+            <input type="text" class="form-control " formControlName="secondName" placeholder="Doe " name="secondName" [(ngModel)]="secondName" [ngClass]="{ 'invalid-input': (submitted && f.secondName.errors)||(f.secondName.touched && f.secondName.errors), 'valid-input': f.secondName.touched && !f.secondName.errors} ">
+            <div *ngIf="(submitted && f.secondName.errors)||(f.secondName.touched && f.secondName.errors) " class="text-control ">
                 <div *ngIf="f.secondName.errors.required ">Name is required</div>
             </div>
         </div>
         <div class="col-12 form-group ">
             <label>Email</label>
-            <input type="email" class="form-control " formControlName="email" placeholder="test@test.com " name="email" [ngClass]="{ 'invalid-input': (submitted && f.email.errors)||(f.email.touched && f.email.errors), 'valid-input': f.email.touched && !f.email.errors} ">
+            <input type="email" class="form-control " formControlName="email" placeholder="test@test.com " name="email" [(ngModel)]="email" [ngClass]="{ 'invalid-input': (submitted && f.email.errors)||(f.email.touched && f.email.errors), 'valid-input': f.email.touched && !f.email.errors} ">
             <div *ngIf="(submitted && f.email.errors)||(f.email.touched && f.email.errors)" class="text-control ">
                 <div *ngIf="f.email.errors.required ">Email is required</div>
                 <div *ngIf="f.email.errors.email ">Write right email</div>
@@ -63,17 +63,32 @@
         </div>
         <div class="col-12 form-group ">
             <label>Password</label>
-            <input type="password" class="form-control " formControlName="password" placeholder="8 + caharacters " name="password" [ngClass]="{ 'invalid-input': (submitted && f.password.errors)||(f.password.touched && f.password.errors), 'valid-input': f.password.touched && !f.password.errors} ">
+            <input type="password" class="form-control " formControlName="password" placeholder="8 + caharacters " name="password" [(ngModel)]="password" [ngClass]="{ 'invalid-input': (submitted && f.password.errors)||(f.password.touched && f.password.errors), 'valid-input': f.password.touched && !f.password.errors} ">
             <div *ngIf="(submitted && f.password.errors)||(f.password.touched && f.password.errors) " class="text-control ">
                 <div *ngIf="f.password.errors.required ">Email is required</div>
                 <div *ngIf="f.password.errors.minlength ">Password must be at least 8 characters</div>
             </div>
         </div>
         <div class="col-12 form-group form-group-submit mt-3 ">
-            <app-button [typeValue]=" 'submit' " [classValue]=" 'full colored' " [textValue]=" 'SING UP' "></app-button>
+            <app-button [typeValue]=" 'submit' " [classValue]=" 'full colored' " [textValue]=" 'SING UP' " (click)="' '"></app-button>
         </div>
         <div class="col-12 login ">
             <a href="# ">Already have an account?</a>
         </div>
     </div>
 </form>
+<div class="row " *ngIf="message == true ">
+    <div class="col-12 sendemail ">
+        <div class="col-3 icon-email "></div>
+        <div class="col-12 head ">
+            <h1>Check your email {{email}}</h1>
+        </div>
+        <div class="col-12 text ">
+            <p>Congratulations you have successfully registered,we`ll send you a link to activate your account.</p>
+            <app-button [routerLink]="['/login']" [typeValue]=" 'button' " [classValue]=" 'sm colored' " [textValue]=" 'LOG IN' "></app-button>
+        </div>
+    </div>
+    <div class="col-12 login ">
+        <a href="# ">Don`t have any account?</a>
+    </div>
+</div>
