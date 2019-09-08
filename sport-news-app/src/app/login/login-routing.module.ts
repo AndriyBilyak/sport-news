@@ -22,10 +22,6 @@ const routes: Routes = [
         component: ForgotPasswordComponent,
       },
       {
-        path:'email',
-        component: EmailComponent,
-      },
-      {
         path:'change-password',
         component: ChangePasswordComponent,
       },
