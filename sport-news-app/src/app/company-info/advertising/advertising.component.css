@@ -1,0 +1,38 @@
+.main-photo img {
+  width: 100%;
+}
+.main-content {
+  width: 100%;
+  background: #F6F6F6;
+}
+.main-content h5 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #2B2F43;
+}
+
+@media screen and (min-width:992px){
+  .main-photo img {
+      width: 70%;
+    }
+    .main-content {
+      width: 70%;
+    }
+}
+
+
+@media screen and (max-width:776px){
+  .main-content p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #7F7B7B;
+    margin-bottom: 10px;
+  }
+  .main-content h5 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    color: #2B2F43;
+  }
+}
