@@ -17,7 +17,7 @@ hr {
   margin-bottom: -38px;
 }
 .breakdown {
-  margin: 40px 0;
+  margin: 40px 0 0;
 }
 .breakdown img {
   width: 100%;
@@ -45,10 +45,18 @@ hr {
   font-weight: bold;
   font-size: 22px;
   line-height: 30px;
-  padding: 12px 15px;
+  padding: 0;
+  margin: 10px 15px 20px;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .breakdown-photo:hover{
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition-duration: 0.4s;
 }
 .news-content img {
   height: 100%;
@@ -66,28 +74,43 @@ hr {
   font-size: 16px;
   line-height: 22px;
   margin: 15px 0 5px;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .news-content p {
   font-size: 14px;
   line-height: 19px;
   color: #7F7B7B;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .news-content:hover{
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition-duration: 0.4s;
 }
 .news-content svg{
   position: absolute;
-  bottom: 10%;
+  bottom: 7%;
   right: 10%;
 }
 .news-content:hover #fill1 {
   fill: #D72130;
+  transition-duration: 0.4s;
 }
 .breakdown-photo svg{
   position: absolute;
-  bottom: 5%;
-  right: 7%;
+  bottom: 2%;
+  right: 5%;
 }
 .breakdown-photo:hover #fill1 {
   fill: #D72130;
+  transition-duration: 0.4s;
 }

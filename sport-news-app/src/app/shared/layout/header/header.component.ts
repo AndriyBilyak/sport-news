@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {debounceTime, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
@@ -68,10 +68,11 @@ const statesWithFlags: {name: string, flag: string}[] = [
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  router: Router;
+  @Input() isSignedIn: boolean;
+
   model: any;
 
-  constructor(private amplifyService: AmplifyService) {}
+  constructor(private router: Router, private amplifyService: AmplifyService) {}
 
   ngOnInit() {}
 
@@ -87,8 +88,7 @@ export class HeaderComponent implements OnInit {
   singOut() {
     this.amplifyService.auth().signOut()
     .then(data => {
-      // TODO: redirect to login page
-      console.log(data)
+      this.router.navigate(['/login']);
     })
     .catch(err => {
       // TODO: handle errors

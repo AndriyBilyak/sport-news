@@ -13,14 +13,17 @@
     display: flex;
     justify-content: flex-end;
 }
-.sort select {
+.sort select, h6 {
     font-weight: bold;
     font-size: 12px;
     line-height: 17px;
     color: #D72130;
     border: none;
     background: #F8F8F8;
-    margin: 20px;
+    margin: 20px 20px 20px 0;
+}
+.sort h6 {
+  margin: 24px 0 20px 20px;
 }
 .write-comment{
     height: 85px;
@@ -28,15 +31,20 @@
     background: #ffffff;
     border: 1px solid #D8D8D8;
 }
+.write-comment .col-10 {
+    display: flex;
+    align-items: center;
+}
 .write-comment input {
     width: 100%;
-    height: 83px;
     border: none;
-    padding-left: 10px;
     font-weight: bold;
     font-size: 12px;
     line-height: 17px;
     color: #B2B2B2;
+}
+.write-comment input:focus {
+    outline: none;
 }
 .col-2, .col-10 {
     padding: 0;
@@ -79,4 +87,10 @@
     line-height: 19px;
     color: #000000;
     padding: 0 20px;
+}
+@media screen and (max-width:500px){
+    .comment-photo img {
+        height: 35px;
+        width: 35px;
+    }
 }

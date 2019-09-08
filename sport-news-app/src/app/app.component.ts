@@ -1,10 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
-import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
 
 import CustomRoutesConfig from "./mockedData/customRoutesConfig"
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +13,21 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'sport-news-app';
   navigationItems = [];
   currentUser =  null;
-  signedIn = false
+  isSignedIn = false
+  isLoginLayoutActivated = false
 
   constructor(private router: Router, private amplifyService: AmplifyService) {}
 
   ngOnInit() {
     this.subscribeAuthState()
+    this.subscribeRouterEvents()
     this.extendRoutes()
     this.getNavigationItems()
   }
 
   ngOnDestroy() {
     this.subscribeAuthState().unsubscribe()
+    this.subscribeRouterEvents().unsubscribe()
   }
 
   private extendRoutes() {
@@ -34,13 +35,6 @@ export class AppComponent implements OnInit, OnDestroy {
     const routerConfig = [...this.router.config]
 
     routerConfig.splice(routerConfig.length - 1, 0, ...customPagesRoutes)
-
-    if (this.currentUser) {
-      routerConfig.splice(0, 1, { path: '', redirectTo: '/home', pathMatch: 'full' })
-    } else {
-      routerConfig.splice(routerConfig.length - 1, 1, { path: '**', redirectTo: '/login'})
-    }
-
     this.router.resetConfig(routerConfig)
   }
 
@@ -51,7 +45,6 @@ export class AppComponent implements OnInit, OnDestroy {
       return {
         path: `${route.path}/:groupId/:articleId`,
         loadChildren: () => import('./custom-pages/custom-pages.module').then(mod => mod.CustomPagesModule),
-        canActivate:[AuthCanActivateGuard]
       }
     })
   }
@@ -64,12 +57,27 @@ export class AppComponent implements OnInit, OnDestroy {
     return this.amplifyService.authStateChange$
       .subscribe(authState => {
         console.log(authState)
-          this.signedIn = authState.state === 'signedIn';
+          this.isSignedIn = authState.state === 'signedIn';
           if (!authState.user) {
               this.currentUser = null;
           } else {
               this.currentUser = authState.user;
           }
     });
+  }
+
+  private subscribeRouterEvents() {
+    return this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        const routesWithLoginLayouts = [
+          '/login',
+          '/login/create-account',
+          '/login/create-account',
+          '/login/forgot-password',
+          '/login/change-password',
+          '/login/email']
+        this.isLoginLayoutActivated = routesWithLoginLayouts.indexOf(event.url) >= 0
+      }
+    })
   }
 }

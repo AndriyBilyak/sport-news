@@ -43,7 +43,7 @@ export class CreateAccountComponent implements OnInit {
     if (this.createAccountForm.invalid) {
       return;
     }
-     
+
       this.amplifyService.auth().signUp({
         username: values.email,
         password: values.password,
@@ -53,25 +53,18 @@ export class CreateAccountComponent implements OnInit {
         },
         validationData: [],
       })
-    
+
       .then(data => {
         // TODO: show message like "Check your email ..." with button leads to login page (done)
         this.message = true;
         console.log(data)
       })
       .catch(err => {
-        // TODO: handle errors on create account  (done)
-  
-        if(err['code'] === "UsernameExistsException"){ 
-          this.amplifyService.auth().signUp(values.email,values.password);
+        // TODO: handle errors on create account
+
+        if(err['code'] === "UsernameExistsException"){
+          this.flashMessagesService.show(`User with this email ${values.email} allready exists`, { cssClass: 'alert-danger', timeout: 5000 });
         }
-        console.log(err);
-        this.flashMessagesService.show(`User with this email ${values.email} allready exists`, { cssClass: 'alert-danger', timeout: 5000 });
-        
       });
-    
-      
-  
     }
-    
 }
