@@ -17,7 +17,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     this. changePasswordForm = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required]
   }, {
       validator: MustMatch('password', 'confirmPassword')
@@ -33,6 +33,19 @@ export class ChangePasswordComponent implements OnInit {
         return;
     }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.changePasswordForm.value))
+    const values = this.changePasswordForm.value;
+    
+    // this.amplifyService.auth().({
+    //   username: values.email,
+    //   validationData: [],
+    // })
+
+    // .then(data => {
+    //   this.message = true;
+    //   console.log(data)
+    // })
+    // .catch(err => {
+    //     this.flashMessagesService.show( err.message, { cssClass: 'alert-danger', timeout: 5000 }); 
+    // });
 }
 }

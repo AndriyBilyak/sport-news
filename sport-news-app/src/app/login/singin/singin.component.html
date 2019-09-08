@@ -11,8 +11,8 @@
         </div>
         <div class="col-12 form-group ">
             <label>Email</label>
-            <input type="email" class="form-control" formControlName="email" placeholder="Doe" name="email" [ngClass]="{ 'invalid-input': (submitted && f.email.errors)||(f.email.touched && f.email.errors), 'valid-input': f.email.touched && !f.email.errors}">
-            <div *ngIf="(submitted && f.email.errors)||(f.email.touched && f.email.errors) " class="text-control ">
+            <input type="email" class="form-control" formControlName="email" placeholder="Doe" name="email" [ngClass]="{ 'invalid-input': (submitted && f.email.errors)||(f.email.touched && f.email.errors)||(err), 'valid-input': f.email.touched && !f.email.errors}">
+            <div *ngIf=" (submitted && f.email.errors)||(f.email.touched && f.email.errors) " class="text-control ">
                 <div *ngIf="f.email.errors.required ">Email is required</div>
                 <div *ngIf="f.email.errors.email ">Write right email</div>
             </div>
@@ -22,14 +22,15 @@
                 <label>Password</label>
                 <a [routerLink]="[ './forgot-password'] ">Forgot password?</a>
             </div>
-            <input type="password" class="form-control " formControlName="password" placeholder="Enter your password " name="password" [ngClass]="{ 'invalid-input': (submitted && f.password.errors)||(f.password.touched && f.password.errors), 'valid-input': f.password.touched && !f.password.errors} ">
+            <input type="password" class="form-control " formControlName="password" placeholder="Enter your password " name="password " [ngClass]="{ 'invalid-input': (submitted && f.password.errors)||(f.password.touched && f.password.errors),
+                'valid-input': f.password.touched && !f.password.errors} ">
             <div *ngIf="(submitted && f.password.errors)||(f.password.touched && f.password.errors) " class="text-control ">
                 <div *ngIf="f.password.errors.required ">Email is required</div>
                 <div *ngIf="f.password.errors.minlength ">Password must be at least 8 characters</div>
             </div>
         </div>
         <div class="col-12 form-group form-group-submit mt-3 ">
-            <app-button [typeValue]=" 'submit' " [classValue]=" 'full colored' " [textValue]=" 'LOG IN' " (click)="' '"></app-button>
+            <app-button [typeValue]=" 'submit' " [classValue]=" 'full colored' " [textValue]=" 'LOG IN' " (click)=" ' ' "></app-button>
         </div>
         <div class="col-12 login ">
             <a [routerLink]="[ './create-account'] ">Don`t have any account?</a>

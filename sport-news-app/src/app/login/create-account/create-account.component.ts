@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
@@ -55,15 +56,16 @@ export class CreateAccountComponent implements OnInit {
       })
 
       .then(data => {
-        // TODO: show message like "Check your email ..." with button leads to login page (done)
         this.message = true;
         console.log(data)
       })
       .catch(err => {
-        // TODO: handle errors on create account
 
         if(err['code'] === "UsernameExistsException"){
           this.flashMessagesService.show(`User with this email ${values.email} allready exists`, { cssClass: 'alert-danger', timeout: 5000 });
+        }
+        else{
+          this.flashMessagesService.show( err.message, { cssClass: 'alert-danger', timeout: 5000 }); 
         }
       });
     }
