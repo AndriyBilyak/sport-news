@@ -17,7 +17,7 @@
               <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
               <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
                   <div class="dropdown-profile-wrapper">
-                      <span class="user-block__name">Ivan Baloh</span>
+                      <span class="user-block__name"></span>
                       <span class="user-block__email">ivanbaloh@gmail.com</span>
                       <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
                   </div>
@@ -79,13 +79,13 @@
           <div ngbDropdown class="user-block d-md-flex justify-content-center align-items-center" id="userDropdownWrapperId">
             <div *ngIf="isSignedIn">
               <div class="user-block__wrapper d-flex flex-column" id="dropdownBasic1" ngbDropdownToggle>
-                  <span class="user-block__name">Ivan Baloh</span>
+                  <span class="user-block__name" [innerHTML]="currentUser.attributes['custom:firstName'] + ' '+ currentUser.attributes['custom:lastName']"></span>
                   <span class="user-block__status">Administrator</span>
               </div>
               <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                   <div class="dropdown-profile-wrapper">
-                      <span class="user-block__name dropdown-name">Ivan Baloh</span>
-                      <span class="user-block__email">ivanbaloh@gmail.com</span>
+                      <span class="user-block__name dropdown-name" [innerHTML]="currentUser.attributes['custom:firstName'] + ' '+ currentUser.attributes['custom:lastName']"></span>
+                      <span class="user-block__email" [innerHTML]="currentUser.attributes.email"></span>
                       <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
                   </div>
                   <div class="list-group">
@@ -98,8 +98,8 @@
               </div>
             </div>
             <div *ngIf="!isSignedIn">
-                <button type="button" class="btn lg colored" [routerLink]="['/login']">Login In</button>
-                <button type="button" class="btn lg colored" [routerLink]="['/login/create-account']">Sing Up</button>
+                <button type="button" class="btn login-btn" [routerLink]="['/login']"></button>
+                <button type="button" class="btn signup-btn" [routerLink]="['/login/create-account']"></button>
             </div>
           </div>
 
