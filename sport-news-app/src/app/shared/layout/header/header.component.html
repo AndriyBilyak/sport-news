@@ -32,8 +32,8 @@
             </div>
 
             <div *ngIf="!isSignedIn">
-                <button type="button" class="btn lg colored" [routerLink]="['/login']">Login In</button>
-                <button type="button" class="btn lg colored" [routerLink]="['/login/create-account']">Sing Up</button>
+                <button type="button" class="btn signup-btn" [routerLink]="['/login/create-account']"></button>
+                <button type="button" class="btn login-btn" [routerLink]="['/login']"></button>
             </div>
           </div>
 
@@ -98,8 +98,8 @@
               </div>
             </div>
             <div *ngIf="!isSignedIn">
-                <button type="button" class="btn login-btn" [routerLink]="['/login']"></button>
-                <button type="button" class="btn signup-btn" [routerLink]="['/login/create-account']"></button>
+                <button type="button" class="btn signup-btn" [routerLink]="['/login/create-account']">Sign Up</button>
+                <button type="button" class="btn login-btn" [routerLink]="['/login']">Log in</button>
             </div>
           </div>
 
