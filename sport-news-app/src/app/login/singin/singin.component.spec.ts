@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingupComponent } from './singup.component';
+import { SinginComponent } from './singin.component';
 
 describe('SingupComponent', () => {
-  let component: SingupComponent;
-  let fixture: ComponentFixture<SingupComponent>;
+  let component: SinginComponent;
+  let fixture: ComponentFixture<SinginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SingupComponent ]
+      declarations: [ SinginComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SingupComponent);
+    fixture = TestBed.createComponent(SinginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

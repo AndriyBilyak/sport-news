@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { SingupComponent } from './singup/singup.component';
+import { SinginComponent } from './singin/singin.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { EmailComponent } from './email/email.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
@@ -15,15 +14,11 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        component: SingupComponent,
+        component: SinginComponent,
       },
       {
         path:'forgot-password',
         component: ForgotPasswordComponent,
-      },
-      {
-        path:'email',
-        component: EmailComponent,
       },
       {
         path:'change-password',
