@@ -103,9 +103,9 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
     this.time.innerHTML = this.toHHMMSS(this.video.currentTime) + ' / ' + this.toHHMMSS(this.video.duration);
   }
 
-  resizeDownloadedBar() {
+  /*resizeDownloadedBar() {
     this.progressLoaded.style.width = this.video.buffered.end(0) / this.video.duration * 100 + '%';
-  }
+  }*/
 
   fullScreen() {
     if (this.video.requestFullscreen) {
