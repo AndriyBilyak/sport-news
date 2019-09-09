@@ -1,5 +1,5 @@
 <div *ngIf="!isLoginLayoutActivated; else LoginLayout">
-    <app-header [isSignedIn]="isSignedIn"></app-header>
+    <app-header [isSignedIn]="isSignedIn" [currentUser]="currentUser"></app-header>
     <div class="row">
         <div class="col-2 left">
             <app-sidenav></app-sidenav>
