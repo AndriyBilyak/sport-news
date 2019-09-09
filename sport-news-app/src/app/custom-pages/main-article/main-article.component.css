@@ -16,18 +16,36 @@
   font-size: 14px;
   line-height: 16px;
   color: #7F7B7B;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main-content h4 {
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
   color: #C63638;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main-content h5 {
   font-weight: bold;
   font-size: 22px;
   line-height: 30px;
   color: #2B2F43;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .article-text p {
   font-size: 14px;
@@ -66,11 +84,12 @@
   }
   .main-content{
     position: absolute;
-    top: 10%;
-    left: 75.2%;
+    top: 18%;
+    left: 78.2%;
     z-index: 2;
-    max-width: 51%;
+    max-width: 50%;
     min-width: 25%;
+    min-height: 30%;
     display: block;
     box-shadow: -20px 16px 23px 0px rgba(0, 0, 0, 0.1);
   }
@@ -86,12 +105,9 @@
 @media screen and (max-width:776px){
   .main-content p {
     font-size: 12px;
-    line-height: 16px;
-    color: #7F7B7B;
     margin-bottom: 10px;
   }
   .main-content h5 {
-    font-weight: bold;
     font-size: 16px;
     line-height: 21px;
     color: #2B2F43;

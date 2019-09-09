@@ -1,7 +1,7 @@
 .news {
   position: relative;
   right: 20px;
-  margin: 24rem 0 13rem;
+  margin: 32rem 0 0;
   z-index: -1;
   transform: rotate(90deg);
 }
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 1200px){
-  col-3 {
+  .col-3 {
     display: none;
   }
 }

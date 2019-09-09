@@ -26,6 +26,7 @@ hr {
 }
 .news-content {
     border: 1px solid #EDEDED;
+    cursor: pointer;
 }
 .news-content h5{
     font-weight: bold;

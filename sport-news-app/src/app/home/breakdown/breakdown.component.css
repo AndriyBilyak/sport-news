@@ -28,6 +28,8 @@ hr {
 .breakdown-photo {
   border: 1px solid #EDEDED;
   position: relative;
+  cursor: pointer;
+  min-height: 100%;
 }
 .breakdown-button button {
   position: absolute;
@@ -65,6 +67,7 @@ hr {
 }
 .news-content {
   border: 1px solid #EDEDED;
+  cursor: pointer;
 }
 .news-content .col-5 {
   padding-right: 0;
