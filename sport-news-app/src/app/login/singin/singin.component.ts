@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
-import { EmailComponent } from '../email/email.component';
 import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
   selector: 'app-singup',

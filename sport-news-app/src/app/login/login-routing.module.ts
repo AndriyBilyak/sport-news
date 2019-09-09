@@ -4,7 +4,6 @@ import { LoginComponent } from './login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SinginComponent } from './singin/singin.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { EmailComponent } from './email/email.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
 

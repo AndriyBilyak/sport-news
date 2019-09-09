@@ -13,6 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   changePasswordForm: FormGroup;
   result: null;
   submitted = false;
+  message = false;
   
  
   constructor(
@@ -31,12 +32,13 @@ export class ForgotPasswordComponent implements OnInit {
      
     onSubmit() {
       this.submitted = true;  
-      // stop here if form is invalid
+      
+      
       if (this. changePasswordForm.invalid) {
           return;
       }  
-      this.router.navigate(['/login/change-password']);
-      // this.result = this.changePasswordForm.value;
+      // this.router.navigate(['/login/change-password']);
+      this.message = true;
       const values = this.changePasswordForm.value;
     
       // this.amplifyService.auth().({
