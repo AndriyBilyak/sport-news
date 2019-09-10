@@ -31,6 +31,7 @@ hr {
 .news-content {
   border: 1px solid #EDEDED;
   height: 100%;
+  cursor: pointer;
 }
 .news-content h5{
   font-weight: bold;
