@@ -432,9 +432,30 @@
     color: black;
 }
 
-@media screen and (max-width: 768px) {}
+.signup-btn, .login-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: unset;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
 
-@media screen and (min-width: 576px) {}
+.signup-btn {
+  margin-right: 10px;
+  background-image: url("../../../../assets/icons/user-plus-solid.svg");
+}
+
+.login-btn {
+  background-image: url("../../../../assets/icons/sign-in-alt-solid.svg");
+}
+
+@media screen and (min-width: 576px) {
+  .signup-btn {
+    margin-right: 20px;
+  }
+}
 
 @media screen and (min-width: 768px) {
     .current-page {
@@ -500,6 +521,23 @@
         border-right: 1px solid #EDEDED;
         box-sizing: border-box;
     }
+
+    .signup-btn, .login-btn {
+      margin: 0;
+      width: unset;
+      height: 32px;
+      color: #D72130;
+      font-size: 12px;
+      font-family: "Open Sans";
+      box-sizing: border-box;
+    }
+
+    .signup-btn {
+    }
+
+    .login-btn {
+      border: 1px solid #C63638;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -545,6 +583,13 @@
     }
     .user-block__name {
         max-width: 120px;
+    }
+    .signup-btn {
+      margin-right: 20px;
+    }
+    .login-btn {
+      padding-left: 35px;
+      padding-right: 35px;
     }
 }
 

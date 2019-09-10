@@ -211,6 +211,10 @@ label {
     color: #000000;
 }
 
+.head h1:nth-child(2) {
+    font-size: 30px;
+}
+
 .text {
     font-family: Open Sans;
     font-style: normal;

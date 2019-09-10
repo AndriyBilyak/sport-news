@@ -28,6 +28,17 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
     canActivate:[AuthCanActivateGuard]
   },
+  {
+    path: 'company', redirectTo: '/company/news', pathMatch: 'full' ,
+  },
+  {
+  path: 'company',
+  loadChildren: () => import('./company-info/company-info.module').then(mod => mod.CompanyInfoModule)
+  },
+  {
+    path: 'contributors',
+    loadChildren: () => import('./contributors/contributors.module').then(mod => mod.ContributorsModule)
+    },
   { path: '**', component: PageNotFoundComponent }
 ];
 
