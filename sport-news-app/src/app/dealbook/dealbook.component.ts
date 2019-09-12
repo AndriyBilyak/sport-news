@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import mockedDealbook from "../mockedData/mockedDealbook";
 
 @Component({
   selector: 'app-dealbook',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dealbook.component.css']
 })
 export class DealbookComponent implements OnInit {
-
+  mainArtContent = mockedDealbook.mainArticle;
+  articleContent = mockedDealbook.article;
+  adBlockContent = mockedDealbook.adBlock;
   constructor() { }
 
   ngOnInit() {
   }
-
 }

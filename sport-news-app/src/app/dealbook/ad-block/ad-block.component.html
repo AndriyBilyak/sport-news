@@ -1,40 +1,11 @@
-<div class="pb-4">
+<div *ngFor ="let adContent of childAdBlockContent" class="pb-4">
         <div class="article-name text-center">
-                <p class="text-capitalize"><span>Ats Video</span></p>
+                <p class="text-capitalize" *ngIf="adContent.adTitle !=''"><span>{{adContent.adTitle}}</span></p>
         </div>
-        <div class="ad-image">
-                <img src="../../assets/img/adBlock3.png
-                        " />
+        <div class="ad-image" *ngIf="adContent.photo !=''">
+                <img src="{{adContent.photo}}" />
         </div>
-        <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-        </div>
-</div>
-
-<div class="pb-4">
-        <div class="article-name text-center">
-                <p class="text-capitalize"><span>Dealbook</span></p>
-        </div>
-        <div class="ad-image">
-                <img src="../../assets/img/adBlock2.png" />
-        </div>
-        <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-        </div>
-</div>
-
-<div class="ad-image pb-4">
-        <img src="../../assets/img/adBlock1.png" />
-</div>
-
-<div>
-        <div class="article-name text-center">
-                <p class="text-capitalize"><span>Facebook Feature</span></p>
-        </div>
-        <div class="ad-image">
-                <img src="../../assets/img/dealbookMostComments1.png" />
-        </div>
-        <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+        <div class="content" *ngIf="adContent.adContent !=''">
+                <p>{{adContent.adContent}}</p>
         </div>
 </div>
