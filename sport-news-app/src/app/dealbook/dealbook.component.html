@@ -1,10 +1,10 @@
 <div class="d-flex">
     <div class="flex-grow-1">
-        <app-main-article></app-main-article>
-        <app-article></app-article>
+        <app-main-article [mainChildArtContent]="mainArtContent"></app-main-article>
+        <app-article [childArticleContent]="articleContent"></app-article>
         <app-most-popular-comments></app-most-popular-comments>
     </div>
     <div class="d-none d-xl-block align-self-end pl-3">
-        <app-ad-block></app-ad-block>
+        <app-ad-block [childAdBlockContent]="adBlockContent"></app-ad-block>
     </div>
 </div>
