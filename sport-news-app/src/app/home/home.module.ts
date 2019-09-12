@@ -8,9 +8,7 @@ import { BreakdownComponent } from './breakdown/breakdown.component';
 import { PhotoOfTheDayComponent } from './photo-of-the-day/photo-of-the-day.component';
 import { MostPopularCommentsComponent } from './most-popular-comments/most-popular-comments.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { ReaderPoolComponent } from './reader-pool/reader-pool.component';
-
-
+import { ReaderPoolComponent } from '../shared/layout/reader-pool/reader-pool.component';
 
 
 @NgModule({
