@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators,FormGroup} from '@angular/forms';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import  { Auth } from "aws-amplify";
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  changePasswordForm: FormGroup;
+  forgotPasswordForm: FormGroup;
   result: null;
   submitted = false;
   message = false;
@@ -19,40 +21,38 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private frmBuilder: FormBuilder,
     private amplifyService: AmplifyService,
-    private router: Router
+    private router: Router,
+    public flashMessagesService: FlashMessagesService,
   ) {}
 
   ngOnInit() {
-      // Form valid
-    this.changePasswordForm = this.frmBuilder.group({
+    this.forgotPasswordForm = this.frmBuilder.group({
     email:["", [Validators.required, Validators.email]],
   })
     }
-     get f() { return this.changePasswordForm.controls; }
+     get f() { return this.forgotPasswordForm.controls; }
      
     onSubmit() {
       this.submitted = true;  
+      const username = this.forgotPasswordForm.controls['email'].value    
       
-      
-      if (this. changePasswordForm.invalid) {
+      if (this.forgotPasswordForm.invalid) {
           return;
       }  
-      // this.router.navigate(['/login/change-password']);
-      this.message = true;
-      const values = this.changePasswordForm.value;
-    
-      // this.amplifyService.auth().({
-      //   username: values.email,
-      //   validationData: [],
-      // })
 
-      // .then(data => {
-      //   this.message = true;
-      //   console.log(data)
-      // })
-      // .catch(err => {
-      //     this.flashMessagesService.show( err.message, { cssClass: 'alert-danger', timeout: 5000 }); 
-      // });
+      this.amplifyService.auth().forgotPassword(
+        username        
+      )
+      .then(data => {
+        this.message = true;
+        console.log(data)
+      })
+      .catch(err => {
+        document.getElementById('email').classList.remove('invalid-input');
+        document.getElementById('email').classList.add('valid-input');
+        
+          this.flashMessagesService.show( err.message, { cssClass: 'alert-danger', timeout: 5000 }); 
+      });
     }
 }
 
