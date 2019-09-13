@@ -1,8 +1,7 @@
-import { element } from 'protractor'
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { AmplifyService } from 'aws-amplify-angular'
-import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms'
 import { FlashMessagesService } from 'angular2-flash-messages'
 @Component({
   selector: 'app-singup',
@@ -17,14 +16,14 @@ export class SinginComponent implements OnInit {
   constructor(
     private amplifyService: AmplifyService,
     private router: Router,
-    private frmBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     public flashMessagesService: FlashMessagesService
   ) {}
 
   ngOnInit() {
-    this.signInForm = this.frmBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+    this.signInForm = this.formBuilder.group({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     })
   }
 
@@ -35,25 +34,28 @@ export class SinginComponent implements OnInit {
   logIn() {
     this.submitted = true
     const values = this.signInForm.value
+
     if (this.signInForm.invalid) {
       return
     }
+
     this.amplifyService
       .auth()
       .signIn({
         username: values.email,
         password: values.password,
       })
-      .then(data => {
+      .then(() => {
         this.router.navigate(['./home'])
       })
       .catch(err => {
-        var elements = document.querySelectorAll('.form-control')
-
-        for (var i = 0; i < elements.length; i++) {
+        // TODO: replace with FormControl methods
+        const elements = document.querySelectorAll('.form-control')
+        for (let i = 0; i < elements.length; i++) {
           elements[i].classList.remove('valid-input')
           elements[i].classList.add('invalid-input')
         }
+
         if (err.code === 'NotAuthorizedException' || 'UserNotFoundException') {
           this.flashMessagesService.show(`Incorrect user ID or password.Try again`, {
             cssClass: 'alert-danger',

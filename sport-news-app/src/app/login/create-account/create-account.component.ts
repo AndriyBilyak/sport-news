@@ -5,10 +5,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 
 import { FlashMessagesService } from 'angular2-flash-messages'
 
-import { publishReplay } from 'rxjs/operators'
-
 // TODO: move svg from html to assets
-// TODO: improve fields validation(done)
 
 @Component({
   selector: 'app-create-account',
@@ -42,6 +39,7 @@ export class CreateAccountComponent implements OnInit {
   onSubmit() {
     const values = this.createAccountForm.value
     this.submitted = true
+
     if (this.createAccountForm.invalid) {
       return
     }
@@ -58,7 +56,7 @@ export class CreateAccountComponent implements OnInit {
         validationData: [],
       })
 
-      .then(data => {
+      .then(() => {
         this.message = true
       })
       .catch(err => {

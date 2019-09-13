@@ -3,7 +3,6 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { AmplifyService } from 'aws-amplify-angular'
 import { Router } from '@angular/router'
 import { FlashMessagesService } from 'angular2-flash-messages'
-import { Auth } from 'aws-amplify'
 
 @Component({
   selector: 'app-forgot-password',
@@ -19,7 +18,6 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private frmBuilder: FormBuilder,
     private amplifyService: AmplifyService,
-    private router: Router,
     public flashMessagesService: FlashMessagesService
   ) {}
 
@@ -28,6 +26,7 @@ export class ForgotPasswordComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
     })
   }
+
   get f() {
     return this.forgotPasswordForm.controls
   }
@@ -43,7 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
     this.amplifyService
       .auth()
       .forgotPassword(username)
-      .then(data => {
+      .then(() => {
         this.message = true
       })
       .catch(err => {

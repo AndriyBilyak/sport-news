@@ -1,4 +1,3 @@
-import { element } from 'protractor'
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
 import { FormGroup } from '@angular/forms'
@@ -47,9 +46,9 @@ export class ChangePasswordComponent implements OnInit {
       return
     }
 
-    let username = this.changePasswordForm.controls['email'].value
-    let code = this.changePasswordForm.controls['code'].value
-    let new_password = this.changePasswordForm.controls['confirmPassword'].value
+    const username = this.changePasswordForm.controls['email'].value
+    const code = this.changePasswordForm.controls['code'].value
+    const new_password = this.changePasswordForm.controls['confirmPassword'].value
 
     this.amplifyService
       .auth()
