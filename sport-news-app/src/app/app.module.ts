@@ -9,13 +9,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/layout/header/header.component';
-import { FooterComponent } from './shared/layout/footer/footer.component';
-import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { ButtonComponent } from './shared/layout/button/button.component';
-import { ValidationFormComponent } from './shared/layout/footer/validation-form/validation-form.component';
+import { ButtonComponent } from './shared/button/button.component';
+import { ValidationFormComponent } from './shared/footer/validation-form/validation-form.component';
 import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
 
 

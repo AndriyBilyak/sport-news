@@ -3,7 +3,7 @@ import {debounceTime, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
-import statesWithFlags from '../../../mockedData/searchHeaderData.js';
+import statesWithFlags from '../../mockedData/searchHeaderData.js';
 
 // TODO: move data to mockedData folder
 // TODO: display real user name and email

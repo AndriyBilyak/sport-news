@@ -185,6 +185,14 @@
   .main-photo {
     width: 100%;
   }
+  .controls {
+    justify-content: center;
+    bottom: -35px;
+    background-color: #F6F6F6;
+  }
+  .carousel-control-next{
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width:767px){

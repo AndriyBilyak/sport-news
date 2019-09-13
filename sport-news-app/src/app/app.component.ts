@@ -43,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     return CustomRoutesConfig.routes.map(route => {
       return {
-        path: `${route.path}/:groupId/:articleId`,
+        path: `${route.path}`,
         loadChildren: () => import('./custom-pages/custom-pages.module').then(mod => mod.CustomPagesModule),
       }
     })
