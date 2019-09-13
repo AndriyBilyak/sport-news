@@ -1,9 +1,8 @@
-import { element } from 'protractor'
-import { Component, OnInit } from '@angular/core'
-import { AmplifyService } from 'aws-amplify-angular'
-import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { Component, OnInit } from '@angular/core';
+import { AmplifyService } from 'aws-amplify-angular';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
-import { FlashMessagesService } from 'angular2-flash-messages'
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 // TODO: move svg from html to assets
 
@@ -13,9 +12,9 @@ import { FlashMessagesService } from 'angular2-flash-messages'
   styleUrls: ['./create-account.component.css'],
 })
 export class CreateAccountComponent implements OnInit {
-  createAccountForm: FormGroup
-  submitted = false
-  message = false
+  createAccountForm: FormGroup;
+  submitted = false;
+  message = false;
 
   constructor(
     private frmBuilder: FormBuilder,
@@ -29,19 +28,19 @@ export class CreateAccountComponent implements OnInit {
       secondName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-    })
+    });
   }
 
   get f() {
-    return this.createAccountForm.controls
+    return this.createAccountForm.controls;
   }
 
   onSubmit() {
-    const values = this.createAccountForm.value
-    this.submitted = true
+    const values = this.createAccountForm.value;
+    this.submitted = true;
 
     if (this.createAccountForm.invalid) {
-      return
+      return;
     }
 
     this.amplifyService
@@ -57,17 +56,17 @@ export class CreateAccountComponent implements OnInit {
       })
 
       .then(() => {
-        this.message = true
+        this.message = true;
       })
       .catch(err => {
         if (err['code'] === 'UsernameExistsException') {
           this.flashMessagesService.show(`User with this email ${values.email} allready exists`, {
             cssClass: 'alert-danger',
             timeout: 5000,
-          })
+          });
         } else {
-          this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 5000 })
+          this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 5000 });
         }
-      })
+      });
   }
 }

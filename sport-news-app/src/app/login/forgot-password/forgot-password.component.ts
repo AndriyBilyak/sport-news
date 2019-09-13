@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { FormBuilder, Validators, FormGroup } from '@angular/forms'
-import { AmplifyService } from 'aws-amplify-angular'
-import { Router } from '@angular/router'
-import { FlashMessagesService } from 'angular2-flash-messages'
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { AmplifyService } from 'aws-amplify-angular';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,10 +9,10 @@ import { FlashMessagesService } from 'angular2-flash-messages'
   styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent implements OnInit {
-  forgotPasswordForm: FormGroup
-  result: null
-  submitted = false
-  message = false
+  forgotPasswordForm: FormGroup;
+  result: null;
+  submitted = false;
+  message = false;
 
   constructor(
     private frmBuilder: FormBuilder,
@@ -24,32 +23,32 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit() {
     this.forgotPasswordForm = this.frmBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-    })
+    });
   }
 
   get f() {
-    return this.forgotPasswordForm.controls
+    return this.forgotPasswordForm.controls;
   }
 
   onSubmit() {
-    this.submitted = true
-    const username = this.forgotPasswordForm.controls['email'].value
+    this.submitted = true;
+    const username = this.forgotPasswordForm.controls['email'].value;
 
     if (this.forgotPasswordForm.invalid) {
-      return
+      return;
     }
 
     this.amplifyService
       .auth()
       .forgotPassword(username)
       .then(() => {
-        this.message = true
+        this.message = true;
       })
       .catch(err => {
-        document.getElementById('email').classList.remove('invalid-input')
-        document.getElementById('email').classList.add('valid-input')
+        document.getElementById('email').classList.remove('invalid-input');
+        document.getElementById('email').classList.add('valid-input');
 
-        this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 5000 })
-      })
+        this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 5000 });
+      });
   }
 }
