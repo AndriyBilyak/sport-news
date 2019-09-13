@@ -1,60 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators,FormGroup} from '@angular/forms';
-import { AmplifyService } from 'aws-amplify-angular';
-import { Router } from '@angular/router';
-import { FlashMessagesService } from 'angular2-flash-messages';
-import  { Auth } from "aws-amplify";
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { AmplifyService } from 'aws-amplify-angular'
+import { Router } from '@angular/router'
+import { FlashMessagesService } from 'angular2-flash-messages'
+import { Auth } from 'aws-amplify'
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
+  styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent implements OnInit {
+  forgotPasswordForm: FormGroup
+  result: null
+  submitted = false
+  message = false
 
-  forgotPasswordForm: FormGroup;
-  result: null;
-  submitted = false;
-  message = false;
-  
- 
   constructor(
     private frmBuilder: FormBuilder,
     private amplifyService: AmplifyService,
     private router: Router,
-    public flashMessagesService: FlashMessagesService,
+    public flashMessagesService: FlashMessagesService
   ) {}
 
   ngOnInit() {
     this.forgotPasswordForm = this.frmBuilder.group({
-    email:["", [Validators.required, Validators.email]],
-  })
-    }
-     get f() { return this.forgotPasswordForm.controls; }
-     
-    onSubmit() {
-      this.submitted = true;  
-      const username = this.forgotPasswordForm.controls['email'].value    
-      
-      if (this.forgotPasswordForm.invalid) {
-          return;
-      }  
+      email: ['', [Validators.required, Validators.email]],
+    })
+  }
+  get f() {
+    return this.forgotPasswordForm.controls
+  }
 
-      this.amplifyService.auth().forgotPassword(
-        username        
-      )
+  onSubmit() {
+    this.submitted = true
+    const username = this.forgotPasswordForm.controls['email'].value
+
+    if (this.forgotPasswordForm.invalid) {
+      return
+    }
+
+    this.amplifyService
+      .auth()
+      .forgotPassword(username)
       .then(data => {
-        this.message = true;
-        console.log(data)
+        this.message = true
       })
       .catch(err => {
-        document.getElementById('email').classList.remove('invalid-input');
-        document.getElementById('email').classList.add('valid-input');
-        
-          this.flashMessagesService.show( err.message, { cssClass: 'alert-danger', timeout: 5000 }); 
-      });
-    }
+        document.getElementById('email').classList.remove('invalid-input')
+        document.getElementById('email').classList.add('valid-input')
+
+        this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 5000 })
+      })
+  }
 }
-
-
-
