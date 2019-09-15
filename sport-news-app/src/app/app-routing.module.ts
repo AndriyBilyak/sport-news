@@ -26,7 +26,6 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
-    data: {currentUser: this.currentUser},
     canActivate:[AuthCanActivateGuard],
   },
   {

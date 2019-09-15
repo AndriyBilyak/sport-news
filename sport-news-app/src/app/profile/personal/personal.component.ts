@@ -8,18 +8,28 @@ import { AmplifyService } from 'aws-amplify-angular';
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
+  isSignedIn;
   currentUser = null;
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private amplifyService: AmplifyService
-  ) { }
+    private amplifyService: AmplifyService,
+  ) {}
 
   ngOnInit() {
-    this.currentUser = {
-      'custom:firstName': 'Serhii',
-      'custom:lastName': 'Shcheh',
-      email: 'serhii.shchehelskyi.kn.2017@lpnu.ua'};
+    this.subscribeAuthState();
+  }
+
+  private subscribeAuthState() {
+    return this.amplifyService.authStateChange$
+      .subscribe(authState => {
+        console.log(this.currentUser);
+        console.log(authState);
+        this.isSignedIn = authState.state === 'signedIn';
+        if (!authState.user) {
+          this.currentUser = null;
+        } else {
+          this.currentUser = authState.user;
+        }
+      });
   }
 
 }

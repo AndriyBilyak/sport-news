@@ -8,15 +8,9 @@ import {switchMap} from 'rxjs/operators';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  currentUser = null;
-  user = 'currentUser';
-  constructor(
-  private route: ActivatedRoute,
-  private router: Router,
-) {}
+  constructor() {}
 
 
   ngOnInit() {
-    this.currentUser = 'fuck this shit';
   }
 }

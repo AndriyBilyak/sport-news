@@ -1,5 +1,7 @@
 .personal-form {
   font-size: 0;
+  max-width: 390px;
+  margin: 0 auto;
 }
 
 .user-photo {
@@ -36,11 +38,6 @@
   background-color: #C80515;
 }
 
-.personal-form {
-  max-width: 390px;
-  margin: 0 auto;
-}
-
 .personal-form label {
   font-size: 10px;
   font-family: "Open Sans";
@@ -49,6 +46,7 @@
   line-height: 11px;
   cursor: text;
   margin-bottom: 8px;
+  padding-left: 10px;
 }
 
 .personal-form input {
@@ -92,4 +90,10 @@
 
 .personal-form input[type='submit']:active {
   background-color: #C80515;
+}
+
+@media screen and (min-width: 768px) {
+  .personal-form label {
+    padding-left: 0;
+  }
 }
