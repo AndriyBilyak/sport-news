@@ -1,1 +1,12 @@
-<p>personal works!</p>
+<div class="user-photo">
+  <div class="change-photo"></div>
+</div>
+<form action="" class="personal-form">
+  <label for="firstNameInput">FIRST NAME</label>
+  <input type="text" class='first-name-input' id="firstNameInput" [placeholder]="currentUser['custom:firstName']" autocomplete="off">
+
+  <label for="lastNameInput">LAST NAME</label>
+  <input type="text" class="last-name-input" id="lastNameInput" [placeholder]="currentUser['custom:lastName']" autocomplete="off">
+
+  <input type="submit" value="UPDATE PROFILE">
+</form>

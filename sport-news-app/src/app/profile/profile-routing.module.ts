@@ -7,7 +7,6 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
 import {SurveysComponent} from './surveys/surveys.component';
 import {TeamHubComponent} from './team-hub/team-hub.component';
 
-
 const routes: Routes = [
   {
     path: '',

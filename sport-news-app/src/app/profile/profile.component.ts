@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  currentUser = null;
+  user = 'currentUser';
+  constructor(
+  private route: ActivatedRoute,
+  private router: Router,
+) {}
 
-  constructor() { }
 
   ngOnInit() {
+    this.currentUser = 'fuck this shit';
   }
-
 }

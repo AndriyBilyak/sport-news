@@ -1,0 +1,95 @@
+.personal-form {
+  font-size: 0;
+}
+
+.user-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url('../../../assets/img/userPhotoLarge.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 40px auto 20px auto;
+  position: relative;
+}
+
+.change-photo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #D72130;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  background-image: url("../../../assets/icons/cameraIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .2s;
+}
+
+.change-photo:hover {
+  background-color: #E02232;
+}
+
+.change-photo:active {
+  background-color: #C80515;
+}
+
+.personal-form {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.personal-form label {
+  font-size: 10px;
+  font-family: "Open Sans";
+  color: #434C5D;
+  font-weight: 600;
+  line-height: 11px;
+  cursor: text;
+  margin-bottom: 8px;
+}
+
+.personal-form input {
+  display: block;
+  width: 100%;
+  padding: 11px 22px;
+  outline: none;
+  font-family: "Open Sans";
+  line-height: 19px;
+}
+
+.personal-form input[type='text'] {
+  border: 1px solid #D4D9E2;
+  font-size: 16px;
+}
+
+.personal-form input::placeholder {
+  color: #B2B2B2;
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+.first-name-input {
+  margin-bottom: 20px;
+}
+
+.last-name-input {
+  margin-bottom: 38px;
+}
+
+.personal-form input[type='submit'] {
+  background-color: #D72130;
+  color: white;
+  border: none;
+  font-size: 14px;
+}
+
+.personal-form input[type='submit']:hover {
+  background-color: #E02232;
+}
+
+.personal-form input[type='submit']:active {
+  background-color: #C80515;
+}
