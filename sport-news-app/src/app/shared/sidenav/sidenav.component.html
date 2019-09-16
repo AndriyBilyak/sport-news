@@ -1,7 +1,23 @@
 <div class="sidenav">
-  <ul>
-    <li *ngFor="let item of navigationItems">
-      <a [routerLink]="item">{{item}}</a>
-    </li>
-  </ul>
+  <input #toggleInput type="checkbox" class="openSidebarMenu" id="openSidebarMenu" (click)="toggleSideNav()">
+  <label for="openSidebarMenu" class="sidebarIconToggle" [ngClass]="{'sidebarIconOff': opened}">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div *ngIf="mobile" class="sidebarMenu" [ngStyle]="{'transform': (opened)?'translateX(0)':'translateX(-100%)'}">
+    <ul class="sidebarMenuInner">
+      <li *ngFor="let item of navigationItems">
+        <a [routerLink]="item.path" (click)="changeActive(item)" [ngClass]="{'active' : item.active}">{{item.path}}</a>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!mobile" class="sidebarMenu" [ngStyle]="{'transform': (opened)?'translateX(0)':'translateX(-100%)'}">
+    <ul class="sidebarMenuInner">
+      <li *ngFor="let item of navigationItems">
+        <a [routerLink]="item.path" (click)="changeActive(item)" [ngClass]="{'active' : item.active}">{{item.path}}</a>
+      </li>
+    </ul>
+  </div>
+
 </div>
