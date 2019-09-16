@@ -1,1 +1,64 @@
-<p>surveys works!</p>
+<div class="tab-nav">
+    <ul class="tab-button">
+        <li class="tab-choice active" (click)="viewMode ='open'">Open</li>
+        <li class="tab-choice" [class.active]="viewMode == 'closed'" (click)="viewMode ='closed'">Closed</li>
+    </ul>
+</div>
+<div [ngSwitch]="viewMode">
+    <div id="open" class="tab-slider accordion" id="accordionExample" *ngSwitchDefault>
+        <div class="row">
+            <div class="col-7">
+                <div class="text">
+                    <p>Open question</p>
+                </div>
+                <div class="tab-list" data-simplebar>
+                    <div *ngFor="let questions of questionContent">
+                        <ul *ngIf="questions.status == 'open' " class="tab-question active" aria-expanded="true" data-toggle="collapse" [attr.data-target]="'#collapse'+ questions.id">
+                            <li>{{questions.question}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div *ngFor="let questions of questionContent">
+                    <!-- <p *ngIf="questions.status == 'open' " class="collapse" [id]=" 'collapse'+ questions.id" data-parent="#accordionExample" [attr.aria-labelledby]="'collapse'+questions.id">{{questions.id}}</p> -->
+                    <div *ngIf="questions.status == 'open'" class="collapse" [id]=" 'collapse'+ questions.id" data-parent="#accordionExample" [attr.aria-labelledby]="'collapse'+questions.id">
+                        <div class="reader-pool">
+                            <div class="reader-title">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5>READER POOL</h5>
+                                    </div>
+                                    <div>
+                                        <p>{{questions.time}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reader-content">
+                                <h4>{{questions.question}}</h4>
+                                <p><input type="radio" name="question"> Yes</p>
+                                <p><input type="radio" name="question"> No</p>
+                                <p><input type="radio" name="question"> Maybe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="close" *ngSwitchCase="'closed'">
+        <div *ngFor="let questions of questionContent" class="accordion">
+            <div class="panel-heading" role="tab" [id]="'questions.question'+ questions.id">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+questions.id" aria-expanded="true" [attr.aria-controls]="'collapse'+questions.id">
+                    {{questions.question}}
+                </a>
+                </h4>
+            </div>
+            <div [id]="'collapse'+ questions.id" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'questions.question'+questions.id">
+                <div class="panel-body">
+                    {{questions.id}}
+                </div>
+            </div>
+        </div>
+    </div>

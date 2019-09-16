@@ -1,0 +1,150 @@
+.tab-nav {
+    margin-top: 20px;
+}
+
+.tab-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    justify-content: flex-start;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.tab-button:first-child li {
+    margin-right: 10px;
+}
+
+.tab-choice {
+    color: #000000;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 0.9px;
+}
+
+.tab-choice.active {
+    color: #D72130;
+    text-decoration: none;
+    border-bottom: 1px solid #D72130;
+}
+
+.tab-question {
+    list-style: none;
+    padding: 18px 15px;
+    margin: 0;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #2B2F43;
+    cursor: pointer;
+    border-left: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.tab-question:hover {
+    border: none;
+    box-shadow: 3px 2px 14px rgba(0, 0, 0, 0.09);
+    z-index: 10;
+}
+
+.tab-question ul.active {
+    border-left: 10px solid red;
+    color: red;
+}
+
+.tab-question li {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tab-question li:hover {
+    overflow: visible;
+    width: auto;
+    background-color: #FFF;
+}
+
+.text {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #434C5D;
+    background: #F2F2F2;
+    margin: 0;
+    height: 54px;
+    line-height: 54px;
+    padding: 0px 10px;
+}
+
+.tab-list {
+    height: 300px;
+}
+
+
+/* Reader-pool */
+
+.reader-pool {
+    max-width: 280px;
+    background: #F8F8F8;
+}
+
+.reader-title {
+    background: #F2F2F2;
+}
+
+.reader-title .col-6 {
+    padding: 0;
+}
+
+.reader-pool h5 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #434C5D;
+    padding: 15px 15px;
+    margin: 0;
+}
+
+.reader-pool p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #B2B2B2;
+    padding: 15px 15px;
+    margin: 0;
+}
+
+.reader-pool h4 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #2B2F43;
+    padding: 30px 16px;
+    margin: 0;
+}
+
+.reader-content {
+    display: block;
+}
+
+.reader-content p {
+    padding: 10px 16px;
+}
+
+
+/* Reader-pool */
+
+[data-simplebar]:before {
+    color: red;
+}

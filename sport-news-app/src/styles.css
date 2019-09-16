@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+@import '~simplebar/dist/simplebar.css';
 @font-face {
     src: url("./assets/fonts/RobotoCondensed-Bold.ttf");
     src: url("./assets/fonts/OpenSans-Regular.ttf");

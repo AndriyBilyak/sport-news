@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  surveys from '../../mockedData/surveys'
 
 @Component({
   selector: 'app-surveys',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveysComponent implements OnInit {
 
+  questionContent = surveys.questions ;
+
   constructor() { }
 
   ngOnInit() {
+   
   }
 
 }
