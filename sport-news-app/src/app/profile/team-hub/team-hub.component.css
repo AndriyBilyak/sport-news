@@ -1,0 +1,76 @@
+.hub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hub-size {
+  max-width: 284px;
+  min-width: 260px;
+}
+
+.hub-title {
+  background: #f2f2f2;
+}
+
+.hub-title p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #434c5d;
+  margin: 15px 0px 15px 20px;
+}
+
+.hub-content {
+  background: #f8f8f8;
+}
+
+.hub-content .content-title p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2b2f43;
+  margin: 15px 0px 15px 20px;
+}
+
+.hub-content img {
+  max-width: 60px;
+  max-height: 60px;
+  margin-left: 20px;
+}
+
+.hub-content h5 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #2b2f43;
+  margin: 0;
+}
+
+.hub-content p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #7f7b7b;
+  margin: 0;
+}
+
+.hub-content .hub-customize p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #d72130;
+  margin: 0 0 15px 20px;
+  cursor: pointer;
+}
