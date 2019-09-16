@@ -5,15 +5,12 @@ import { DealbookRoutingModule } from './dealbook-routing.module';
 import { DealbookComponent } from './dealbook.component';
 import { MainArticleComponent } from './main-article/main-article.component';
 import { ArticleComponent } from './article/article.component';
-<<<<<<< Updated upstream
-=======
-import { MostPopularCommentsComponent } from '../shared/layout/most-popular-comments/most-popular-comments.component';
->>>>>>> Stashed changes
+import { MostPopularCommentsComponent } from '../shared/most-popular-comments/most-popular-comments.component';
 import { AdBlockComponent } from './ad-block/ad-block.component';
 
 
 @NgModule({
-  declarations: [DealbookComponent, MainArticleComponent, ArticleComponent, AdBlockComponent],
+  declarations: [DealbookComponent, MainArticleComponent, MostPopularCommentsComponent, ArticleComponent, AdBlockComponent],
   imports: [
     CommonModule,
     DealbookRoutingModule
