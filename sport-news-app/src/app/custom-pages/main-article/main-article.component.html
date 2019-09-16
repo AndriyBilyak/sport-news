@@ -1,6 +1,6 @@
 <div class="main-article">
   <div class="main-photo">
-    <img src="{{childMainArtContent.photo}}"/>
+    <img src="{{childMainArtContent.photo}}" />
     <div class="NBA-news">
       <h2>{{childMainArtContent.pageTitle}}</h2>
     </div>
@@ -13,6 +13,7 @@
     </div>
   </div>
   <div class="article-text">
-    <p *ngFor="let item of childMainArtContent.articleContent; let i = index">{{childMainArtContent.articleContent[i]}}</p>
+    <p *ngFor="let item of childMainArtContent.articleContent; let i = index">{{childMainArtContent.articleContent[i]}}
+    </p>
   </div>
 </div>
