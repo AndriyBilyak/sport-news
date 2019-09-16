@@ -1,0 +1,13 @@
+.sidenav ul li a {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #B2B2B2;
+  text-transform: uppercase;
+}
+.sidenav ul {
+  list-style-type: none;
+}
+.sidenav {
+  margin: 75px 0;
+}
