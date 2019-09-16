@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import customPages from '../mockedData/customPages';
 
 @Component({
   selector: 'app-custom-pages',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomPagesComponent implements OnInit {
 
+  pageContent;
   constructor() { }
 
   ngOnInit() {
+    this.pageContent = customPages;
   }
 
 }

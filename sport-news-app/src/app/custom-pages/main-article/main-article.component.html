@@ -1,28 +1,19 @@
 <div class="main-article">
   <div class="main-photo">
-    <img src="../../../assets/img/custom-page-photo/NBA-photo.png" />
+    <img src="{{childMainArtContent.photo}}" />
     <div class="NBA-news">
-      <h2>NBA</h2>
+      <h2>{{childMainArtContent.pageTitle}}</h2>
     </div>
   </div>
   <div class="main-content pt-3">
     <div class="col-md-12 ">
-      <p>Publised / 20.09.2019</p>
-      <h4>Article by Some Name / Assosiated Prass</h4>
-      <h5>As M.L.B.'s Season Opens in Japan, at Least the Dirt Is Familiar</h5>
+      <p>{{childMainArtContent.pubDate}}</p>
+      <h4>{{childMainArtContent.articleAuthor}}</h4>
+      <h5>{{childMainArtContent.articleTitle}}</h5>
     </div>
   </div>
   <div class="article-text">
-    <p>TOKYO Major League Baseball begins its 2019 season on Wednesday in Japan with the first of two games between the
-      Oakland Athletics and the Seattle Mariners. NBA which equipe is the best? But when the teams take the field at the
-      Tokyo Dome, don't say they're playing on foreign soil.</p>
-    <p>That's because 12 tons of clay, silt and sand mixtures have been shipped by boat from the United States to make
-      the batter's box, pitcher's mound, base pits and bullpens feel like home. The dirt swap was news to the veteran
-      Seattle pitcher Mike Leake, who nonetheless gave his stomp of approval after starting the first of two exhibition
-      games each club played against teams from Japan's Nippon Professional Baseball as a tuneup.</p>
-    <p>Oh, you mean we weren't pitching on the same mound the Japanese teams use during their season? Leake said
-      Sunday."It felt like the same mound that we pitch on in the States. The only thing I would say is that maybe they
-      put a little too much water at first, so some of the clay stuck to my spikes in the first inning, but that happens
-      at home, too. After that, it was perfect. Sort by: Most popular COMMENTS (2) Write a comment</p>
+    <p *ngFor="let item of childMainArtContent.articleContent; let i = index">{{childMainArtContent.articleContent[i]}}
+    </p>
   </div>
 </div>
