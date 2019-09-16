@@ -9,11 +9,15 @@ import { SurveysComponent } from './surveys/surveys.component';
 import { TeamHubComponent } from './team-hub/team-hub.component';
 
 
+
 @NgModule({
-  declarations: [ProfileComponent, PersonalComponent, ChangePasswordComponent, SurveysComponent, TeamHubComponent,],
+  declarations: [ProfileComponent, PersonalComponent, ChangePasswordComponent, SurveysComponent, TeamHubComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule
+  ],
+  exports:[
+    
   ]
 })
 export class ProfileModule { }

@@ -7,13 +7,21 @@ import  surveys from '../../mockedData/surveys'
   styleUrls: ['./surveys.component.css']
 })
 export class SurveysComponent implements OnInit {
-
+  
   questionContent = surveys.questions ;
+  viewMode = 'open';
+  submitted: boolean = false;
+
+  
 
   constructor() { }
 
-  ngOnInit() {
-   
+  ngOnInit() {}
+  
+  submit(data){
+    this.submitted = true;   
+    var result = this.questionContent.find(object => object.id === data);
+    result.status = "closed"
   }
 
 }
