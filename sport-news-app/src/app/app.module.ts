@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
     AmplifyAngularModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [],
   providers: [AmplifyService, AuthCanActivateGuard],

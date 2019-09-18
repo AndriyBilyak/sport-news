@@ -4,8 +4,6 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { FlashMessagesService } from 'angular2-flash-messages';
 
-// TODO: move svg from html to assets
-
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
