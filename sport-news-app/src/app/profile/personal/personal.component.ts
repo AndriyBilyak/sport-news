@@ -8,28 +8,17 @@ import { AmplifyService } from 'aws-amplify-angular';
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
-  isSignedIn;
-  currentUser = null;
+  userFirstName;
+  userLastName;
+  userEmail;
   constructor(
     private amplifyService: AmplifyService,
   ) {}
 
   ngOnInit() {
-    this.subscribeAuthState();
+    this.userFirstName = this.amplifyService.auth().user.attributes["custom:firstName"];
+    this.userLastName = this.amplifyService.auth().user.attributes["custom:lastName"];
+    this.userEmail = this.amplifyService.auth().user.attributes.email;
+    console.log(this.amplifyService.auth());
   }
-
-  private subscribeAuthState() {
-    return this.amplifyService.authStateChange$
-      .subscribe(authState => {
-        console.log(this.currentUser);
-        console.log(authState);
-        this.isSignedIn = authState.state === 'signedIn';
-        if (!authState.user) {
-          this.currentUser = null;
-        } else {
-          this.currentUser = authState.user;
-        }
-      });
-  }
-
 }

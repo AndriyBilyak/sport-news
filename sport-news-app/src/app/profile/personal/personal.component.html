@@ -3,10 +3,10 @@
 </div>
 <form action="" class="personal-form">
   <label for="firstNameInput">FIRST NAME</label>
-  <input type="text" class='first-name-input' id="firstNameInput" autocomplete="off">
+  <input type="text" class='first-name-input' id="firstNameInput" [placeholder]="userFirstName" autocomplete="off">
 
   <label for="lastNameInput">LAST NAME</label>
-  <input type="text" class="last-name-input" id="lastNameInput"  autocomplete="off">
+  <input type="text" class="last-name-input" id="lastNameInput" [placeholder]="userLastName"  autocomplete="off">
 
   <input type="submit" value="UPDATE PROFILE">
 </form>
