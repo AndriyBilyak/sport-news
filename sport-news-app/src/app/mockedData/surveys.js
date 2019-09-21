@@ -6,7 +6,7 @@ const surveys = {
             time: "10 Apr - 12 May",
             answer: {
                 yes: "23",
-                no: "24",
+                no: "50",
                 maybe: "34"
             }
         },
@@ -17,7 +17,7 @@ const surveys = {
             time: "11 Apr - 12 May",
             answer: {
                 yes: "23",
-                no: "24",
+                no: "80",
                 maybe: "34"
             }
         },
@@ -29,7 +29,7 @@ const surveys = {
             answer: {
                 yes: "23",
                 no: "24",
-                maybe: "34"
+                maybe: "90"
             }
         },
         {
@@ -38,7 +38,7 @@ const surveys = {
             question: "Sed the amet est, AD Piscing eliem est valorem Nonumiam Est game?",
             time: "18 Apr - 12 May",
             answer: {
-                yes: "23",
+                yes: "50",
                 no: "24",
                 maybe: "34"
             }
@@ -49,7 +49,7 @@ const surveys = {
             question: "Sed the amet est, AD Piscing eliem est valorem Nonumiam Est game?",
             time: "18 Apr - 12 May",
             answer: {
-                yes: "23",
+                yes: "80",
                 no: "24",
                 maybe: "34"
             }
@@ -61,44 +61,12 @@ const surveys = {
             question: "Sed the amet est, AD Piscing eliem est valorem Nonumiam Est game?",
             time: "18 Apr - 12 May",
             answer: {
-                yes: "23",
-                no: "24",
+                yes: "40",
+                no: "20",
                 maybe: "34"
             }
-        },
-        {
-            id: 7,
-            status: "open",
-            question: "Sed the amet est, AD Piscing eliem est valorem Nonumiam Est game?",
-            time: "18 Apr - 12 May",
-            answer: {
-                yes: "23",
-                no: "24",
-                maybe: "34"
-            }
-        },
-        {
-            id: 8,
-            status: "open",
-            question: "Sed the amet est, AD Piscing eliem est valorem Nonumiam Est game?",
-            time: "29 Apr - 12 May",
-            answer: {
-                yes: "23",
-                no: "24",
-                maybe: "34"
-            }
-        },
-        {
-            id: 9,
-            status: "open",
-            question: "Sed the amet est, AD Piscing eliem est valorem Nonumiam Est game?",
-            time: "30 Apr - 12 May",
-            answer: {
-                yes: "23",
-                no: "24",
-                maybe: "34"
-            }
-        },
+        }
+
     ]
 }
 export default surveys;
