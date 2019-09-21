@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import mockedDealbook from '../mockedData/mockedDealbook';
+import { AppDataService } from '../app-data.service';
 
 @Component({
   selector: 'app-dealbook',
@@ -7,11 +7,17 @@ import mockedDealbook from '../mockedData/mockedDealbook';
   styleUrls: ['./dealbook.component.css'],
 })
 export class DealbookComponent implements OnInit {
-  pageContent;
+  pageContent = null;
 
-  constructor() {}
+  constructor(private appDataService: AppDataService) {}
 
   ngOnInit() {
-    this.pageContent = mockedDealbook;
+    this.getPageContent();
+  }
+
+  private getPageContent() {
+    this.appDataService.getDealbookContent().subscribe(data => {
+      this.pageContent = data;
+    });
   }
 }
