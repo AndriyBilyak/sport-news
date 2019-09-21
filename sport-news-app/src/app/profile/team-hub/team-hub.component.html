@@ -29,6 +29,7 @@
                 [ngbTypeahead]="search"
                 [resultTemplate]="rt"
                 [inputFormatter]="formatter"
+                (keyup.enter)="showSearch = false"
               />
             </div>
           </label>
@@ -48,11 +49,11 @@
         <hr class="mt-0 mb-0" />
         <div class="row ml-0 mr-0 pt-3 pb-3">
           <div class="col-3 pl-0 ml-4 pr-0 text-center">
-            <img src="{{ model.photo }}" />
+            <img *ngIf="model != undefined" src="{{ model.photo }}" />
           </div>
           <div class="col align-self-center pr-0">
-            <h5>{{ model.name }}</h5>
-            <p>{{ model.content }}</p>
+            <h5 *ngIf="model != undefined">{{ model.name }}</h5>
+            <p *ngIf="model != undefined">{{ model.content }}</p>
           </div>
           <div
             class="col-1 pt-1 pl-0 pr-4 hub-team-editing-mark-disp"

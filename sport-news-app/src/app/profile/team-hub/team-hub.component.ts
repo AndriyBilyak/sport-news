@@ -23,9 +23,7 @@ export class TeamHubComponent implements OnInit {
 
   selectedTeams = selectedTeams1;
   constructor() {}
-  ngOnInit() {
-    console.log(typeof this.model);
-  }
+  ngOnInit() {}
 
   search = (text$: Observable<string>) =>
     text$.pipe(
