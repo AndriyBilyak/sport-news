@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
+    "angular-user-idle": "^2.2.1",
     "angular2-flash-messages": "^3.0.1",
     "aws-amplify": "^1.1.36",
     "aws-amplify-angular": "^3.0.11",
