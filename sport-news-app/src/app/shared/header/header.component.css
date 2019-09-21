@@ -54,7 +54,7 @@
 .header-profile .avatar {
     width: 25px;
     height: 25px;
-    background-image: url('../../../../assets/icons/profileAvatar.svg');
+    background-image: url('../../../assets/icons/profileAvatar.svg');
 }
 
 .header-main .right-section {
@@ -122,7 +122,7 @@
     height: 16px;
     top: 5px;
     right: -12px;
-    background-image: url("../../../../assets/icons/searchIcon.svg");
+    background-image: url("../../../assets/icons/searchIcon.svg");
     background-size: cover;
     cursor: text;
 }
@@ -191,32 +191,32 @@
 
 .share-facebook {
     width: 9px;
-    background-image: url("../../../../assets/icons/fasebook.svg");
+    background-image: url("../../../assets/icons/fasebook.svg");
 }
 
 .share-facebook:hover {
-    background-image: url("../../../../assets/icons/facebookHover.svg");
+    background-image: url("../../../assets/icons/facebookHover.svg");
 }
 
 .share-twitter {
     width: 21px;
-    background-image: url('../../../../assets/icons/twitter.svg');
+    background-image: url('../../../assets/icons/twitter.svg');
     margin-left: 24px;
 }
 
 .share-twitter:hover {
-  background-image: url("../../../../assets/icons/twitterHover.svg");
+  background-image: url("../../../assets/icons/twitterHover.svg");
 }
 
 .share-linkedin {
     width: 20px;
-    background-image: url('../../../../assets/icons/linked-in.svg');
+    background-image: url('../../../assets/icons/linked-in.svg');
     margin-left: 24px;
     background-repeat: no-repeat;
 }
 
 .share-linkedin:hover {
-  background-image: url("../../../../assets/icons/linked-inHover.svg");
+  background-image: url("../../../assets/icons/linked-inHover.svg");
 }
 
 .right-section .user-block,
@@ -278,7 +278,7 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background-image: url("../../../../assets/icons/userPhoto.png");
+    background-image: url("../../../assets/icons/userPhoto.png");
     top: 0;
     left: 0;
 }
@@ -444,11 +444,11 @@
 
 .signup-btn {
   margin-right: 10px;
-  background-image: url("../../../../assets/icons/user-plus-solid.svg");
+  background-image: url("../../../assets/icons/user-plus-solid.svg");
 }
 
 .login-btn {
-  background-image: url("../../../../assets/icons/sign-in-alt-solid.svg");
+  background-image: url("../../../assets/icons/sign-in-alt-solid.svg");
 }
 
 @media screen and (min-width: 576px) {

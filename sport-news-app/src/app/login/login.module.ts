@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-import { ButtonComponent } from '../shared/layout/button/button.component';
+import { ButtonComponent } from '../shared/button/button.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SinginComponent } from './singin/singin.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';

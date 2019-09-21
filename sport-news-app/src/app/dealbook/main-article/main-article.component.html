@@ -1,12 +1,12 @@
 <div class="article">
   <div class="main-photo">
-    <img src="{{mainChildArtContent.photo}}" />
+    <img src="{{ mainChildArtContent?.photo }}" />
   </div>
   <div class="main-content pt-3">
     <div class="col-md-12 ">
-      <p>{{mainChildArtContent.pubDate}}</p>
-      <h4>{{mainChildArtContent.articleAuthor}}</h4>
-      <h5>{{mainChildArtContent.articleTitle}}</h5>
+      <p>{{ mainChildArtContent?.pubDate }}</p>
+      <h4>{{ mainChildArtContent?.articleAuthor }}</h4>
+      <h5>{{ mainChildArtContent?.articleTitle }}</h5>
     </div>
     <div class="text-center">
       <button type="button" class="btn lg colored">Share</button>
