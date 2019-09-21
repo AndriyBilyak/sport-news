@@ -6,8 +6,7 @@
 }
 
 .hub-size {
-  max-width: 284px;
-  min-width: 260px;
+  width: 260px;
 }
 
 .hub-title {
@@ -41,7 +40,6 @@
 .hub-content img {
   max-width: 60px;
   max-height: 60px;
-  margin-left: 20px;
 }
 
 .hub-content h5 {
@@ -63,6 +61,9 @@
   color: #7f7b7b;
   margin: 0;
 }
+.height-team {
+  min-height: 93px;
+}
 
 .hub-content .hub-customize p {
   font-family: Open Sans;
@@ -73,4 +74,91 @@
   color: #d72130;
   margin: 0 0 15px 20px;
   cursor: pointer;
+}
+
+.hub-team-editing:hover {
+  background-color: rgba(215, 33, 48, 0.11);
+  cursor: pointer;
+}
+.hub-team-editing-mark-disp {
+  opacity: 0;
+  cursor: default;
+}
+
+.hub-team-editing:hover .hub-team-editing-mark {
+  display: inline;
+  opacity: 1;
+  color: #d72130;
+  cursor: pointer;
+}
+
+/* button and form*/
+.sm {
+  height: 32px;
+  max-width: 74px;
+  min-width: 68px;
+}
+
+.colored {
+  background: #d72130;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff5f5;
+  font-style: normal;
+  font-size: 12px;
+  border-radius: 0px;
+}
+
+.colored:hover {
+  background: #e02232;
+  color: white;
+  box-shadow: none;
+}
+
+.colored:focus {
+  box-shadow: none;
+}
+
+.colored:active {
+  background: #c80515;
+  box-shadow: none;
+  color: white;
+}
+.form-pl {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.input-em {
+  border-radius: 0rem;
+  border-color: #d8d8d8;
+  max-width: 160px;
+  min-width: 100px;
+  border-right: none;
+}
+
+#searchFieldId:not(textarea) {
+  height: 32px !important;
+}
+
+.input-em::placeholder {
+  font-family: Open Sans;
+  color: #c6ccd7;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.input-em:hover {
+  color: #495057;
+  background-color: #fff;
+  border-color: #a6a9af;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.input-em:focus {
+  color: #000000;
+  background-color: #fff;
+  border-color: #a6a9af;
+  outline: 0;
+  box-shadow: 0 0 0 0;
 }
