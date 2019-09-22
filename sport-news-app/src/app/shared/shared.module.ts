@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { MostPopularCommentsComponent } from './most-popular-comments/most-popular-comments.component';
-import { ReaderPoolComponent } from './layout/reader-pool/reader-pool.component';
+import { ReaderPoolComponent } from './reader-pool/reader-pool.component';
 
 @NgModule({
   declarations: [MostPopularCommentsComponent, ReaderPoolComponent],
