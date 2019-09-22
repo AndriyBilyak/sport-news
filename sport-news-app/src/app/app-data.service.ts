@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+
 import { Article } from './interfaces/article';
+import { Team } from './interfaces/team';
+import { SearchResult } from './interfaces/searchResult';
 
 @Injectable({
   providedIn: 'root',
@@ -55,8 +58,18 @@ export class AppDataService {
     return this.http.get('./assets/mockedData/customRoutesConfig.json');
   }
 
-  findContent() {
-    return this.http.get('./assets/mockedData/searchContent.json');
+  findContent(term) {
+    return this.http
+      .get('./assets/mockedData/searchContent.json')
+      .pipe(
+        map((searchResultes: Array<SearchResult>) =>
+          searchResultes
+            .filter(
+              searchResulte => searchResulte.text.toLowerCase().indexOf(term.toLowerCase()) > -1
+            )
+            .slice(0, 10)
+        )
+      );
   }
 
   getSubscriptions() {
@@ -65,5 +78,17 @@ export class AppDataService {
 
   getSurveys() {
     return this.http.get('./assets/mockedData/surveys.json');
+  }
+
+  getTeams(term) {
+    return this.http
+      .get('./assets/mockedData/teams.json')
+      .pipe(
+        map((teams: Array<Team>) =>
+          teams
+            .filter(team => team.name.toLowerCase().indexOf(term.toLowerCase()) > -1)
+            .slice(0, 10)
+        )
+      );
   }
 }

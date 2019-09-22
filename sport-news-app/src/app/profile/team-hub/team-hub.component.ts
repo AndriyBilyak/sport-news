@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { AppDataService } from '../../app-data.service';
@@ -24,12 +24,8 @@ export class TeamHubComponent implements OnInit {
 
   search = (text$: Observable<string>) =>
     text$.pipe(
-      debounceTime(200),
-      map(term =>
-        term === ''
-          ? []
-          : allTeams.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)
-      )
+      debounceTime(300),
+      switchMap(term => this.appDataService.getTeams(term))
     );
 
   formatter = (x: { name: string }) => x.name;

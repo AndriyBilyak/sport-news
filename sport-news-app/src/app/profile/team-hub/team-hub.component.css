@@ -133,7 +133,6 @@
 .input-em {
   border-radius: 0rem;
   border-color: #d8d8d8;
-  max-width: 160px;
   min-width: 100px;
   border-right: none;
 }
@@ -169,7 +168,7 @@
   top: 0px !important;
   left: 0px !important;
   background-color: #fffefe;
-  width: 100px;
+  max-width: 200px;
   padding: 0;
   border-radius: unset;
   border: none;
