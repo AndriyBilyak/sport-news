@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import surveys from '../../mockedData/surveys';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { AppDataService } from '../../app-data.service';
