@@ -7,7 +7,6 @@ import { ArticleComponent } from './article/article.component';
 import { BreakdownComponent } from './breakdown/breakdown.component';
 import { PhotoOfTheDayComponent } from './photo-of-the-day/photo-of-the-day.component';
 import { CarouselComponent } from './carousel/carousel.component';
-// import { ReaderPoolComponent } from './reader-pool/reader-pool.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { SharedModule } from '../shared/shared.module';
     BreakdownComponent,
     PhotoOfTheDayComponent,
     CarouselComponent,
-    // ReaderPoolComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

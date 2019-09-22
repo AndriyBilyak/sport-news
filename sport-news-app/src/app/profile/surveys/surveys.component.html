@@ -1,107 +1,160 @@
 <div class="tab-nav">
-    <ul class="tab-button">
-        <li class="tab-choice" [class.active]="viewMode == 'open'" (click)="viewMode ='open'">Open</li>
-        <li class="tab-choice" [class.active]="viewMode == 'closed'" (click)="viewMode ='closed'">Closed</li>
-    </ul>
+  <ul class="tab-button">
+    <li class="tab-choice" [class.active]="viewMode == 'open'" (click)="viewMode = 'open'">Open</li>
+    <li class="tab-choice" [class.active]="viewMode == 'closed'" (click)="viewMode = 'closed'">
+      Closed
+    </li>
+  </ul>
 </div>
 <div [ngSwitch]="viewMode">
-    <div id="open" class="tab-slider accordion" id="accordionOpen" *ngSwitchCase="'open'">
-        <div class="row">
-            <div class="col-7">
-                <div class="text">
-                    <p>Open question</p>
-                </div>
-                <div *ngFor="let questions of questionContent">
-                    <ul *ngIf="questions.status == 'open' " class="tab-question active" aria-expanded="false" data-toggle="collapse" [attr.data-target]="'#collapse'+ questions.id">
-                        <li>{{questions.question}}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-5">
-                <div *ngFor="let questions of questionContent">
-                    <div *ngIf="questions.status == 'open'" class="collapse" [id]=" 'collapse'+ questions.id" data-parent="#accordionOpen" [attr.aria-labelledby]="'collapse'+questions.id">
-                        <div class="reader-pool">
-                            <div class="reader-title">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5>READER POOL</h5>
-                                    </div>
-                                    <div>
-                                        <p>{{questions.time}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reader-content">
-                                <h4>{{questions.question}}</h4>
-                                <form [formGroup]='radioTest' (ngSubmit)="submit(questions.id)" novalidate>
-                                    <p><input type="radio" name="answer" value="yes" formControlName='answer'> Yes</p>
-                                    <p><input type="radio" name="answer" value="no" formControlName='answer'> No</p>
-                                    <p><input type="radio" name="answer" value="maybe" formControlName='answer'> Maybe</p>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <button [disabled]="radioTest.invalid" class="btn button-answer" type="submit">Save</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div id="open" class="tab-slider accordion" id="accordionOpen" *ngSwitchCase="'open'">
+    <div class="row">
+      <div class="col-7">
+        <div class="text">
+          <p>Open question</p>
         </div>
-    </div>
-    <div id="close" *ngSwitchCase="'closed'" id="accordionClosed">
-        <div class="row">
-            <div class="col-12 col-md-7">
-                <div class="text">
-                    <p>Closed question</p>
-                </div>
-                <div *ngFor="let questions of questionContent">
-                    <ul *ngIf="questions.status == 'closed' " class="tab-question " aria-expanded="false" data-toggle="collapse" [attr.data-target]="'#collapse'+ questions.id">
-                        <li>{{questions.question}}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-5">
-                <div *ngFor="let questions of questionContent">
-                    <div *ngIf="questions.status == 'closed'" class="collapse" [id]=" 'collapse'+ questions.id" data-parent="#accordionClosed" [attr.aria-labelledby]="'collapse'+questions.id">
-                        <div class="reader-pool">
-                            <div class="reader-title">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5>READER POOL</h5>
-                                    </div>
-                                    <div>
-                                        <p>{{questions.time}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reader-content">
-                                <h4>{{questions.question}}</h4>
-                                <div class="answer">
-                                    <p>Yes</p>
-                                    <p>{{questions.answer.yes}}%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" [ngStyle]="{width: questions.answer.yes + '%'}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="answer">
-                                    <p>No</p>
-                                    <p>{{questions.answer.no}}%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" [ngStyle]="{width: questions.answer.no + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="answer">
-                                    <p>Maybe</p>
-                                    <p>{{questions.answer.maybe}}%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" [ngStyle]="{width: questions.answer.maybe + '%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div *ngFor="let questions of questionContent">
+          <ul
+            *ngIf="questions.status == 'open'"
+            class="tab-question active"
+            aria-expanded="false"
+            data-toggle="collapse"
+            [attr.data-target]="'#collapse' + questions.id"
+          >
+            <li>{{ questions.question }}</li>
+          </ul>
         </div>
+      </div>
+      <div class="col-5">
+        <div *ngFor="let questions of questionContent">
+          <div
+            *ngIf="questions.status == 'open'"
+            class="collapse"
+            [id]="'collapse' + questions.id"
+            data-parent="#accordionOpen"
+            [attr.aria-labelledby]="'collapse' + questions.id"
+          >
+            <div class="reader-pool">
+              <div class="reader-title">
+                <div class="row">
+                  <div class="col-6">
+                    <h5>READER POOL</h5>
+                  </div>
+                  <div>
+                    <p>{{ questions.time }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="reader-content">
+                <h4>{{ questions.question }}</h4>
+                <form [formGroup]="radioTest" (ngSubmit)="submit(questions.id)" novalidate>
+                  <p>
+                    <input type="radio" name="answer" value="yes" formControlName="answer" /> Yes
+                  </p>
+                  <p><input type="radio" name="answer" value="no" formControlName="answer" /> No</p>
+                  <p>
+                    <input type="radio" name="answer" value="maybe" formControlName="answer" />
+                    Maybe
+                  </p>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <button [disabled]="radioTest.invalid" class="btn button-answer" type="submit">
+                      Save
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div id="close" *ngSwitchCase="'closed'" id="accordionClosed">
+    <div class="row">
+      <div class="col-12 col-md-7">
+        <div class="text">
+          <p>Closed question</p>
+        </div>
+        <div *ngFor="let questions of questionContent">
+          <ul
+            *ngIf="questions.status == 'closed'"
+            class="tab-question "
+            aria-expanded="false"
+            data-toggle="collapse"
+            [attr.data-target]="'#collapse' + questions.id"
+          >
+            <li>{{ questions.question }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-5">
+        <div *ngFor="let questions of questionContent">
+          <div
+            *ngIf="questions.status == 'closed'"
+            class="collapse"
+            [id]="'collapse' + questions.id"
+            data-parent="#accordionClosed"
+            [attr.aria-labelledby]="'collapse' + questions.id"
+          >
+            <div class="reader-pool">
+              <div class="reader-title">
+                <div class="row">
+                  <div class="col-6">
+                    <h5>READER POOL</h5>
+                  </div>
+                  <div>
+                    <p>{{ questions.time }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="reader-content">
+                <h4>{{ questions.question }}</h4>
+                <div class="answer">
+                  <p>Yes</p>
+                  <p>{{ questions.answer.yes }}%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    [ngStyle]="{ width: questions.answer.yes + '%' }"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="answer">
+                  <p>No</p>
+                  <p>{{ questions.answer.no }}%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    [ngStyle]="{ width: questions.answer.no + '%' }"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="answer">
+                  <p>Maybe</p>
+                  <p>{{ questions.answer.maybe }}%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    [ngStyle]="{ width: questions.answer.maybe + '%' }"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

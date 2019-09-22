@@ -8,9 +8,8 @@ describe('ReaderPoolComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReaderPoolComponent ]
-    })
-    .compileComponents();
+      declarations: [ReaderPoolComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

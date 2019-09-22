@@ -4,8 +4,8 @@ import { MostPopularCommentsComponent } from './most-popular-comments/most-popul
 import { ReaderPoolComponent } from './layout/reader-pool/reader-pool.component';
 
 @NgModule({
-  declarations: [MostPopularCommentsComponent,ReaderPoolComponent],
+  declarations: [MostPopularCommentsComponent, ReaderPoolComponent],
   imports: [],
-  exports: [MostPopularCommentsComponent,ReaderPoolComponent],
+  exports: [MostPopularCommentsComponent, ReaderPoolComponent],
 })
 export class SharedModule {}

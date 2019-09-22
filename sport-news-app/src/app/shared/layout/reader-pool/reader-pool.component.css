@@ -1,9 +1,9 @@
 .reader-pool {
   max-width: 280px;
-  background: #F8F8F8;
+  background: #f8f8f8;
 }
 .reader-title {
-  background: #F2F2F2;
+  background: #f2f2f2;
 }
 .reader-title .col-6 {
   padding: 0;
@@ -12,14 +12,14 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
-  color: #434C5D;
+  color: #434c5d;
   padding: 15px 15px;
   margin: 0;
 }
 .reader-pool p {
   font-size: 12px;
   line-height: 16px;
-  color: #B2B2B2;
+  color: #b2b2b2;
   padding: 15px 15px;
   margin: 0;
 }
@@ -27,14 +27,14 @@
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
-  color: #2B2F43;
+  color: #2b2f43;
   padding: 30px 16px;
   margin: 0;
 }
 .reader-content {
   display: block;
 }
-.reader-content p{
+.reader-content p {
   padding: 10px 16px;
 }
 .news {

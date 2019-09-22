@@ -5,7 +5,7 @@ import { AuthLoginGuard } from './auth-login.guard';
 describe('AuthLoginGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthLoginGuard]
+      providers: [AuthLoginGuard],
     });
   });
 

@@ -1,132 +1,131 @@
 /* button-form */
 
 .sm {
-    height: 32px;
-    max-width: 97px;
-    min-width: 80px;
+  height: 32px;
+  max-width: 97px;
+  min-width: 80px;
 }
 
 .colored {
-    background: #D72130;
-    box-sizing: border-box;
-    text-align: center;
-    color: #FFF5F5;
-    font-style: normal;
-    font-size: 12px;
-    border-radius: 0px;
+  background: #d72130;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff5f5;
+  font-style: normal;
+  font-size: 12px;
+  border-radius: 0px;
 }
 
 .colored:hover {
-    background: #E02232;
-    color: white;
-    box-shadow: none;
+  background: #e02232;
+  color: white;
+  box-shadow: none;
 }
 
 .colored:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .colored:active {
-    background: #C80515;
-    box-shadow: none;
-    color: white;
+  background: #c80515;
+  box-shadow: none;
+  color: white;
 }
 
-.btn-invalid{
-    background: #000000;
+.btn-invalid {
+  background: #000000;
 }
 
 /* button-form */
 
-
-.sub-label{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    color: #7F7B7B;
+.sub-label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #7f7b7b;
 }
 
-.input-em{
-    border-radius: 0rem;
-    border-color: #D8D8D8;
-    max-width: 187px;
-    min-width: 100px;
-    border-right: none;  
+.input-em {
+  border-radius: 0rem;
+  border-color: #d8d8d8;
+  max-width: 187px;
+  min-width: 100px;
+  border-right: none;
 }
-.input-em::placeholder{
-    font-family: Open Sans;
-    color:#C6CCD7;
-    font-size: 12px;
-    vertical-align: middle;
+.input-em::placeholder {
+  font-family: Open Sans;
+  color: #c6ccd7;
+  font-size: 12px;
+  vertical-align: middle;
 }
 
-.footer-copyright-info
-{
-    font-size: 12px;
+.footer-copyright-info {
+  font-size: 12px;
 }
 
 .input-em:hover {
-    color: #495057;
-    background-color: #fff;
-    border-color: #A6A9AF;
-    outline: 0;
-    box-shadow: 0 0 0 0 ;
-  }
-
-
-.input-em:focus {
-    color: #000000;
-    background-color: #fff;
-    border-color: #A6A9AF;
-    outline: 0;
-    box-shadow: 0 0 0 0 ;
-  }
-
-.input-em.is-invalid {
-    color: #495057;
-    background-color: #fff;
-    border-color: #D72130;
-    outline: 0;
-    box-shadow: 0 0 0 0 ;
-  }
-
-  .input-em.is-invalid:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #D72130;
-    outline: 0;
-    box-shadow: 0 0 0 0 ;
-  }
-
-
-  .input-em.is-invalid::placeholder{
-    color: #D72130;
-    opacity:0.2;
-  }
-
-  .btn.is-invalid{
-      background: #D72130;
-      text-indent: -9999px; 
-      line-height: 0; 
-  }
-  .btn.is-invalid:after 
-  { 
-      content: "✖"; 
-      text-indent: 0; 
-      display: block; 
-      line-height: initial; 
-  }
-
-  .btn.is-valid{
-    background: #57A902;
-    text-indent: -9999px; 
-    line-height: 0; 
+  color: #495057;
+  background-color: #fff;
+  border-color: #a6a9af;
+  outline: 0;
+  box-shadow: 0 0 0 0;
 }
 
-.btn.is-valid:after 
-{ 
-    content: "✔"; 
-    text-indent: 0; 
-    display: block; 
-    line-height: initial; 
+.input-em:focus {
+  color: #000000;
+  background-color: #fff;
+  border-color: #a6a9af;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.input-em.is-invalid {
+  color: #495057;
+  background-color: #fff;
+  border-color: #d72130;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.input-em.is-invalid:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #d72130;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.input-em.is-invalid::placeholder {
+  color: #d72130;
+  opacity: 0.2;
+}
+
+.btn.is-invalid {
+  background: #d72130;
+  text-indent: -9999px;
+  line-height: 0;
+}
+.btn.is-invalid:after {
+  content: '✖';
+  text-indent: 0;
+  display: block;
+  line-height: initial;
+}
+
+.btn.is-valid {
+  background: #57a902;
+  text-indent: -9999px;
+  line-height: 0;
+}
+
+.btn.is-valid:after {
+  content: '✔';
+  text-indent: 0;
+  display: block;
+  line-height: initial;
+}
+
+.input-group-sm > .custom-select,
+.input-group-sm > .form-control:not(textarea) {
+  height: 32px;
 }
