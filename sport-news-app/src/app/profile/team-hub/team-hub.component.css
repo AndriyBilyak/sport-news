@@ -3,10 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
+  margin: auto;
 }
 
 .hub-size {
-  width: 260px;
+  width: 100%;
 }
 
 .hub-title {

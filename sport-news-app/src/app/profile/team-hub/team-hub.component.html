@@ -67,7 +67,7 @@
     </div>
 
     <div
-      *ngFor="let team of selectedTeams; let index = i"
+      *ngFor="let team of subscriptions; let index = i"
       (click)="deleteTeam(team)"
       [hidden]="!showSearch"
     >

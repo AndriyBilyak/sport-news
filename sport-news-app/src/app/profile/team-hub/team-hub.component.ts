@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { debounceTime, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import allTeams from '../../mockedData/teamHub.js';
 
-let selectedTeams1 = [
-  {
-    photo: '../../../../assets/img/teams/los_angeles_lakers.svg',
-    name: 'Los Angeles Lakers',
-    content: 'Some text',
-  },
-];
+import { AppDataService } from '../../app-data.service';
+import allTeams from '../../mockedData/teamHub.js';
 
 @Component({
   selector: 'app-team-hub',
@@ -17,13 +11,16 @@ let selectedTeams1 = [
   styleUrls: ['./team-hub.component.css'],
 })
 export class TeamHubComponent implements OnInit {
-  public model: any;
-  public isShow = true;
-  public showSearch = true;
+  subscriptions;
+  model: any;
+  isShow = true;
+  showSearch = true;
 
-  selectedTeams = selectedTeams1;
-  constructor() {}
-  ngOnInit() {}
+  constructor(private appDataService: AppDataService) {}
+
+  ngOnInit() {
+    this.getUserSubsctiptions();
+  }
 
   search = (text$: Observable<string>) =>
     text$.pipe(
@@ -47,18 +44,21 @@ export class TeamHubComponent implements OnInit {
 
   deleteTeam(item) {
     if (this.isShow == false) {
-      var index = this.selectedTeams.indexOf(item);
-      this.selectedTeams.splice(index, 1);
+      var index = this.subscriptions.indexOf(item);
+      this.subscriptions.splice(index, 1);
     }
   }
 
   addTeam() {
     if (typeof this.model === 'object') {
-      this.selectedTeams.unshift(this.model);
-      localStorage.setItem('array', JSON.stringify(selectedTeams1));
-      selectedTeams1 = JSON.parse(localStorage.getItem('array'));
-      console.log(typeof this.model);
+      this.subscriptions.unshift(this.model);
       this.model = '';
     } else alert("You didn't select any team to add");
+  }
+
+  private getUserSubsctiptions() {
+    this.appDataService.getSubscriptions().subscribe(data => {
+      this.subscriptions = data;
+    });
   }
 }

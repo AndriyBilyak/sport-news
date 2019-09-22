@@ -1,0 +1,26 @@
+[
+  {
+    "id": "46e3b208-fa15-400d-bfc2-f464ef0f75f3",
+    "photo": "../../../../assets/img/teams/los_angeles_lakers.svg",
+    "name": "Los Angeles Lakers",
+    "content": "It is a long established"
+  },
+  {
+    "id": "a7783454-3cee-42f1-ac74-38edfc90ab1c",
+    "photo": "../../../../assets/img/teams/los_angeles_lakers.svg",
+    "name": "Columbus Blue Jackets",
+    "content": "There are many variations"
+  },
+  {
+    "id": "8d67d834-fe8e-462a-a5c1-172bbe992642",
+    "photo": "../../../../assets/img/teams/los_angeles_lakers.svg",
+    "name": "New Jersey Devils",
+    "content": "Contrary to popular belief"
+  },
+  {
+    "id": "e149c2b3-6d3c-4aa2-ad73-c38c005835bf",
+    "photo": "../../../../assets/img/teams/los_angeles_lakers.svg",
+    "name": "New York Islanders",
+    "content": "Lorem Ipsum is simply dummy"
+  }
+]

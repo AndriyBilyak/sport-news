@@ -58,4 +58,12 @@ export class AppDataService {
   findContent() {
     return this.http.get('./assets/mockedData/searchContent.json');
   }
+
+  getSubscriptions() {
+    return this.http.get('./assets/mockedData/subscriptions.json');
+  }
+
+  getSurveys() {
+    return this.http.get('./assets/mockedData/surveys.json');
+  }
 }

@@ -61,18 +61,17 @@ ul.tab-question[aria-expanded='true'] {
 }
 
 .tab-question li {
-  width: 300px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .tab-question li:hover {
-  overflow: visible;
+  /* overflow: visible; */
 }
 
 .tab-question[aria-expanded='true'] li {
-  overflow: visible;
+  /* overflow: visible; */
 }
 
 .text {
@@ -97,7 +96,6 @@ ul.tab-question[aria-expanded='true'] {
 /* Reader-pool */
 
 .reader-pool {
-  max-width: 280px;
   background: #f8f8f8;
 }
 
