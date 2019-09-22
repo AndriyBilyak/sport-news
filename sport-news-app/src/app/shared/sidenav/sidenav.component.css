@@ -12,22 +12,38 @@
   list-style-type: none;
 }
 .sidenav {
-  margin: 75px 0;
-  min-width: 25%;
-  max-width: 260px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 .sidenav input, label {
    display: none;
 }
+.sidebarMenu {
+  width: 25%;
+  background: white;
+  height: 100%;
+}
 .active {
   color: #D72130!important;
 }
+.sidenav .subMenu ul li a, li {
+  text-transform: none;
+  color: black;
+  font-weight: normal;
+  cursor: pointer;
+}
+.subMenu ul li {
+  padding: 5px 0;
+}
+
 
 @media screen and (max-width: 768px){
   .sidenav label {
     display: block;
   }
   .sidenav {
+    position: relative;
     display: block;
     overflow-x: hidden;
     height: 100%;
@@ -41,7 +57,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    top: 79px;
+    top: 78px;
     transform: translateX(-100%);
     transition: transform 250ms ease-in-out;
     background-color: #D72130;
@@ -50,6 +66,7 @@
   .active {
     color: #ffffff!important;
   }
+
 
   .sidenav ul li {
     margin: 10px 20px;
@@ -122,5 +139,24 @@
     box-sizing: border-box;
     transform: rotate(-135deg);
     margin-top: -9px;
+  }
+
+  .subMenu p {
+    padding-left: 40px;
+    color: white;
+    cursor: pointer;
+  }
+  .sidenav .subMenu ul li a, li {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: none;
+    color: white;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .sidebarMenu span {
+    margin-top: -3px;
+    color: white
   }
 }

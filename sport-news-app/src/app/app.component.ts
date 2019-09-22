@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
 
-import CustomRoutesConfig from "./mockedData/customRoutesConfig"
+import CustomRoutesConfig from './mockedData/customRoutesConfig';
 
 @Component({
   selector: 'app-root',
@@ -13,29 +13,29 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'sport-news-app';
   navigationItems = [];
   currentUser =  null;
-  isSignedIn = false
-  isLoginLayoutActivated = false
+  isSignedIn = false;
+  isLoginLayoutActivated = false;
 
   constructor(private router: Router, private amplifyService: AmplifyService) {}
 
   ngOnInit() {
-    this.subscribeAuthState()
-    this.subscribeRouterEvents()
-    this.extendRoutes()
-    this.getNavigationItems()
+    this.subscribeAuthState();
+    this.subscribeRouterEvents();
+    this.extendRoutes();
+    this.getNavigationItems();
   }
 
   ngOnDestroy() {
-    this.subscribeAuthState().unsubscribe()
-    this.subscribeRouterEvents().unsubscribe()
+    this.subscribeAuthState().unsubscribe();
+    this.subscribeRouterEvents().unsubscribe();
   }
 
   private extendRoutes() {
     const customPagesRoutes = this.getCustomPagesRoutes();
-    const routerConfig = [...this.router.config]
+    const routerConfig = [...this.router.config];
 
-    routerConfig.splice(routerConfig.length - 1, 0, ...customPagesRoutes)
-    this.router.resetConfig(routerConfig)
+    routerConfig.splice(routerConfig.length - 1, 0, ...customPagesRoutes);
+    this.router.resetConfig(routerConfig);
   }
 
   private getCustomPagesRoutes() {
@@ -45,20 +45,20 @@ export class AppComponent implements OnInit, OnDestroy {
       return {
         path: `${route.path}`,
         loadChildren: () => import('./custom-pages/custom-pages.module').then(mod => mod.CustomPagesModule),
-      }
-    })
+      };
+    });
   }
 
   private getNavigationItems() {
-    this.navigationItems = this.router.config.map(routes => routes.path)
+    this.navigationItems = this.router.config.map(routes => routes.path);
   }
 
   private subscribeAuthState() {
     return this.amplifyService.authStateChange$
       .subscribe(authState => {
-        console.log(authState)
-          this.isSignedIn = authState.state === 'signedIn';
-          if (!authState.user) {
+        console.log(authState);
+        this.isSignedIn = authState.state === 'signedIn';
+        if (!authState.user) {
               this.currentUser = null;
           } else {
               this.currentUser = authState.user;
@@ -75,9 +75,9 @@ export class AppComponent implements OnInit, OnDestroy {
           '/login/create-account',
           '/login/forgot-password',
           '/login/change-password',
-          '/login/email']
-        this.isLoginLayoutActivated = routesWithLoginLayouts.indexOf(event.url) >= 0
+          '/login/email'];
+        this.isLoginLayoutActivated = routesWithLoginLayouts.indexOf(event.url) >= 0;
       }
-    })
+    });
   }
 }
