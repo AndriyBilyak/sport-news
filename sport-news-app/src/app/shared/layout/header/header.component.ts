@@ -19,10 +19,11 @@ export class HeaderComponent implements OnInit {
   @Input() isSignedIn: boolean;
   @Input() currentUser: any;
   model: any;
-
+  pageUrl = window.location.href;
   constructor(private router: Router, private amplifyService: AmplifyService) {}
 
   ngOnInit() {
+    console.log(this.pageUrl);
   }
 
   search = (text$: Observable<string>) =>

@@ -92,6 +92,34 @@
   background-color: #C80515;
 }
 
+.personal-form input.invalid-input {
+  border: 1px solid red;
+}
+
+.personal-form input.valid-input {
+  border: 1px solid green;
+}
+
+.success-block {
+  text-align: center;
+  background-color: green;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 14px;
+  padding: 11px 22px;
+  line-height: 19px;
+}
+
+.error-block {
+  text-align: center;
+  background-color: #D72130;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 14px;
+  padding: 11px 22px;
+  line-height: 19px;
+}
+
 @media screen and (min-width: 768px) {
   .personal-form label {
     padding-left: 0;
