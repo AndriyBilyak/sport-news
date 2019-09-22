@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import customPages from '../mockedData/customPages';
 import { AppDataService } from '../app-data.service';
 
 @Component({
@@ -11,13 +10,12 @@ import { AppDataService } from '../app-data.service';
 })
 export class CustomPagesComponent implements OnInit, OnDestroy {
   roterParamsSubscription;
-  pageContent;
+  articles;
 
   constructor(private route: ActivatedRoute, private appDataService: AppDataService) {}
 
   ngOnInit() {
     this.getPageContent();
-    this.pageContent = customPages;
   }
 
   ngOnDestroy() {
@@ -25,9 +23,11 @@ export class CustomPagesComponent implements OnInit, OnDestroy {
   }
 
   private getPageContent() {
+    // TODO: get data by conference
+    // TODO: get data by team
     this.roterParamsSubscription = this.route.data.subscribe(data => {
       this.appDataService.getArticlesByCategory(data.categoryId).subscribe(data => {
-        console.log(data);
+        this.articles = data;
       });
     });
   }

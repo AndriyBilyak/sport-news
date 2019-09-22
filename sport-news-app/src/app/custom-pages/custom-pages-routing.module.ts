@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CustomPagesComponent } from './custom-pages.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: ':conference/:team',
     component: CustomPagesComponent,
+  },
+  {
+    path: ':conference/:team/:article',
+    component: ArticleComponent,
   },
 ];
 

@@ -38,6 +38,10 @@ export class AppDataService {
       .pipe(map((articles: Array<Article>) => articles.filter(article => article.team === teamId)));
   }
 
+  getArticleById() {
+    return this.http.get('./assets/mockedData/article.json');
+  }
+
   getDealbookContent() {
     return this.http.get('./assets/mockedData/dealbook.json');
   }

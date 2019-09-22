@@ -4,7 +4,7 @@ import { AmplifyService } from 'aws-amplify-angular';
 import { AppDataService } from './app-data.service';
 import { UserIdleService } from 'angular-user-idle';
 
-import CustomRoutesConfig from './mockedData/customRoutesConfig';
+import CustomRoutesConfig from './customRoutesConfig';
 
 @Component({
   selector: 'app-root',
@@ -98,7 +98,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private subscribeAuthState() {
-    console.log(this.amplifyService.auth());
     this.authStateSubscription = this.amplifyService.authStateChange$.subscribe(authState => {
       this.isSignedIn = authState.state === 'signedIn';
       if (!authState.user) {
