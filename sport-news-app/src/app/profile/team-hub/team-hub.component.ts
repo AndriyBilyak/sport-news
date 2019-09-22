@@ -3,7 +3,6 @@ import { debounceTime, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { AppDataService } from '../../app-data.service';
-import allTeams from '../../mockedData/teamHub.js';
 
 @Component({
   selector: 'app-team-hub',

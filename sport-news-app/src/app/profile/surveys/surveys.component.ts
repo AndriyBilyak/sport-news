@@ -2,20 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import surveys from '../../mockedData/surveys';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
+import { AppDataService } from '../../app-data.service';
+
 @Component({
   selector: 'app-surveys',
   templateUrl: './surveys.component.html',
   styleUrls: ['./surveys.component.css'],
 })
 export class SurveysComponent implements OnInit {
-  questionContent = surveys.questions;
+  questionContent;
   viewMode = 'open';
   submitted: boolean = false;
   radioTest: FormGroup;
 
-  constructor(private frmBuilder: FormBuilder) {}
+  constructor(private frmBuilder: FormBuilder, private appDataService: AppDataService) {}
 
   ngOnInit() {
+    this.getSurveys();
     this.radioTest = this.frmBuilder.group({
       answer: ['', [Validators.required]],
     });
@@ -33,5 +36,11 @@ export class SurveysComponent implements OnInit {
     var result = this.questionContent.find(object => object.id === data);
     result.status = 'closed';
     this.radioTest.reset();
+  }
+
+  private getSurveys() {
+    this.appDataService.getSurveys().subscribe(data => {
+      this.questionContent = data;
+    });
   }
 }
