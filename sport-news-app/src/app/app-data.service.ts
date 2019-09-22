@@ -8,23 +8,23 @@ import { map } from 'rxjs/operators';
 export class AppDataService {
   constructor(private http: HttpClient) {}
 
-  getArticlesByCategory(categoryId) {
-    return this.http
-      .get('./assets/mockedData/articles.json')
-      .pipe(map(articles => articles.filter(article => article.category === categoryId)));
-  }
+  // getArticlesByCategory(categoryId) {
+  //   return this.http
+  //     .get('./assets/mockedData/articles.json')
+  //     .pipe(map(articles => articles.filter(article => article.category === categoryId)));
+  // }
 
-  getArticlesByConference(сonferenceId) {
-    return this.http
-      .get('./assets/mockedData/articles.json')
-      .pipe(map(articles => articles.filter(article => article.сonference === сonferenceId)));
-  }
+  // getArticlesByConference(сonferenceId) {
+  //   return this.http
+  //     .get('./assets/mockedData/articles.json')
+  //     .pipe(map(articles => articles.filter(article => article.сonference === сonferenceId)));
+  // }
 
-  getArticlesByTeam(teamId) {
-    return this.http
-      .get('./assets/mockedData/articles.json')
-      .pipe(map(articles => articles.filter(article => article.team === teamId)));
-  }
+  // getArticlesByTeam(teamId) {
+  //   return this.http
+  //     .get('./assets/mockedData/articles.json')
+  //     .pipe(map(articles => articles.filter(article => article.team === teamId)));
+  // }
 
   getDealbookContent() {
     return this.http.get('./assets/mockedData/dealbook.json');

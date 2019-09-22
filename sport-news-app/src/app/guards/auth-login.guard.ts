@@ -5,8 +5,7 @@ import { AmplifyService } from 'aws-amplify-angular';
 @Injectable({
   providedIn: 'root'
 })
-
-export class AuthCanActivateGuard implements  CanActivate{
+export class AuthLoginGuard implements CanActivate{
   constructor(
     private router: Router,
     private amplifyService: AmplifyService
@@ -16,10 +15,10 @@ export class AuthCanActivateGuard implements  CanActivate{
     const currentUser = this.amplifyService.auth().user;
 
     if (currentUser) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
       return false;
+    } else {
+      return true;
     }
   }
 }
