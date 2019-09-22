@@ -1,0 +1,10 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "name": "",
+      "size": "lg/sm",
+      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    }
+  ]
+}

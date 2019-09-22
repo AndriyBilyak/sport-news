@@ -17,8 +17,15 @@
           <div class="avatar" id="dropdownBasic3" ngbDropdownToggle></div>
           <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
             <div class="dropdown-profile-wrapper">
-              <span class="user-block__name"></span>
-              <span class="user-block__email">ivanbaloh@gmail.com</span>
+              <span
+                class="user-block__name"
+                [innerHTML]="
+                  currentUser.attributes['custom:firstName'] +
+                  ' ' +
+                  currentUser.attributes['custom:lastName']
+                "
+              ></span>
+              <span class="user-block__email" [innerHTML]="currentUser.attributes.email"></span>
               <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
             </div>
             <div class="list-group">
@@ -51,7 +58,7 @@
       <div class="search-block d-flex align-items-center border-right">
         <label for="rtid" class="dropdown-menu">
           <ng-template #rt let-r="result" let-t="term" id="rtid">
-            <ngb-highlight [result]="r.text" [term]="t" class="highlight"></ngb-highlight>
+            <ngb-highlight [result]="r.name" [term]="t" class="highlight"></ngb-highlight>
           </ng-template>
         </label>
 
@@ -77,14 +84,23 @@
           <div class="share-icons-wrapper d-flex justify-content-around justify-content-lg-end">
             <a
               class="share-facebook"
-              href="https://www.facebook.com/sharer/sharer.php?app_id=1248741531954687&sdk=joey&u=https://bright-newt-90.localtunnel.me&display=popup&ref=plugin&src=share_button"
-              onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')"
+              target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?app_id=1248741531954687&sdk=joey&u={{
+                this.pageUrl
+              }}&display=popup&ref=plugin&src=share_button"
             ></a>
             <a
               class="share-twitter"
-              href="http://twitter.com/share?text=Sport news is the best news dealer ever!&url=https://stupid-fly-44.localtunnel.me/&hashtags=sportnews,news,sport"
+              target="_blank"
+              href="http://twitter.com/share?text=Sport news is the best news dealer ever!&url={{
+                this.pageUrl
+              }}&hashtags=sportnews,news,sport"
             ></a>
-            <a class="share-linkedin"></a>
+            <a
+              class="share-linkedin"
+              target="_blank"
+              href="https://www.linkedin.com/shareArticle?mini=true&url={{ this.pageUrl }}"
+            ></a>
           </div>
         </div>
       </div>
@@ -117,12 +133,18 @@
                 "
               ></span>
               <span class="user-block__email" [innerHTML]="currentUser.attributes.email"></span>
-              <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
+              <a class="btn dropdown-btn" routerLink="/profile" role="button">VIEW PROFILE</a>
             </div>
             <div class="list-group">
-              <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
-              <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
-              <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
+              <a routerLink="/profile" class="list-group-item list-group-item-action">Personal</a>
+              <a
+                routerLink="/profile/change-password"
+                class="list-group-item list-group-item-action"
+                >Change password</a
+              >
+              <a routerLink="/profile/surveys" class="list-group-item list-group-item-action"
+                >My surveys</a
+              >
               <div class="dropdown-divider user-dropdown-divider"></div>
               <a routerLink="" class="list-group-item list-group-item-action" (click)="singOut()"
                 >Log out</a
