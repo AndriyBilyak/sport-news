@@ -1,10 +1,40 @@
 {
+  "pageTitle": "As M.L.B.’s Season Opens in Japan, at Least the Dirt Is Familiar",
   "videos": [
     {
       "id": 1,
-      "name": "",
-      "size": "lg/sm",
-      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      "name": "The final RWC 2019  is coming! It will be interesting",
+      "size": "lg",
+      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "poster": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 2,
+      "name": "Title",
+      "size": "sm",
+      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "poster": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 3,
+      "name": "Something interesting",
+      "size": "sm",
+      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "poster": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 4,
+      "name": "More interesting",
+      "size": "sm",
+      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "poster": "https://source.unsplash.com/random"
+    },
+    {
+      "id": 5,
+      "name": "The last video",
+      "size": "sm",
+      "source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "poster": "https://source.unsplash.com/random"
     }
   ]
 }

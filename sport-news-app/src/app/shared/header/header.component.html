@@ -18,7 +18,7 @@
           <div class="user-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic3">
             <div class="dropdown-profile-wrapper">
               <span
-                class="user-block__name"
+                class="user-block__name dropdown-name"
                 [innerHTML]="
                   currentUser.attributes['custom:firstName'] +
                   ' ' +
@@ -26,12 +26,18 @@
                 "
               ></span>
               <span class="user-block__email" [innerHTML]="currentUser.attributes.email"></span>
-              <a class="btn dropdown-btn" routerLink="#" role="button">VIEW PROFILE</a>
+              <a class="btn dropdown-btn" routerLink="/profile" role="button">VIEW PROFILE</a>
             </div>
             <div class="list-group">
-              <a routerLink="" class="list-group-item list-group-item-action">Personal</a>
-              <a routerLink="" class="list-group-item list-group-item-action">Change password</a>
-              <a routerLink="" class="list-group-item list-group-item-action">My surveys</a>
+              <a routerLink="/profile" class="list-group-item list-group-item-action">Personal</a>
+              <a
+                routerLink="/profile/change-password"
+                class="list-group-item list-group-item-action"
+                >Change password</a
+              >
+              <a routerLink="/profile/surveys" class="list-group-item list-group-item-action"
+                >My surveys</a
+              >
               <div class="dropdown-divider user-dropdown-divider"></div>
               <a routerLink="" class="list-group-item list-group-item-action" (click)="singOut()"
                 >Log out</a
@@ -58,7 +64,7 @@
       <div class="search-block d-flex align-items-center border-right">
         <label for="rtid" class="dropdown-menu">
           <ng-template #rt let-r="result" let-t="term" id="rtid">
-            <ngb-highlight [result]="r.name" [term]="t" class="highlight"></ngb-highlight>
+            <ngb-highlight [result]="r.text" [term]="t" class="highlight"></ngb-highlight>
           </ng-template>
         </label>
 
