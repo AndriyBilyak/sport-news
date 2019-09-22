@@ -1,79 +1,76 @@
 ::ng-deep main.container {
-  padding-right: 0;
+    padding-right: 0;
 }
 
 .profile-wrapper {
-  max-width: 814px;
-  margin-top: 80px;
+    max-width: 814px;
+    margin-top: 80px;
 }
 
 .profile-menu {
-  list-style: none;
-  padding: 0;
-  font-size: 0;
-  width: 100%;
+    list-style: none;
+    padding: 0;
+    font-size: 0;
+    width: 100%;
 }
 
 .profile-menu li {
-  width: 50%;
-  margin-bottom: -1px;
+    width: 50%;
+    margin-bottom: -1px;
 }
 
 .profile-menu a {
-  color: #2B2F43;
-  text-decoration: none;
-  padding: 10px 10px;
-  font-size: 14px;
-  line-height: 19px;
-  font-family: "Open Sans";
-  font-weight: bold;
-  box-sizing: border-box;
-  border: 1px solid #EDEDED;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+    color: #2B2F43;
+    text-decoration: none;
+    padding: 10px 10px;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 1px solid #EDEDED;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }
 
-.profile-menu li:nth-child(2n) a{
-  margin-left: -1px;
-  width: calc(100% + 1px);
-}
-
-.profile-menu li:first-child a{
+.profile-menu li:nth-child(2n) a {
+    margin-left: -1px;
+    width: calc(100% + 1px);
 }
 
 .profile-menu li.active {
-  z-index: 10;
-  box-shadow: 3px 2px 14px rgba(0, 0, 0, 0.09);
+    z-index: 10;
+    box-shadow: 3px 2px 14px rgba(0, 0, 0, 0.09);
 }
 
 .profile-menu li.active a {
-  border: 1px solid white;
-  color: #D72130;
+    border: 1px solid white;
+    color: #D72130;
 }
 
-@media screen and (min-width: 768px){
-  .profile-menu {
-    width: max-content;
-    margin: 0 auto;
-  }
-  .profile-menu li {
-    width: unset;
-    margin-bottom: 0;
-  }
-  .profile-menu a {
-    padding: 10px 30px;
-    margin-left: -1px;
-    width: min-content;
-    white-space: nowrap;
-  }
-  .profile-menu li:first-child a {
-    margin-left: 0;
-  }
+@media screen and (min-width: 768px) {
+    .profile-menu {
+        width: max-content;
+        margin: 0 auto;
+    }
+    .profile-menu li {
+        width: unset;
+        margin-bottom: 0;
+    }
+    .profile-menu a {
+        padding: 10px 30px;
+        margin-left: -1px;
+        width: min-content;
+        white-space: nowrap;
+    }
+    .profile-menu li:first-child a {
+        margin-left: 0;
+    }
 }
 
-@media screen and (min-width: 992px){
-  .profile-menu a {
-    padding: 10px 54px;
-  }
+@media screen and (min-width: 992px) {
+    .profile-menu a {
+        padding: 10px 54px;
+    }
 }

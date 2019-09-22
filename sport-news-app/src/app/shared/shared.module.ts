@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { MostPopularCommentsComponent } from './most-popular-comments/most-popular-comments.component';
+import { ReaderPoolComponent } from './layout/reader-pool/reader-pool.component';
 
 @NgModule({
-  declarations: [MostPopularCommentsComponent],
+  declarations: [MostPopularCommentsComponent,ReaderPoolComponent],
   imports: [],
-  exports: [MostPopularCommentsComponent],
+  exports: [MostPopularCommentsComponent,ReaderPoolComponent],
 })
 export class SharedModule {}
