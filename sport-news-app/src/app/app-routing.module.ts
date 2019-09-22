@@ -27,7 +27,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
-    canActivate: [AuthCanActivateGuard],
+    canActivate:[AuthCanActivateGuard],
+  },
+  {
+    path: 'company', redirectTo: '/company/news', pathMatch: 'full' ,
   },
   {
     path: 'company',

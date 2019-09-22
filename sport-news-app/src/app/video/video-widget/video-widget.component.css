@@ -39,7 +39,7 @@
   content: '';
   width: 14px;
   height: 14px;
-  background-image: url("../../assets/icons/shareIcon.svg");
+  background-image: url("../../../assets/icons/shareIcon.svg");
   position: absolute;
   top: 3px;
   left: -10px;
@@ -69,11 +69,11 @@
 }
 
 .play-pause-btn.play {
-  background-image: url('../../assets/icons/playIcon.svg');
+  background-image: url('../../../assets/icons/playIcon.svg');
 }
 
 .play-pause-btn.pause {
-  background-image: url('../../assets/icons/stopIcon.svg');
+  background-image: url('../../../assets/icons/stopIcon.svg');
 }
 
 .play-pause-btn:hover {
@@ -119,27 +119,27 @@ video {
 }
 
 .controls-play-btn::before {
-  background-image: url("../../assets/icons/playIcon.svg");
+  background-image: url("../../../assets/icons/playIcon.svg");
 }
 
 .play::before {
-  background-image: url("../../assets/icons/playIcon.svg");
+  background-image: url("../../../assets/icons/playIcon.svg");
 }
 
 .pause::before {
-  background-image: url("../../assets/icons/stopIcon.svg");
+  background-image: url("../../../assets/icons/stopIcon.svg");
 }
 
 .controls-fullscreen-btn::before {
-  background-image: url("../../assets/icons/fullScreenIcon.svg");
+  background-image: url("../../../assets/icons/fullScreenIcon.svg");
 }
 
 .controls-settings-btn::before {
-  background-image: url("../../assets/icons/settingsIcon.svg");
+  background-image: url("../../../assets/icons/settingsIcon.svg");
 }
 
 .controls-volume-btn::before {
-  background-image: url("../../assets/icons/volumeIcon.svg");
+  background-image: url("../../../assets/icons/volumeIcon.svg");
 }
 
 .progress-block {
