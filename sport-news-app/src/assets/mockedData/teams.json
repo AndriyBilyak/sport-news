@@ -1,0 +1,50 @@
+[
+  {
+    "id": "a6fd4edc-bece-4af6-8d46-10c4188cf79d",
+    "photo": "../../../../assets/img/teams/barcelona.png",
+    "name": "FC Barcelona",
+    "content": "Some text"
+  },
+  {
+    "id": "69073ea8-3a90-40ea-b4a9-1fa9f5ac777e",
+    "photo": "../../../../assets/img/teams/atalanta.svg",
+    "name": "Atalanta B.C.",
+    "content": "Some text"
+  },
+  {
+    "id": "4b3faa24-2cc5-4777-a47b-b7900c5dcc7e",
+    "photo": "../../../../assets/img/teams/napoli.svg",
+    "name": "S.S.C. Napoli",
+    "content": "Some text"
+  },
+  {
+    "id": "6bc66b1c-e6d6-4a01-a971-42cb56235657",
+    "photo": "../../../../assets/img/teams/internazionale.svg",
+    "name": "FC Internazionale Milano",
+    "content": "Some text"
+  },
+  {
+    "id": "2074d917-3395-4165-9fa7-48149c3e4388",
+    "photo": "../../../../assets/img/teams/milan.svg",
+    "name": "A.C. Milan",
+    "content": "Some text"
+  },
+  {
+    "id": "4e9ae38f-af7f-4fb2-ab80-3dcf1ebdda44",
+    "photo": "../../../../assets/img/teams/fiorentina.svg",
+    "name": "ACF Fiorentina",
+    "content": "Some text"
+  },
+  {
+    "id": "ec02bc91-6d33-430c-b56f-238664d825da",
+    "photo": "../../../../assets/img/teams/juventus.svg",
+    "name": "Juventus F.C.",
+    "content": "Some text"
+  },
+  {
+    "id": "83aee452-9aa2-4f2b-bd6a-5fb20bef0456",
+    "photo": "../../../../assets/img/teams/roma.svg",
+    "name": "A.S. Roma",
+    "content": "Some text"
+  }
+]

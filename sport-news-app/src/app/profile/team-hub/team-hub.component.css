@@ -1,0 +1,189 @@
+.hub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.hub-size {
+  width: 100%;
+}
+
+.hub-title {
+  background: #f2f2f2;
+}
+
+.hub-title p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #434c5d;
+  margin: 15px 0px 15px 20px;
+}
+
+.hub-content {
+  background: #f8f8f8;
+}
+
+.hub-content .content-title p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2b2f43;
+  margin: 15px 0px 15px 20px;
+}
+
+.hub-content img {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.hub-content h5 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #2b2f43;
+  margin: 0;
+}
+
+.hub-content p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #7f7b7b;
+  margin: 0;
+}
+.height-team {
+  min-height: 93px;
+}
+
+.hub-content .hub-customize p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #d72130;
+  margin: 0 0 15px 20px;
+  cursor: pointer;
+}
+
+.hub-team-editing:hover {
+  background-color: rgba(215, 33, 48, 0.11);
+  cursor: pointer;
+}
+.hub-team-editing-mark-disp {
+  opacity: 0;
+  cursor: default;
+}
+
+.hub-team-editing:hover .hub-team-editing-mark {
+  display: inline;
+  opacity: 1;
+  color: #d72130;
+  cursor: pointer;
+}
+
+/* button and form*/
+.sm {
+  height: 32px;
+  max-width: 74px;
+  min-width: 68px;
+}
+
+.colored {
+  background: #d72130;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff5f5;
+  font-style: normal;
+  font-size: 12px;
+  border-radius: 0px;
+}
+
+.colored:hover {
+  background: #e02232;
+  color: white;
+  box-shadow: none;
+}
+
+.colored:focus {
+  box-shadow: none;
+}
+
+.colored:active {
+  background: #c80515;
+  box-shadow: none;
+  color: white;
+}
+.form-pl {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.input-em {
+  border-radius: 0rem;
+  border-color: #d8d8d8;
+  min-width: 100px;
+  border-right: none;
+}
+
+#searchFieldId:not(textarea) {
+  height: 32px !important;
+}
+
+.input-em::placeholder {
+  font-family: Open Sans;
+  color: #c6ccd7;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.input-em:hover {
+  color: #495057;
+  background-color: #fff;
+  border-color: #a6a9af;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.input-em:focus {
+  color: #000000;
+  background-color: #fff;
+  border-color: #a6a9af;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+:host ::ng-deep .dropdown-menu {
+  top: 0px !important;
+  left: 0px !important;
+  background-color: #fffefe;
+  max-width: 200px;
+  padding: 0;
+  border-radius: unset;
+  border: none;
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.0949246);
+}
+
+:host::ng-deep .dropdown-menu .dropdown-item {
+  padding: 10px 0 10px 5px;
+  color: #b2b2b2;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  line-height: 17px;
+}
+
+:host::ng-deep .dropdown-menu .dropdown-item.active {
+  background: rgba(215, 33, 48, 0.11);
+  color: black;
+}

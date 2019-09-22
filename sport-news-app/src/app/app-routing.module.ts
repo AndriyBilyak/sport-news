@@ -3,13 +3,14 @@ import { Routes, RouterModule, PreloadAllModules, CanActivate } from '@angular/r
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
-
+import { AuthLoginGuard } from './guards/auth-login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
+    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule),
+    canActivate: [AuthLoginGuard],
   },
   {
     path: 'home',
@@ -21,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'video',
-    loadChildren: () => import('./video/video.module').then(mod => mod.VideoModule)
+    loadChildren: () => import('./video/video.module').then(mod => mod.VideoModule),
   },
   {
     path: 'profile',
@@ -32,20 +33,24 @@ const routes: Routes = [
     path: 'company', redirectTo: '/company/news', pathMatch: 'full' ,
   },
   {
-  path: 'company',
-  loadChildren: () => import('./company-info/company-info.module').then(mod => mod.CompanyInfoModule)
+    path: 'company',
+    loadChildren: () =>
+      import('./company-info/company-info.module').then(mod => mod.CompanyInfoModule),
   },
   {
     path: 'contributors',
-    loadChildren: () => import('./contributors/contributors.module').then(mod => mod.ContributorsModule)
-    },
-  { path: '**', component: PageNotFoundComponent }
+    loadChildren: () =>
+      import('./contributors/contributors.module').then(mod => mod.ContributorsModule),
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

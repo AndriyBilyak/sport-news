@@ -1,48 +1,38 @@
 <div class="comments">
-    <div class="row justify-content-between">
-        <div class="col-3">
-            <h5>COMMENTS(2)</h5>
-        </div>
-        <div class="col sort">
-            <h6>Sort by:</h6>
-            <select>
-                <option> Most popular</option>
-                <option> Most popular1</option>
-            </select>
-        </div>
+  <div class="row justify-content-between">
+    <div class="col-3">
+      <h5>COMMENTS(2)</h5>
     </div>
-    <div class="write-comment row">
+    <div class="col sort">
+      <h6>Sort by:</h6>
+      <select>
+        <option> Most popular</option>
+        <option> Most popular1</option>
+      </select>
+    </div>
+  </div>
+  <div class="write-comment row">
+    <div class="col-2 comment-photo">
+      <img src="{{ childCommentContent.userPhoto }}" alt="" />
+    </div>
+    <div class="col-10">
+      <input type="text" placeholder="Write a comment" />
+    </div>
+  </div>
+  <div class="comment-container">
+    <div *ngFor="let item of childCommentContent.postedComment">
+      <div class="commentator row">
         <div class="col-2 comment-photo">
-            <img src="../../../assets/img/custom-page-photo/comment-photo.png" alt="">
+          <img src="{{ item.photo }}" alt="" />
         </div>
         <div class="col-10">
-            <input type="text" placeholder="Write a comment">
+          <h4>{{ item.userName }}</h4>
+          <p>{{ item.pbubDate }}</p>
         </div>
+      </div>
+      <div class="comment-content">
+        <p>{{ item.content }}</p>
+      </div>
     </div>
-    <div class="comment-container">
-        <div class="commentator row">
-            <div class="col-2 comment-photo">
-                <img src="../../../assets/img/custom-page-photo/comment-photo.png" alt="">
-            </div>
-            <div class="col-10">
-                <h4>Maurizio Spadari</h4>
-                <p>Mar 15</p>
-            </div>
-        </div>
-        <div class="comment-content">
-            <p>Interesting article. Personally I am trying to slowly move away from Whatsapp as I am doing with Facebook Most of the Whatsapp group I belong to are permanently on mute; otherwise my phone would constantly be beeping each new message on a group typically triggers a flood of comments the majority of which does not add.</p>
-        </div>
-        <div class="commentator row">
-                <div class="col-2 comment-photo">
-                    <img src="../../../assets/img/custom-page-photo/comment-photo.png" alt="">
-                </div>
-                <div class="col-10">
-                    <h4>Tom Chanter</h4>
-                    <p>Mar 15</p>
-                </div>
-            </div>
-            <div class="comment-content">
-                <p>Message services are also looking to get into payments, much like WeChat. Big tech is coming for the banks.</p>
-            </div>
-    </div>
+  </div>
 </div>
