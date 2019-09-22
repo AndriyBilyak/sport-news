@@ -26,9 +26,9 @@ export class CustomPagesComponent implements OnInit, OnDestroy {
 
   private getPageContent() {
     this.roterParamsSubscription = this.route.data.subscribe(data => {
-      // this.appDataService.getArticlesByCategory(data.categoryId).subscribe(data => {
-      //   console.log(data);
-      // });
+      this.appDataService.getArticlesByCategory(data.categoryId).subscribe(data => {
+        console.log(data);
+      });
     });
   }
 }
