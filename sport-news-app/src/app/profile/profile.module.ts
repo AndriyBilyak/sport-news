@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ProfileRoutingModule } from './profile-routing.module';
@@ -9,6 +8,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { SurveysComponent } from './surveys/surveys.component';
 import { TeamHubComponent } from './team-hub/team-hub.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { TeamHubComponent } from './team-hub/team-hub.component';
     SurveysComponent,
     TeamHubComponent,
   ],
-  imports: [CommonModule, ProfileRoutingModule, FormsModule, NgbModule],
+  imports: [CommonModule, ProfileRoutingModule, FormsModule, ReactiveFormsModule, NgbModule],
+  exports: [],
 })
 export class ProfileModule {}

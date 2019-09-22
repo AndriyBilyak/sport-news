@@ -20,26 +20,23 @@
 }
 
 .profile-menu a {
-  color: #2B2F43;
+  color: #2b2f43;
   text-decoration: none;
   padding: 10px 10px;
   font-size: 14px;
   line-height: 19px;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-weight: bold;
   box-sizing: border-box;
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   display: inline-block;
   width: 100%;
   text-align: center;
 }
 
-.profile-menu li:nth-child(2n) a{
+.profile-menu li:nth-child(2n) a {
   margin-left: -1px;
   width: calc(100% + 1px);
-}
-
-.profile-menu li:first-child a{
 }
 
 .profile-menu li.active {
@@ -49,10 +46,10 @@
 
 .profile-menu li.active a {
   border: 1px solid white;
-  color: #D72130;
+  color: #d72130;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .profile-menu {
     width: max-content;
     margin: 0 auto;
@@ -72,7 +69,7 @@
   }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
   .profile-menu a {
     padding: 10px 54px;
   }

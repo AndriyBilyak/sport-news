@@ -3,12 +3,14 @@ import { Routes, RouterModule, PreloadAllModules, CanActivate } from '@angular/r
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthCanActivateGuard } from './guards/auth-can-activate.guard';
+import { AuthLoginGuard } from './guards/auth-login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule),
+    canActivate: [AuthLoginGuard],
   },
   {
     path: 'home',

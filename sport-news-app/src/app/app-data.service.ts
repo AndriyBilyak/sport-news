@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Article } from './interfaces/article';
 
 @Injectable({
   providedIn: 'root',
@@ -11,19 +12,27 @@ export class AppDataService {
   getArticlesByCategory(categoryId) {
     return this.http
       .get('./assets/mockedData/articles.json')
-      .pipe(map(articles => articles.filter(article => article.category === categoryId)));
+      .pipe(
+        map((articles: Array<Article>) =>
+          articles.filter(article => article.category === categoryId)
+        )
+      );
   }
 
   getArticlesByConference(сonferenceId) {
     return this.http
       .get('./assets/mockedData/articles.json')
-      .pipe(map(articles => articles.filter(article => article.сonference === сonferenceId)));
+      .pipe(
+        map((articles: Array<Article>) =>
+          articles.filter(article => article.conference === сonferenceId)
+        )
+      );
   }
 
   getArticlesByTeam(teamId) {
     return this.http
       .get('./assets/mockedData/articles.json')
-      .pipe(map(articles => articles.filter(article => article.team === teamId)));
+      .pipe(map((articles: Array<Article>) => articles.filter(article => article.team === teamId)));
   }
 
   getDealbookContent() {
