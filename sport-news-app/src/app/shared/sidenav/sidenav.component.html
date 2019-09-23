@@ -1,32 +1,54 @@
 <div>
-  <div class="sidenav" [ngStyle]="{'z-index': (openedSubMenu)?'1000':'100'}">
-    <input #toggleInput type="checkbox" class="openSidebarMenu" id="openSidebarMenu" (click)="toggleSideNav()">
-    <label for="openSidebarMenu" class="sidebarIconToggle" [ngClass]="{'sidebarIconOff': opened}">
+  <div class="sidenav" [ngStyle]="{ 'z-index': openedSubMenu || mobile ? '1000' : '0' }">
+    <input
+      #toggleInput
+      type="checkbox"
+      class="openSidebarMenu"
+      id="openSidebarMenu"
+      (click)="toggleSideNav()"
+    />
+    <label for="openSidebarMenu" class="sidebarIconToggle" [ngClass]="{ sidebarIconOff: opened }">
       <div class="spinner diagonal part-1"></div>
       <div class="spinner horizontal"></div>
       <div class="spinner diagonal part-2"></div>
     </label>
     <div *ngIf="mobile">
-      <div  class="sidebarMenu" [ngStyle]="{'transform': (opened)?'translateX(0)':'translateX(-100%)'}">
+      <div
+        class="sidebarMenu"
+        [ngStyle]="{ transform: opened ? 'translateX(0)' : 'translateX(-100%)' }"
+        style="margin-left: -15px;"
+      >
         <ul class="sidebarMenuInner">
-          <li *ngFor="let item of navigationItems" [ngClass]="{'active' : item.active}" style="width: 100px; display: flex; justify-content: space-between;" (click)="changeActive(item)">
-            <a [routerLink]="item.path">{{item.path}}</a>
+          <li
+            *ngFor="let item of navigationItems"
+            [ngClass]="{ active: item.active }"
+            style="width: 100px; display: flex; justify-content: space-between;"
+            (click)="changeActive(item)"
+          >
+            <a [routerLink]="item.path">{{ item.path }}</a>
             <span *ngIf="mobile && item.custom"> <i class="fas fa-caret-right"></i> </span>
           </li>
         </ul>
       </div>
-      <div  class="sidebarMenu subMenu" [ngStyle]="{'transform': (openedSubMenu)?'translateX(0)':'translateX(100%)'}">
+      <div
+        class="sidebarMenu subMenu"
+        [ngStyle]="{ transform: openedSubMenu ? 'translateX(0)' : 'translateX(100%)' }"
+      >
         <p (click)="openedSubMenu = false">< Back to menu</p>
-        <p>{{currentSubMenuName.toUpperCase()}}</p>
+        <p>{{ currentSubMenuName.toUpperCase() }}</p>
         <ul class="sidebarMenuInner">
           <div *ngFor="let item of currentSubMenu">
             <li (click)="openSubMenu(item)">
-              <a [ngClass]="{'active' : item.active}" style="text-transform: none" >{{item.name}}</a>
-              <span *ngIf="item.subElements.length" style="margin-top: -3px; color: white"> <i class="fas fa-caret-right"></i> </span>
+              <a [ngClass]="{ active: item.active }" style="text-transform: none">{{
+                item.name
+              }}</a>
+              <span *ngIf="item.subElements.length" style="margin-top: -3px; color: white">
+                <i class="fas fa-caret-right"></i>
+              </span>
             </li>
             <div *ngIf="item.opened">
               <ul *ngFor="let subItem of item.subElements">
-                <li (click)="thirdLevelMenuItemClick()">{{subItem}}</li>
+                <li (click)="thirdLevelMenuItemClick()">{{ subItem }}</li>
               </ul>
             </div>
           </div>
@@ -34,35 +56,54 @@
       </div>
     </div>
 
-
-
     <div *ngIf="!mobile" style="display: flex; height: 100%">
-      <div class="sidebarMenu" [ngStyle]="{'transform': (opened)?'translateX(0)':'translateX(-100%)'}" style="padding-top: 75px; max-width: 260px">
+      <div
+        class="sidebarMenu"
+        [ngStyle]="{ transform: opened ? 'translateX(0)' : 'translateX(-100%)' }"
+        style="padding-top: 75px; max-width: 260px"
+      >
         <ul class="sidebarMenuInner">
           <li *ngFor="let item of navigationItems">
-            <a [routerLink]="item.path" (click)="changeActive(item)" [ngClass]="{'active' : item.active}">{{item.path}}</a>
+            <a
+              [routerLink]="item.path"
+              (click)="changeActive(item)"
+              [ngClass]="{ active: item.active }"
+              >{{ item.path }}</a
+            >
           </li>
         </ul>
       </div>
-      <div *ngIf="openedSubMenu" class="sidebarMenu subMenu" [ngStyle]="{'transform': (opened)?'translateX(0)':'translateX(-100%)'}" style="padding-top: 75px; max-width: 260px">
+      <div
+        *ngIf="openedSubMenu"
+        class="sidebarMenu subMenu"
+        [ngStyle]="{ transform: opened ? 'translateX(0)' : 'translateX(-100%)' }"
+        style="padding-top: 75px; max-width: 260px"
+      >
         <ul class="sidebarMenuInner">
           <li *ngFor="let item of currentSubMenu">
-            <a  (click)="openThirdLevelMenu(item)" [ngClass]="{'active' : item.active}">{{item.name}}</a>
+            <a (click)="openThirdLevelMenu(item)" [ngClass]="{ active: item.active }">{{
+              item.name
+            }}</a>
           </li>
         </ul>
       </div>
-      <div *ngIf="thirdLevelMenuOpened" class="sidebarMenu subMenu" [ngStyle]="{'transform': (opened)?'translateX(0)':'translateX(-100%)'}" style="padding-top: 75px; max-width: 260px">
+      <div
+        *ngIf="thirdLevelMenuOpened"
+        class="sidebarMenu subMenu"
+        [ngStyle]="{ transform: opened ? 'translateX(0)' : 'translateX(-100%)' }"
+        style="padding-top: 75px; max-width: 260px"
+      >
         <ul class="sidebarMenuInner">
           <li *ngFor="let item of currentThirdLevelMenuItems">
-            <a (click)="thirdLevelMenuItemClick()">{{item}}</a>
+            <a (click)="thirdLevelMenuItemClick()">{{ item }}</a>
           </li>
         </ul>
       </div>
-      <div style="display: flex; flex: auto; background: rgba(0,0,0,.5);" *ngIf="openedSubMenu" (click)="openedSubMenu = false; thirdLevelMenuOpened = false">
-
-      </div>
+      <div
+        style="display: flex; flex: auto; background: rgba(0,0,0,.5);"
+        *ngIf="openedSubMenu"
+        (click)="openedSubMenu = false; thirdLevelMenuOpened = false"
+      ></div>
     </div>
-
   </div>
-
 </div>

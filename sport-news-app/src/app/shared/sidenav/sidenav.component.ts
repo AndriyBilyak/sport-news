@@ -1,13 +1,13 @@
-import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
-import { Router, } from '@angular/router';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css'],
 })
 export class SidenavComponent implements OnInit {
-  @ViewChild('toggleInput', {static: false}) toggleInput: HTMLInputElement;
+  @ViewChild('toggleInput', { static: false }) toggleInput: HTMLInputElement;
   navigationItems = [];
   opened = window.innerWidth > 768;
   mobile = window.innerWidth < 768;
@@ -17,382 +17,382 @@ export class SidenavComponent implements OnInit {
   submenuItems = {
     nba: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     nfl: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     mlb: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     nhl: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     cbb: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     cfb: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     nascar: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     golf: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
     ],
     soccer: [
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
+      },
+      {
+        name: 'AFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
         name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'AFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC East',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Nourth',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC Sought',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
       {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
+        name: 'NFC West',
+        subElements: ['Houston', 'Indianapolis', 'Jacksonville', 'Tennessee'],
+        opened: false,
       },
-      {
-        name: 'AFC Sought',
-        subElements: ['Houston', 'Indianapolis'],
-        opened: false
-      }
-    ]
+    ],
   };
   currentSubMenu = [];
   currentSubMenuName = '';
@@ -402,8 +402,7 @@ export class SidenavComponent implements OnInit {
     this.mobile = window.innerWidth < 768;
   }
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.getNavigationItems();
@@ -412,13 +411,26 @@ export class SidenavComponent implements OnInit {
   private getNavigationItems() {
     this.navigationItems = [];
     this.router.config.forEach(routes => {
-      if (routes.path !== 'login' && routes.path !== '**' && routes.path && routes.path !== 'company' && routes.path !== 'contributors') {
+      if (
+        routes.path !== 'login' &&
+        routes.path !== '**' &&
+        routes.path &&
+        routes.path !== 'company' &&
+        routes.path !== 'contributors'
+      ) {
         this.navigationItems.push({
           path: routes.path,
-          active: (routes.path === 'home'),
-          custom: (routes.path === 'nba' || routes.path === 'nfl' || routes.path === 'mlb' || routes.path === 'nhl' ||
-            routes.path === 'cbb' || routes.path === 'cfb' || routes.path === 'soccer' || routes.path === 'nascar' ||
-            routes.path === 'golf')
+          active: routes.path === 'home',
+          custom:
+            routes.path === 'nba' ||
+            routes.path === 'nfl' ||
+            routes.path === 'mlb' ||
+            routes.path === 'nhl' ||
+            routes.path === 'cbb' ||
+            routes.path === 'cfb' ||
+            routes.path === 'soccer' ||
+            routes.path === 'nascar' ||
+            routes.path === 'golf',
         });
       }
     });
@@ -436,7 +448,7 @@ export class SidenavComponent implements OnInit {
       this.openedSubMenu = false;
       this.thirdLevelMenuOpened = false;
     }
-    this.navigationItems.forEach((item) => {
+    this.navigationItems.forEach(item => {
       item.active = false;
     });
     menuItem.active = true;
@@ -459,7 +471,7 @@ export class SidenavComponent implements OnInit {
   openThirdLevelMenu(item) {
     this.currentThirdLevelMenuItems = item.subElements;
     this.thirdLevelMenuOpened = true;
-    this.currentSubMenu.forEach((menuItem) => {
+    this.currentSubMenu.forEach(menuItem => {
       menuItem.active = false;
     });
     item.active = true;
