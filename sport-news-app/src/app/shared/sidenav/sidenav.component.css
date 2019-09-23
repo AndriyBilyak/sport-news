@@ -5,9 +5,158 @@
   color: #B2B2B2;
   text-transform: uppercase;
 }
+.sidenav a:hover {
+  text-decoration: none;
+}
 .sidenav ul {
   list-style-type: none;
 }
 .sidenav {
-  margin: 75px 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.sidenav input, label {
+   display: none;
+}
+.sidebarMenu {
+  width: 25%;
+  background: white;
+  height: 100%;
+}
+.active {
+  color: #D72130!important;
+}
+.sidenav .subMenu ul li a, li {
+  text-transform: none;
+  color: black;
+  font-weight: normal;
+  cursor: pointer;
+}
+.subMenu ul li {
+  padding: 5px 0;
+}
+
+
+@media screen and (max-width: 768px){
+  .sidenav label {
+    display: block;
+  }
+  .sidenav {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    height: 100%;
+  }
+  .sidenav ul {
+    overflow: auto;
+  }
+  .sidebarMenu {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 78px;
+    transform: translateX(-100%);
+    transition: transform 250ms ease-in-out;
+    background-color: #D72130;
+  }
+
+  .active {
+    color: #ffffff!important;
+  }
+
+
+  .sidenav ul li {
+    margin: 10px 20px;
+  }
+  .sidenav ul li a {
+    font-size: 18px;
+    color: rgba(235, 235, 235, 0.79);
+  }
+  .sidebarMenuInner {
+    margin-top: 25px;
+  }
+
+  input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+  }
+  .sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: fixed;
+    z-index: 101;
+    top: 47px;
+    left: 17px;
+    height: 22px;
+    width: 22px;
+  }
+  .spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+  }
+  .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+  }
+  .diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+  }
+  .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+  }
+  .sidebarIconOff > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+  }
+  .sidebarIconOff  > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+  }
+  .sidebarIconOff  > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+  }
+
+  .subMenu p {
+    padding-left: 40px;
+    color: white;
+    cursor: pointer;
+  }
+  .sidenav .subMenu ul li a, li {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: none;
+    color: white;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .sidebarMenu span {
+    margin-top: -3px;
+    color: white
+  }
 }
