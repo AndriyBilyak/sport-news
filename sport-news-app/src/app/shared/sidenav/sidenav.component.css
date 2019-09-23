@@ -2,7 +2,7 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
-  color: #B2B2B2;
+  color: #b2b2b2;
   text-transform: uppercase;
 }
 .sidenav a:hover {
@@ -16,8 +16,9 @@
   height: 100%;
   position: fixed;
 }
-.sidenav input, label {
-   display: none;
+.sidenav input,
+label {
+  display: none;
 }
 .sidebarMenu {
   width: 25%;
@@ -25,9 +26,10 @@
   height: 100%;
 }
 .active {
-  color: #D72130!important;
+  color: #d72130 !important;
 }
-.sidenav .subMenu ul li a, li {
+.sidenav .subMenu ul li a,
+li {
   text-transform: none;
   color: black;
   font-weight: normal;
@@ -37,8 +39,7 @@
   padding: 5px 0;
 }
 
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .sidenav label {
     display: block;
   }
@@ -60,13 +61,12 @@
     top: 78px;
     transform: translateX(-100%);
     transition: transform 250ms ease-in-out;
-    background-color: #D72130;
+    background-color: #d72130;
   }
 
   .active {
-    color: #ffffff!important;
+    color: #ffffff !important;
   }
-
 
   .sidenav ul li {
     margin: 10px 20px;
@@ -79,7 +79,7 @@
     margin-top: 25px;
   }
 
-  input[type=checkbox] {
+  input[type='checkbox'] {
     transition: all 0.3s;
     box-sizing: border-box;
     display: none;
@@ -128,13 +128,13 @@
     box-sizing: border-box;
     opacity: 0;
   }
-  .sidebarIconOff  > .diagonal.part-1 {
+  .sidebarIconOff > .diagonal.part-1 {
     transition: all 0.3s;
     box-sizing: border-box;
     transform: rotate(135deg);
     margin-top: 8px;
   }
-  .sidebarIconOff  > .diagonal.part-2 {
+  .sidebarIconOff > .diagonal.part-2 {
     transition: all 0.3s;
     box-sizing: border-box;
     transform: rotate(-135deg);
@@ -146,7 +146,8 @@
     color: white;
     cursor: pointer;
   }
-  .sidenav .subMenu ul li a, li {
+  .sidenav .subMenu ul li a,
+  li {
     width: 150px;
     display: flex;
     justify-content: space-between;
@@ -157,6 +158,6 @@
   }
   .sidebarMenu span {
     margin-top: -3px;
-    color: white
+    color: white;
   }
 }

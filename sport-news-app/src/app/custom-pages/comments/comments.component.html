@@ -13,14 +13,14 @@
   </div>
   <div class="write-comment row">
     <div class="col-2 comment-photo">
-      <img src="{{ childCommentContent.userPhoto }}" alt="" />
+      <img src="{{ childCommentContent?.userPhoto }}" alt="" />
     </div>
     <div class="col-10">
       <input type="text" placeholder="Write a comment" />
     </div>
   </div>
   <div class="comment-container">
-    <div *ngFor="let item of childCommentContent.postedComment">
+    <div *ngFor="let item of childCommentContent?.postedComment">
       <div class="commentator row">
         <div class="col-2 comment-photo">
           <img src="{{ item.photo }}" alt="" />

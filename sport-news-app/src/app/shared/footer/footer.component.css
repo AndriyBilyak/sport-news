@@ -7,20 +7,22 @@
 .footer-width {
   max-width: 1200px;
 }
-.row {
+/* .row {
   margin: 0;
-}
+} */
 .main-content {
   max-width: 850px;
 }
-.col {
+/* .col {
   padding: 0;
 }
 .col-md-4 {
   padding-left: 0;
-}
+} */
 
 .footer-botttom-bg {
+  position: absolute;
+  left: 0;
   z-index: 1;
   background-color: #d72130;
 }
