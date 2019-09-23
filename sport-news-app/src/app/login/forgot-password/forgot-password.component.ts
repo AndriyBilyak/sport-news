@@ -45,9 +45,7 @@ export class ForgotPasswordComponent implements OnInit {
         this.message = true;
       })
       .catch(err => {
-        document.getElementById('email').classList.remove('invalid-input');
-        document.getElementById('email').classList.add('valid-input');
-
+        this.forgotPasswordForm.controls['email'].setErrors({'incorrect': true});
         this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 5000 });
       });
   }

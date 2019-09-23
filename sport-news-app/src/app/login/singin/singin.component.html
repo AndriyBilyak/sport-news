@@ -11,7 +11,8 @@
         </div>
         <div class="col-12 form-group ">
             <label>Email</label>
-            <input type="email" class="form-control" formControlName="email" placeholder="Doe" name="email" [ngClass]="{ 'invalid-input': (submitted && f.email.errors)||(f.email.touched && f.email.errors)||(err), 'valid-input': f.email.touched && !f.email.errors}">
+            <input type="email" class="form-control" formControlName="email" placeholder="Doe" name="email" [ngClass]="{ 'invalid-input': (submitted && f.email.errors)||(f.email.touched && f.email.errors)||(err), 
+            'valid-input': f.email.touched && !f.email.errors }">
             <div *ngIf=" (submitted && f.email.errors)||(f.email.touched && f.email.errors) " class="text-control ">
                 <div *ngIf="f.email.errors.required ">Email is required</div>
                 <div *ngIf="f.email.errors.email ">Write right email</div>
