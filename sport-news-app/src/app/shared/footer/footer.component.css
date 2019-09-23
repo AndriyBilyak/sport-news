@@ -21,6 +21,7 @@
 } */
 
 .footer-botttom-bg {
+  z-index: 1;
   background-color: #d72130;
 }
 
