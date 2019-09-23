@@ -3,7 +3,7 @@
 .sm {
   height: 32px;
   max-width: 97px;
-  min-width: 80px;
+  min-width: 75px;
 }
 
 .colored {
@@ -49,7 +49,7 @@
   border-radius: 0rem;
   border-color: #d8d8d8;
   max-width: 187px;
-  min-width: 100px;
+  min-width: 68px;
   border-right: none;
 }
 .input-em::placeholder {
