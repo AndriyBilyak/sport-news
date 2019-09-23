@@ -1,16 +1,43 @@
 <div class="user-photo">
   <div class="change-photo"></div>
 </div>
-<form  [formGroup]="personalForm" (ngSubmit)="changeUserName()" class="personal-form" >
-
+<form [formGroup]="personalForm" (ngSubmit)="changeUserName()" class="personal-form">
   <h5 *ngIf="error" class="error-block">Oops.. Something went wrong!</h5>
 
   <label for="firstNameInput">FIRST NAME</label>
-  <input type="text" class='first-name-input' id="firstNameInput" formControlName="firstName" [ngClass]="{'invalid-input': (firstName.invalid && firstName.touched) || (firstName.invalid && submited), 'valid-input': firstName.touched && !firstName.invalid }" [placeholder]="userFirstName" autocomplete="off">
+  <input
+    type="text"
+    class="first-name-input"
+    id="firstNameInput"
+    formControlName="firstName"
+    [ngClass]="{
+      'invalid-input': (firstName.invalid && firstName.touched) || (firstName.invalid && submitted),
+      'valid-input': firstName.touched && !firstName.invalid
+    }"
+    [placeholder]="userFirstName"
+    autocomplete="off"
+  />
 
   <label for="lastNameInput">LAST NAME</label>
-  <input type="text" class="last-name-input" id="lastNameInput" formControlName="lastName" [ngClass]="{'invalid-input': (lastName.invalid && lastName.touched) || (lastName.invalid && submited), 'valid-input': lastName.touched && !lastName.invalid }" [placeholder]="userLastName"  autocomplete="off">
+  <input
+    type="text"
+    class="last-name-input"
+    id="lastNameInput"
+    formControlName="lastName"
+    [ngClass]="{
+      'invalid-input': (lastName.invalid && lastName.touched) || (lastName.invalid && submitted),
+      'valid-input': lastName.touched && !lastName.invalid
+    }"
+    [placeholder]="userLastName"
+    autocomplete="off"
+  />
 
-  <input *ngIf="!changed" type="submit" value="UPDATE PROFILE" [disabled]="personalForm.invalid">
+  <input
+    *ngIf="!changed"
+    type="submit"
+    value="UPDATE PROFILE"
+    [class.disabled]="personalForm.invalid"
+    [disabled]="personalForm.invalid"
+  />
   <h5 *ngIf="changed" class="success-block">NAME WAS CHANGED SUCCESSFULLY!</h5>
 </form>

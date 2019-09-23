@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.css']
+  styleUrls: ['./personal.component.css'],
 })
 export class PersonalComponent implements OnInit {
   personalForm: FormGroup;
@@ -13,13 +13,10 @@ export class PersonalComponent implements OnInit {
   userLastName;
   userEmail;
   errorMessage;
-  submited = false;
+  submitted = false;
   changed = false;
   error = false;
-  constructor(
-    private amplifyService: AmplifyService,
-    private fb: FormBuilder,
-  ) {}
+  constructor(private amplifyService: AmplifyService, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.getUserData();
@@ -30,16 +27,19 @@ export class PersonalComponent implements OnInit {
   }
 
   changeUserName() {
-    this.submited = true;
-    this.amplifyService.auth().updateUserAttributes(this.amplifyService.auth().user, {
-      'custom:firstName': this.personalForm.value.firstName,
-      'custom:lastName': this.personalForm.value.lastName,
-    }).then(() => {
-      this.changed = true;
-      setTimeout(() => {
-        this.changed = false;
-      }, 5000);
-    })
+    this.submitted = true;
+    this.amplifyService
+      .auth()
+      .updateUserAttributes(this.amplifyService.auth().user, {
+        'custom:firstName': this.personalForm.value.firstName,
+        'custom:lastName': this.personalForm.value.lastName,
+      })
+      .then(() => {
+        this.changed = true;
+        setTimeout(() => {
+          this.changed = false;
+        }, 5000);
+      })
       .catch(err => {
         this.error = true;
         this.errorMessage = err;
@@ -50,8 +50,8 @@ export class PersonalComponent implements OnInit {
   }
 
   getUserData() {
-    this.userFirstName = this.amplifyService.auth().user.attributes["custom:firstName"];
-    this.userLastName = this.amplifyService.auth().user.attributes["custom:lastName"];
+    this.userFirstName = this.amplifyService.auth().user.attributes['custom:firstName'];
+    this.userLastName = this.amplifyService.auth().user.attributes['custom:lastName'];
     this.userEmail = this.amplifyService.auth().user.attributes.email;
   }
 

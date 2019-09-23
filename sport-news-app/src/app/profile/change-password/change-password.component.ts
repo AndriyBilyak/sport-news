@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.css']
+  styleUrls: ['./change-password.component.css'],
 })
 export class ChangePasswordComponent implements OnInit {
   changePasswordForm: FormGroup;
@@ -14,12 +14,9 @@ export class ChangePasswordComponent implements OnInit {
   oldP;
   newP;
   changed = false;
-  submited = false;
+  submitted = false;
   error = false;
-  constructor(
-    private amplifyService: AmplifyService,
-    private fb: FormBuilder,
-  ) { }
+  constructor(private amplifyService: AmplifyService, private fb: FormBuilder) {}
 
   ngOnInit() {
     console.log(this.amplifyService.auth());
@@ -37,10 +34,11 @@ export class ChangePasswordComponent implements OnInit {
       this.isVisible = false;
     }
   }
-
   changePass() {
-    this.amplifyService.auth().changePassword(this.amplifyService.auth().user, this.oldP, this.newP)
-      .then( () => {
+    this.amplifyService
+      .auth()
+      .changePassword(this.amplifyService.auth().user, this.oldP, this.newP)
+      .then(() => {
         this.changed = true;
         setTimeout(() => {
           this.changed = false;
@@ -61,5 +59,4 @@ export class ChangePasswordComponent implements OnInit {
   get newPassword() {
     return this.changePasswordForm.get('newPassword');
   }
-
 }
