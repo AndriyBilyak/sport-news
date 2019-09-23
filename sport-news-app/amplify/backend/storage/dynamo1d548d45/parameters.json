@@ -1,0 +1,7 @@
+{
+  "tableName": "articles",
+  "partitionKeyName": "id",
+  "partitionKeyType": "S",
+  "sortKeyName": "updatedAt",
+  "sortKeyType": "S"
+}

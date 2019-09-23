@@ -1,14 +1,10 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {debounceTime, map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
-import {Router} from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { debounceTime, switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
-import statesWithFlags from '../../mockedData/searchHeaderData.js';
 
-// TODO: move data to mockedData folder
-// TODO: display real user name and email
-// TODO: add sharing via social media
-
+import { AppDataService } from '../../app-data.service';
 
 @Component({
   selector: 'app-header',
@@ -20,29 +16,32 @@ export class HeaderComponent implements OnInit {
   @Input() currentUser: any;
   model: any;
 
-  constructor(private router: Router, private amplifyService: AmplifyService) {}
+  constructor(
+    private router: Router,
+    private amplifyService: AmplifyService,
+    private appDataService: AppDataService
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   search = (text$: Observable<string>) =>
     text$.pipe(
-      debounceTime(200),
-      map(term => term === '' ? []
-        : statesWithFlags.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-    )
+      debounceTime(300),
+      switchMap(term => this.appDataService.findContent(term))
+    );
 
-  formatter = (x: {name: string}) => x.name;
+  formatter = (x: { name: string }) => x.name;
 
   singOut() {
-    this.amplifyService.auth().signOut()
-    .then(data => {
-      this.router.navigate(['/login']);
-    })
-    .catch(err => {
-      // TODO: handle errors
-      console.log(err);
-    });
+    this.amplifyService
+      .auth()
+      .signOut()
+      .then(data => {
+        this.router.navigate(['/login']);
+      })
+      .catch(err => {
+        // TODO: handle errors
+        console.log(err);
+      });
   }
-
 }

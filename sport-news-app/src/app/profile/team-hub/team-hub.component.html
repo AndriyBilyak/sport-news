@@ -1,1 +1,98 @@
-<p>team-hub works!</p>
+<div class="hub pt-3">
+  <div class="hub-title hub-size ">
+    <p class="text-uppercase">Team hub</p>
+  </div>
+  <div class="hub-size hub-content">
+    <div class="content-title">
+      <p>Follow your favourite teams</p>
+      <form class="form-group mt-2 form-pl" [hidden]="isShow">
+        <div class="input-group input-group-sm">
+          <label for="rtid" class="dropdown-menu">
+            <ng-template #rt let-r="result" let-t="term" id="rtid">
+              <div (click)="showSearch = false">
+                <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+              </div>
+            </ng-template>
+          </label>
+
+          <label for="searchFieldId">
+            <div class="input-wrapper">
+              <input
+                name="something"
+                spellcheck="false"
+                type="text"
+                class="form-control input-em"
+                placeholder="Add a team or topic"
+                id="searchFieldId"
+                autocomplete="off"
+                [(ngModel)]="model"
+                [ngbTypeahead]="search"
+                [resultTemplate]="rt"
+                [inputFormatter]="formatter"
+                (keyup.enter)="showSearch = false"
+              />
+            </div>
+          </label>
+          <button
+            type="button"
+            class="btn sm colored"
+            (click)="changeShow(); showSearch = true; addTeam()"
+          >
+            Done
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <div [hidden]="showSearch">
+        <hr class="mt-0 mb-0" />
+        <div class="row ml-0 mr-0 pt-3 pb-3">
+          <div class="col-3 pl-0 ml-4 pr-0 text-center">
+            <img *ngIf="model != undefined" src="{{ model.photo }}" />
+          </div>
+          <div class="col align-self-center pr-0">
+            <h5 *ngIf="model != undefined">{{ model.name }}</h5>
+            <p *ngIf="model != undefined">{{ model.content }}</p>
+          </div>
+          <div
+            class="col-1 pt-1 pl-0 pr-4 hub-team-editing-mark-disp"
+            [ngClass]="{ 'hub-team-editing-mark': !isShow }"
+          >
+            ✕
+          </div>
+        </div>
+      </div>
+      <hr class="mt-0 mb-0" />
+    </div>
+
+    <div
+      *ngFor="let team of subscriptions; let index = i"
+      (click)="deleteTeam(team)"
+      [hidden]="!showSearch"
+    >
+      <div class="row ml-0 mr-0 pt-3 pb-3 height-team" [ngClass]="{ 'hub-team-editing': !isShow }">
+        <div class="col-3 pl-0 ml-4 pr-0 text-center align-self-center">
+          <img src="{{ team.photo }}" />
+        </div>
+        <div class="col align-self-center pr-0">
+          <h5>{{ team.name }}</h5>
+          <p>{{ team.content }}</p>
+        </div>
+        <div
+          class="col-1 pt-1 pl-0 pr-4 hub-team-editing-mark-disp"
+          [ngClass]="{ 'hub-team-editing-mark': !isShow }"
+        >
+          ✕
+        </div>
+      </div>
+      <hr class="mt-0 mb-0" />
+    </div>
+
+    <div class="hub-customize mt-3" (click)="changeShow()" [hidden]="!isShow">
+      <div>
+        <p>Customize / Select your teams</p>
+      </div>
+    </div>
+  </div>
+</div>

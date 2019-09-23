@@ -156,7 +156,7 @@
 }
 
 .share-block {
-    width: 26.8%;
+    width: 26%;
     padding: 0 10px;
     display: none;
 }
@@ -390,6 +390,7 @@
 .language-block {
     width: 8.2%;
     display: none;
+  padding-right: 10px;
 }
 
 .language-dropdown {
@@ -514,7 +515,7 @@
     }
     .user-dropdown {
         top: 22px !important;
-        left: -30px !important;
+        left: -10px !important;
     }
     .border-right {
         height: 100%;
@@ -546,11 +547,11 @@
         line-height: 28px;
     }
     .search-block {
-        width: 31.8vw;
+        width: 30vw;
         padding: 0;
     }
      ::ng-deep .dropdown-menu {
-        width: 31.6vw;
+        width: 30vw;
         left: -38px !important;
     }
     .share-block {
@@ -559,8 +560,12 @@
     .user-block {
         width: 26.5%;
     }
+    .user-dropdown {
+      left: 0 !important;
+    }
     .language-block {
         width: 8.5%;
+      padding-right: 0;
     }
     .share-wrapper {
         width: 180px;
@@ -599,6 +604,9 @@
     }
     .left-section {
         max-width: 260px;
+    }
+    .user-dropdown {
+      left: 20px !important;
     }
     .user-block__wrapper {
         margin-left: 20px;

@@ -1,0 +1,33 @@
+{
+  "paths": [
+    {
+      "name": "/articles",
+      "lambdaFunction": "sportnewsapp10d783af",
+      "privacy": {
+        "protected": true,
+        "auth": ["/POST", "/PUT", "/PATCH", "/DELETE"],
+        "unauth": ["/GET"]
+      }
+    }
+  ],
+  "resourceName": "sportNews",
+  "apiName": "sportNews",
+  "functionArns": [
+    {
+      "lambdaFunction": "sportnewsapp10d783af"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 1,
+    "authRoleName": "sport-news-app-dev-20190820103737-authRole",
+    "unAuthRoleName": "sport-news-app-dev-20190820103737-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "sportnewsapp10d783af",
+      "attributes": ["Name", "Arn"]
+    }
+  ]
+}
