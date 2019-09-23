@@ -1,20 +1,20 @@
 <div class="main-article">
   <div class="main-photo">
-    <img src="{{ childMainArtContent.photo }}" />
+    <img src="{{ childMainArtContent?.photo }}" />
     <div class="NBA-news">
-      <h2>{{ childMainArtContent.pageTitle }}</h2>
+      <h2>{{ childMainArtContent?.pageTitle }}</h2>
     </div>
   </div>
   <div class="main-content pt-3">
     <div class="col-md-12 ">
-      <p>{{ childMainArtContent.pubDate }}</p>
-      <h4>{{ childMainArtContent.articleAuthor }}</h4>
-      <h5>{{ childMainArtContent.articleTitle }}</h5>
+      <p>{{ childMainArtContent?.pubDate }}</p>
+      <h4>{{ childMainArtContent?.articleAuthor }}</h4>
+      <h5>{{ childMainArtContent?.articleTitle }}</h5>
     </div>
   </div>
   <div class="article-text">
-    <p *ngFor="let item of childMainArtContent.articleContent; let i = index">
-      {{ childMainArtContent.articleContent[i] }}
+    <p *ngFor="let item of childMainArtContent?.articleContent; let i = index">
+      {{ (childMainArtContent?.articleContent)[i] }}
     </p>
   </div>
 </div>
