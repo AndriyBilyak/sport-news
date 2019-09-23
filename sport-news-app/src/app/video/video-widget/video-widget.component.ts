@@ -1,10 +1,9 @@
-import { Component, OnInit, Input, AfterContentInit, AfterViewInit} from '@angular/core';
-import {zip} from 'rxjs';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-video-widget',
   templateUrl: './video-widget.component.html',
-  styleUrls: ['./video-widget.component.css']
+  styleUrls: ['./video-widget.component.css'],
 })
 export class VideoWidgetComponent implements OnInit, AfterViewInit {
   video;
@@ -25,11 +24,13 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
   size: string;
   @Input()
   videoLogoName: string;
-  constructor() {
-  }
+  @Input()
+  source: string;
+  @Input()
+  poster: string;
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     this.initVideoVariables();
@@ -78,7 +79,7 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
   hidePlayBtn() {
     setTimeout(() => {
       this.playBtn.style.opacity = '0';
-    } , 1000);
+    }, 1000);
   }
 
   initVideoVariables() {
@@ -90,7 +91,9 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
     this.progressLoaded = document.getElementById(`progressLoaded${this.id}`) as HTMLElement;
     this.playBtn = document.getElementById(`playPauseLargeBtn${this.id}`) as HTMLElement;
     this.shareBtn = document.getElementById(`shareBtn${this.id}`) as HTMLElement;
-    this.mainVideoContainer = document.getElementById(`mainVideoContainer${this.id}`) as HTMLElement;
+    this.mainVideoContainer = document.getElementById(
+      `mainVideoContainer${this.id}`
+    ) as HTMLElement;
     this.videoLogo = document.getElementById(`videoLogo${this.id}`) as HTMLElement;
     this.videoContainer = document.getElementById(`videoContainer${this.id}`);
     this.videoTimeSm = document.getElementById(`videoTimeSm${this.id}`);
@@ -100,7 +103,8 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
   resizeStatusBar(event) {
     const progress = event.target.currentTime / event.target.duration;
     this.progressStatus.style.width = progress * 100 + '%';
-    this.time.innerHTML = this.toHHMMSS(this.video.currentTime) + ' / ' + this.toHHMMSS(this.video.duration);
+    this.time.innerHTML =
+      this.toHHMMSS(this.video.currentTime) + ' / ' + this.toHHMMSS(this.video.duration);
   }
 
   /*resizeDownloadedBar() {
@@ -119,17 +123,19 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
 
   rewindVideo(event) {
     const progressBarWidth = document.getElementById(`progressBlock${this.id}`).clientWidth;
-    const clickPosition = (event.clientX - Math.floor(event.target.getBoundingClientRect().left));
+    const clickPosition = event.clientX - Math.floor(event.target.getBoundingClientRect().left);
     this.video.currentTime = this.video.duration * (clickPosition / progressBarWidth);
   }
 
   toHHMMSS(sec): string {
-    const hours   = Math.floor(sec / 3600);
-    const minutes = Math.floor((sec - (hours * 3600)) / 60);
-    let seconds = Math.floor(sec - (hours * 3600) - (minutes * 60));
+    const hours = Math.floor(sec / 3600);
+    const minutes = Math.floor((sec - hours * 3600) / 60);
+    let seconds = Math.floor(sec - hours * 3600 - minutes * 60);
 
     // if (seconds < 10) {seconds = '0' + seconds;}
-    return hours.toString() === '0' ? minutes + ':' + seconds : hours + ':' + minutes + ':' + Math.floor(seconds);
+    return hours.toString() === '0'
+      ? minutes + ':' + seconds
+      : hours + ':' + minutes + ':' + Math.floor(seconds);
   }
 
   hideButtonsOnMouseLeave() {
@@ -168,5 +174,4 @@ export class VideoWidgetComponent implements OnInit, AfterViewInit {
     this.shareBtn.style.opacity = '100';
     this.shareBtn.style.top = '0';
   }
-
 }

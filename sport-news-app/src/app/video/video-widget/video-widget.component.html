@@ -1,35 +1,47 @@
-<div class="main-video-container {{size}}" id="mainVideoContainer{{id}}">
-  <div class="container-fluid video-container {{size}}" id="videoContainer{{id}}" (mouseleave)="hideButtonsOnMouseLeave()">
-    <div class="share-btn {{size}} d-flex align-items-center justify-content-center"
-         id="shareBtn{{id}}"
-         (mouseover)="showShareBtnOnHover()">
+<div class="main-video-container {{ size }}" id="mainVideoContainer{{ id }}">
+  <div
+    class="container-fluid video-container {{ size }}"
+    id="videoContainer{{ id }}"
+    (mouseleave)="hideButtonsOnMouseLeave()"
+  >
+    <div
+      class="share-btn {{ size }} d-flex align-items-center justify-content-center"
+      id="shareBtn{{ id }}"
+      (mouseover)="showShareBtnOnHover()"
+    >
       <span>Share</span>
     </div>
-    <div class="play-pause-btn play {{size}}" id="playPauseLargeBtn{{id}}"></div>
-    <video id="mainVideo{{id}}"
-           poster="https://source.unsplash.com/random"
-           preload="metadata"
-           (loadedmetadata)="initVideoDurationSpan()"
-           (timeupdate)="resizeStatusBar($event)"
-           (click)="togglePlayPause()"
-           (mouseover)="showShareBtnOnHover()">
-      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+    <div class="play-pause-btn play {{ size }}" id="playPauseLargeBtn{{ id }}"></div>
+    <video
+      id="mainVideo{{ id }}"
+      poster="{{ this.poster }}"
+      preload="metadata"
+      (loadedmetadata)="initVideoDurationSpan()"
+      (timeupdate)="resizeStatusBar($event)"
+      (click)="togglePlayPause()"
+      (mouseover)="showShareBtnOnHover()"
+    >
+      <source src="{{ this.source }}" />
     </video>
     <div class="video-controls d-flex align-items-center justify-content-start">
-      <button class="controls-play-btn" id="playPauseBtn{{id}}" (click)="togglePlayPause()"></button>
-      <div class="progress-block" id="progressBlock{{id}}" (click)="rewindVideo($event)">
+      <button
+        class="controls-play-btn"
+        id="playPauseBtn{{ id }}"
+        (click)="togglePlayPause()"
+      ></button>
+      <div class="progress-block" id="progressBlock{{ id }}" (click)="rewindVideo($event)">
         <div class="progress-background"></div>
-        <div class="progress-loaded" id="progressLoaded{{id}}"></div>
-        <div class="progress-status" id="progressStatus{{id}}"></div>
+        <div class="progress-loaded" id="progressLoaded{{ id }}"></div>
+        <div class="progress-status" id="progressStatus{{ id }}"></div>
       </div>
       <div class="controls-time-wrapper">
-        <span class="controls-time-span" id="controlsTimeSpan{{id}}">time</span>
+        <span class="controls-time-span" id="controlsTimeSpan{{ id }}">time</span>
       </div>
-      <button class="controls-volume-btn" ></button>
+      <button class="controls-volume-btn"></button>
       <button class="controls-fullscreen-btn" (click)="fullScreen()"></button>
-      <button class="controls-settings-btn" ></button>
+      <button class="controls-settings-btn"></button>
     </div>
-    <h1 class="video-logo {{size}}" id="videoLogo{{id}}">{{videoLogoName}}</h1>
-    <span *ngIf="size === 'sm'" class="video-time-sm" id="videoTimeSm{{id}}">time</span>
+    <h1 class="video-logo {{ size }}" id="videoLogo{{ id }}">{{ videoLogoName }}</h1>
+    <span *ngIf="size === 'sm'" class="video-time-sm" id="videoTimeSm{{ id }}">time</span>
   </div>
 </div>
