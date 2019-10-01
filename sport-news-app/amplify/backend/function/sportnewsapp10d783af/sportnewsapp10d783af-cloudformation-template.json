@@ -68,7 +68,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "sport-news-app-dev-20190820103737-deployment",
-          "S3Key": "amplify-builds/sportnewsapp10d783af-77553947674963583245-build.zip"
+          "S3Key": "amplify-builds/sportnewsapp10d783af-67413943794a50732f44-build.zip"
         }
       }
     },
